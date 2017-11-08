@@ -1,0 +1,4 @@
+update lzh_members set regstep='@由于未从后台专用注册通道进行注册，导致记录失败，现从数据库直接修改',kefu=159 where id=2298--林静修改用户客服、时间2016-4-8、未执行
+update lzh_members set regstep='@由于未从后台专用注册通道进行注册，导致记录失败，现从数据库直接修改',kefu=157 where id=2289--陈晨修改用户客服、时间2016-4-8、未执行
+update lzh_members set regstep='@由于未从后台专用注册通道进行注册，导致记录失败，现从数据库直接修改',kefu=157 where id=2324--陈晨修改用户客服、时间2016-4-14、未执行
+update lzh_members set regstep='@由于未从后台专用注册通道进行注册，导致记录失败，现从数据库直接修改',kefu=156 where id=2363--赵艳修改用户客服、时间2016-4-25、未执行

@@ -1,0 +1,1008 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="oadbModelStoreContainer" CdmEntityContainer="oadbEntities">
+    <EntitySetMapping Name="oa_achievements_achievementsinfo">
+      <EntityTypeMapping TypeName="oadbModel.oa_achievements_achievementsinfo">
+        <MappingFragment StoreEntitySet="oa_achievements_achievementsinfo">
+          <ScalarProperty Name="impactafterscore" ColumnName="impactafterscore" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="institutionid" ColumnName="institutionid" />
+          <ScalarProperty Name="impactscore" ColumnName="impactscore" />
+          <ScalarProperty Name="explain" ColumnName="explain" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_achievements_institution">
+      <EntityTypeMapping TypeName="oadbModel.oa_achievements_institution">
+        <MappingFragment StoreEntitySet="oa_achievements_institution">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="impactscore" ColumnName="impactscore" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_approvalprocess_approvalpersons">
+      <EntityTypeMapping TypeName="oadbModel.oa_approvalprocess_approvalpersons">
+        <MappingFragment StoreEntitySet="oa_approvalprocess_approvalpersons">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="processid" ColumnName="processid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_approvalprocess_process">
+      <EntityTypeMapping TypeName="oadbModel.oa_approvalprocess_process">
+        <MappingFragment StoreEntitySet="oa_approvalprocess_process">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="creator" ColumnName="creator" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="processname" ColumnName="processname" />
+          <ScalarProperty Name="processinfo" ColumnName="processinfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_member_companys">
+      <EntityTypeMapping TypeName="oadbModel.oa_member_companys">
+        <MappingFragment StoreEntitySet="oa_member_companys">
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="companyname" ColumnName="companyname" />
+          <ScalarProperty Name="companyinfo" ColumnName="companyinfo" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_member_departments">
+      <EntityTypeMapping TypeName="oadbModel.oa_member_departments">
+        <MappingFragment StoreEntitySet="oa_member_departments">
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="departmentname" ColumnName="departmentname" />
+          <ScalarProperty Name="departmentinfo" ColumnName="departmentinfo" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_member_dologs">
+      <EntityTypeMapping TypeName="oadbModel.oa_member_dologs">
+        <MappingFragment StoreEntitySet="oa_member_dologs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="addip" ColumnName="addip" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="doinfo" ColumnName="doinfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_member_positions">
+      <EntityTypeMapping TypeName="oadbModel.oa_member_positions">
+        <MappingFragment StoreEntitySet="oa_member_positions">
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="departmentid" ColumnName="departmentid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="positionname" ColumnName="positionname" />
+          <ScalarProperty Name="positioninfo" ColumnName="positioninfo" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_member_staffs">
+      <EntityTypeMapping TypeName="oadbModel.oa_member_staffs">
+        <MappingFragment StoreEntitySet="oa_member_staffs">
+          <ScalarProperty Name="isachievement" ColumnName="isachievement" />
+          <ScalarProperty Name="isall" ColumnName="isall" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="userword" ColumnName="userword" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="departmentid" ColumnName="departmentid" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_member_staffsinfos">
+      <EntityTypeMapping TypeName="oadbModel.oa_member_staffsinfos">
+        <MappingFragment StoreEntitySet="oa_member_staffsinfos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="realname" ColumnName="realname" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="idcard" ColumnName="idcard" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_member_staffslogins">
+      <EntityTypeMapping TypeName="oadbModel.oa_member_staffslogins">
+        <MappingFragment StoreEntitySet="oa_member_staffslogins">
+          <ScalarProperty Name="dotime" ColumnName="dotime" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="addip" ColumnName="addip" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="cookie" ColumnName="cookie" />
+          <ScalarProperty Name="expiretime" ColumnName="expiretime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_notice_noticecomment">
+      <EntityTypeMapping TypeName="oadbModel.oa_notice_noticecomment">
+        <MappingFragment StoreEntitySet="oa_notice_noticecomment">
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="noticeid" ColumnName="noticeid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_notice_noticetype">
+      <EntityTypeMapping TypeName="oadbModel.oa_notice_noticetype">
+        <MappingFragment StoreEntitySet="oa_notice_noticetype">
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_power_actions">
+      <EntityTypeMapping TypeName="oadbModel.oa_power_actions">
+        <MappingFragment StoreEntitySet="oa_power_actions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="actionname" ColumnName="actionname" />
+          <ScalarProperty Name="actioninfo" ColumnName="actioninfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_power_ausers">
+      <EntityTypeMapping TypeName="oadbModel.oa_power_ausers">
+        <MappingFragment StoreEntitySet="oa_power_ausers">
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="userword" ColumnName="userword" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_power_ausersinfos">
+      <EntityTypeMapping TypeName="oadbModel.oa_power_ausersinfos">
+        <MappingFragment StoreEntitySet="oa_power_ausersinfos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="auserid" ColumnName="auserid" />
+          <ScalarProperty Name="realname" ColumnName="realname" />
+          <ScalarProperty Name="qq" ColumnName="qq" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_power_auserslogins">
+      <EntityTypeMapping TypeName="oadbModel.oa_power_auserslogins">
+        <MappingFragment StoreEntitySet="oa_power_auserslogins">
+          <ScalarProperty Name="dotime" ColumnName="dotime" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="auserid" ColumnName="auserid" />
+          <ScalarProperty Name="addip" ColumnName="addip" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="cookie" ColumnName="cookie" />
+          <ScalarProperty Name="expiretime" ColumnName="expiretime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_power_dologs">
+      <EntityTypeMapping TypeName="oadbModel.oa_power_dologs">
+        <MappingFragment StoreEntitySet="oa_power_dologs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="auserid" ColumnName="auserid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="addip" ColumnName="addip" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="doinfo" ColumnName="doinfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_power_functions">
+      <EntityTypeMapping TypeName="oadbModel.oa_power_functions">
+        <MappingFragment StoreEntitySet="oa_power_functions">
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="functionname" ColumnName="functionname" />
+          <ScalarProperty Name="functioninfo" ColumnName="functioninfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_power_functionsactions">
+      <EntityTypeMapping TypeName="oadbModel.oa_power_functionsactions">
+        <MappingFragment StoreEntitySet="oa_power_functionsactions">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="functionid" ColumnName="functionid" />
+          <ScalarProperty Name="actionid" ColumnName="actionid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_power_powerlogs">
+      <EntityTypeMapping TypeName="oadbModel.oa_power_powerlogs">
+        <MappingFragment StoreEntitySet="oa_power_powerlogs">
+          <ScalarProperty Name="addip" ColumnName="addip" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tablename" ColumnName="tablename" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="auserid" ColumnName="auserid" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_power_roles">
+      <EntityTypeMapping TypeName="oadbModel.oa_power_roles">
+        <MappingFragment StoreEntitySet="oa_power_roles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rolename" ColumnName="rolename" />
+          <ScalarProperty Name="roleinfo" ColumnName="roleinfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_power_rolesfunctions">
+      <EntityTypeMapping TypeName="oadbModel.oa_power_rolesfunctions">
+        <MappingFragment StoreEntitySet="oa_power_rolesfunctions">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="functionid" ColumnName="functionid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_project_projects">
+      <EntityTypeMapping TypeName="oadbModel.oa_project_projects">
+        <MappingFragment StoreEntitySet="oa_project_projects">
+          <ScalarProperty Name="realityfinishtime" ColumnName="realityfinishtime" />
+          <ScalarProperty Name="expectfinishtime" ColumnName="expectfinishtime" />
+          <ScalarProperty Name="realitybegintime" ColumnName="realitybegintime" />
+          <ScalarProperty Name="expectbegintime" ColumnName="expectbegintime" />
+          <ScalarProperty Name="person_responsibleid" ColumnName="person_responsibleid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="projectname" ColumnName="projectname" />
+          <ScalarProperty Name="projectinfo" ColumnName="projectinfo" />
+          <ScalarProperty Name="progress" ColumnName="progress" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_project_projectsstaffs">
+      <EntityTypeMapping TypeName="oadbModel.oa_project_projectsstaffs">
+        <MappingFragment StoreEntitySet="oa_project_projectsstaffs">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="rolename" ColumnName="rolename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_runtinework_memorandums">
+      <EntityTypeMapping TypeName="oadbModel.oa_runtinework_memorandums">
+        <MappingFragment StoreEntitySet="oa_runtinework_memorandums">
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="remindtime" ColumnName="remindtime" />
+          <ScalarProperty Name="deletetime" ColumnName="deletetime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_member_staffs_staffsinfos">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_member_staffs_staffsinfos">
+        <MappingFragment StoreEntitySet="view_oa_member_staffs_staffsinfos">
+          <ScalarProperty Name="departmentid" ColumnName="departmentid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="idcard" ColumnName="idcard" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="realname" ColumnName="realname" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_member_departmentstaffnumber">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_member_departmentstaffnumber">
+        <MappingFragment StoreEntitySet="view_oa_member_departmentstaffnumber">
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="staffnumber" ColumnName="staffnumber" />
+          <ScalarProperty Name="departmentinfo" ColumnName="departmentinfo" />
+          <ScalarProperty Name="departmentname" ColumnName="departmentname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_member_position">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_member_position">
+        <MappingFragment StoreEntitySet="view_oa_member_position">
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="departmentid" ColumnName="departmentid" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="departmentname" ColumnName="departmentname" />
+          <ScalarProperty Name="parentpositionname" ColumnName="parentpositionname" />
+          <ScalarProperty Name="positioninfo" ColumnName="positioninfo" />
+          <ScalarProperty Name="positionname" ColumnName="positionname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_userpower_functions">
+      <EntityTypeMapping TypeName="oadbModel.oa_userpower_functions">
+        <MappingFragment StoreEntitySet="oa_userpower_functions">
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="functioninfo" ColumnName="functioninfo" />
+          <ScalarProperty Name="functionname" ColumnName="functionname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_userpower_functionsactions">
+      <EntityTypeMapping TypeName="oadbModel.oa_userpower_functionsactions">
+        <MappingFragment StoreEntitySet="oa_userpower_functionsactions">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="actionid" ColumnName="actionid" />
+          <ScalarProperty Name="functionid" ColumnName="functionid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_userpower_pagemenu">
+      <EntityTypeMapping TypeName="oadbModel.oa_userpower_pagemenu">
+        <MappingFragment StoreEntitySet="oa_userpower_pagemenu">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="ispage" ColumnName="ispage" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_userpower_positionsfunctions">
+      <EntityTypeMapping TypeName="oadbModel.oa_userpower_positionsfunctions">
+        <MappingFragment StoreEntitySet="oa_userpower_positionsfunctions">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="functionid" ColumnName="functionid" />
+          <ScalarProperty Name="positionid" ColumnName="positionid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_userpower_powerlogs">
+      <EntityTypeMapping TypeName="oadbModel.oa_userpower_powerlogs">
+        <MappingFragment StoreEntitySet="oa_userpower_powerlogs">
+          <ScalarProperty Name="staffname" ColumnName="staffname" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="tablename" ColumnName="tablename" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_member_staffspositions">
+      <EntityTypeMapping TypeName="oadbModel.oa_member_staffspositions">
+        <MappingFragment StoreEntitySet="oa_member_staffspositions">
+          <ScalarProperty Name="positionid" ColumnName="positionid" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_member_staffposition">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_member_staffposition">
+        <MappingFragment StoreEntitySet="view_oa_member_staffposition">
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="positionname" ColumnName="positionname" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="positionid" ColumnName="positionid" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_member_staffinfolist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_member_staffinfolist">
+        <MappingFragment StoreEntitySet="view_oa_member_staffinfolist">
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="departmentid" ColumnName="departmentid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="departmentname" ColumnName="departmentname" />
+          <ScalarProperty Name="positionname" ColumnName="positionname" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="realname" ColumnName="realname" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_project_projectstafflist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_project_projectstafflist">
+        <MappingFragment StoreEntitySet="view_oa_project_projectstafflist">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="realname" ColumnName="realname" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="rolename" ColumnName="rolename" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_project_projectbug">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_project_projectbug">
+        <MappingFragment StoreEntitySet="view_oa_project_projectbug">
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+          <ScalarProperty Name="finishtime" ColumnName="finishtime" />
+          <ScalarProperty Name="solvetime" ColumnName="solvetime" />
+          <ScalarProperty Name="confirmtime" ColumnName="confirmtime" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="editorusername" ColumnName="editorusername" />
+          <ScalarProperty Name="editor" ColumnName="editor" />
+          <ScalarProperty Name="writerusername" ColumnName="writerusername" />
+          <ScalarProperty Name="writer" ColumnName="writer" />
+          <ScalarProperty Name="dostep" ColumnName="dostep" />
+          <ScalarProperty Name="reproducestep" ColumnName="reproducestep" />
+          <ScalarProperty Name="degree" ColumnName="degree" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="projectname" ColumnName="projectname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_project_projectsbugs">
+      <EntityTypeMapping TypeName="oadbModel.oa_project_projectsbugs">
+        <MappingFragment StoreEntitySet="oa_project_projectsbugs">
+          <ScalarProperty Name="closetime" ColumnName="closetime" />
+          <ScalarProperty Name="solvetime" ColumnName="solvetime" />
+          <ScalarProperty Name="confirmtime" ColumnName="confirmtime" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="editor" ColumnName="editor" />
+          <ScalarProperty Name="writer" ColumnName="writer" />
+          <ScalarProperty Name="dostep" ColumnName="dostep" />
+          <ScalarProperty Name="reproducestep" ColumnName="reproducestep" />
+          <ScalarProperty Name="degree" ColumnName="degree" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_project_projectbuglist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_project_projectbuglist">
+        <MappingFragment StoreEntitySet="view_oa_project_projectbuglist">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="editorusername" ColumnName="editorusername" />
+          <ScalarProperty Name="editor" ColumnName="editor" />
+          <ScalarProperty Name="writerusername" ColumnName="writerusername" />
+          <ScalarProperty Name="writer" ColumnName="writer" />
+          <ScalarProperty Name="degree" ColumnName="degree" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="projectname" ColumnName="projectname" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_member_staffsidusername">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_member_staffsidusername">
+        <MappingFragment StoreEntitySet="view_oa_member_staffsidusername">
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_approvalprocess_staffapplyapprovals">
+      <EntityTypeMapping TypeName="oadbModel.oa_approvalprocess_staffapplyapprovals">
+        <MappingFragment StoreEntitySet="oa_approvalprocess_staffapplyapprovals">
+          <ScalarProperty Name="approvaltime" ColumnName="approvaltime" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="approvalpersonid" ColumnName="approvalpersonid" />
+          <ScalarProperty Name="staffapplyid" ColumnName="staffapplyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_approvalprocess_staffapplys">
+      <EntityTypeMapping TypeName="oadbModel.oa_approvalprocess_staffapplys">
+        <MappingFragment StoreEntitySet="oa_approvalprocess_staffapplys">
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="projectprocessid" ColumnName="projectprocessid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="applyname" ColumnName="applyname" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_approvalprocess_projects">
+      <EntityTypeMapping TypeName="oadbModel.oa_approvalprocess_projects">
+        <MappingFragment StoreEntitySet="oa_approvalprocess_projects">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="pathfile" ColumnName="pathfile" />
+          <ScalarProperty Name="projectinfo" ColumnName="projectinfo" />
+          <ScalarProperty Name="projectname" ColumnName="projectname" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="creator" ColumnName="creator" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_approvalprocess_projectprocess">
+      <EntityTypeMapping TypeName="oadbModel.oa_approvalprocess_projectprocess">
+        <MappingFragment StoreEntitySet="oa_approvalprocess_projectprocess">
+          <ScalarProperty Name="projectprocessname" ColumnName="projectprocessname" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="processid" ColumnName="processid" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_approvalprocess_projectprocess">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_approvalprocess_projectprocess">
+        <MappingFragment StoreEntitySet="view_oa_approvalprocess_projectprocess">
+          <ScalarProperty Name="projectprocessname" ColumnName="projectprocessname" />
+          <ScalarProperty Name="pathfile" ColumnName="pathfile" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="processinfo" ColumnName="processinfo" />
+          <ScalarProperty Name="processname" ColumnName="processname" />
+          <ScalarProperty Name="projectinfo" ColumnName="projectinfo" />
+          <ScalarProperty Name="projectname" ColumnName="projectname" />
+          <ScalarProperty Name="processid" ColumnName="processid" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_approvalprocess_processperson">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_approvalprocess_processperson">
+        <MappingFragment StoreEntitySet="view_oa_approvalprocess_processperson">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="processname" ColumnName="processname" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="processid" ColumnName="processid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_approvalprocess_staffapplylist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_approvalprocess_staffapplylist">
+        <MappingFragment StoreEntitySet="view_oa_approvalprocess_staffapplylist">
+          <ScalarProperty Name="approvalstaffid" ColumnName="approvalstaffid" />
+          <ScalarProperty Name="approvalstatus" ColumnName="approvalstatus" />
+          <ScalarProperty Name="approvaltime" ColumnName="approvaltime" />
+          <ScalarProperty Name="approvalusername" ColumnName="approvalusername" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="processname" ColumnName="processname" />
+          <ScalarProperty Name="projectname" ColumnName="projectname" />
+          <ScalarProperty Name="processid" ColumnName="processid" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="applyname" ColumnName="applyname" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="projectprocessid" ColumnName="projectprocessid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_approvalprocess_staffapplyapprovallist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_approvalprocess_staffapplyapprovallist">
+        <MappingFragment StoreEntitySet="view_oa_approvalprocess_staffapplyapprovallist">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="approvaltime" ColumnName="approvaltime" />
+          <ScalarProperty Name="staffapplyid" ColumnName="staffapplyid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_approvalprocess_staffapplyall">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_approvalprocess_staffapplyall">
+        <MappingFragment StoreEntitySet="view_oa_approvalprocess_staffapplyall">
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="applyname" ColumnName="applyname" />
+          <ScalarProperty Name="approvalpersonid" ColumnName="approvalpersonid" />
+          <ScalarProperty Name="approvalstaffid" ColumnName="approvalstaffid" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="projectprocessid" ColumnName="projectprocessid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="processid" ColumnName="processid" />
+          <ScalarProperty Name="projectid" ColumnName="projectid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_achievements_achievementinfolist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_achievements_achievementinfolist">
+        <MappingFragment StoreEntitySet="view_oa_achievements_achievementinfolist">
+          <ScalarProperty Name="departmentid" ColumnName="departmentid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="impactafterscore" ColumnName="impactafterscore" />
+          <ScalarProperty Name="impactscore" ColumnName="impactscore" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="realname" ColumnName="realname" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="institutionid" ColumnName="institutionid" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_achievements_staffachievementlist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_achievements_staffachievementlist">
+        <MappingFragment StoreEntitySet="view_oa_achievements_staffachievementlist">
+          <ScalarProperty Name="score" ColumnName="score" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="departmentid" ColumnName="departmentid" />
+          <ScalarProperty Name="departmentname" ColumnName="departmentname" />
+          <ScalarProperty Name="realname" ColumnName="realname" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_notice_notice">
+      <EntityTypeMapping TypeName="oadbModel.oa_notice_notice">
+        <MappingFragment StoreEntitySet="oa_notice_notice">
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="edittime" ColumnName="edittime" />
+          <ScalarProperty Name="commentcount" ColumnName="commentcount" />
+          <ScalarProperty Name="clickcount" ColumnName="clickcount" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="typeid" ColumnName="typeid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_forum_reply">
+      <EntityTypeMapping TypeName="oadbModel.oa_forum_reply">
+        <MappingFragment StoreEntitySet="oa_forum_reply">
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="topicid" ColumnName="topicid" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_forum_section">
+      <EntityTypeMapping TypeName="oadbModel.oa_forum_section">
+        <MappingFragment StoreEntitySet="oa_forum_section">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="topiccount" ColumnName="topiccount" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="sectioninfo" ColumnName="sectioninfo" />
+          <ScalarProperty Name="sectionname" ColumnName="sectionname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_forum_topic">
+      <EntityTypeMapping TypeName="oadbModel.oa_forum_topic">
+        <MappingFragment StoreEntitySet="oa_forum_topic">
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="lastclicktime" ColumnName="lastclicktime" />
+          <ScalarProperty Name="clickcount" ColumnName="clickcount" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="sectionid" ColumnName="sectionid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_forum_section">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_forum_section">
+        <MappingFragment StoreEntitySet="view_oa_forum_section">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="topiccount" ColumnName="topiccount" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="sectioninfo" ColumnName="sectioninfo" />
+          <ScalarProperty Name="sectionname" ColumnName="sectionname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_forum_reply">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_forum_reply">
+        <MappingFragment StoreEntitySet="view_oa_forum_reply">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="sectionid" ColumnName="sectionid" />
+          <ScalarProperty Name="topicid" ColumnName="topicid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_forum_topic">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_forum_topic">
+        <MappingFragment StoreEntitySet="view_oa_forum_topic">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="lastclicktime" ColumnName="lastclicktime" />
+          <ScalarProperty Name="clickcount" ColumnName="clickcount" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="sectionid" ColumnName="sectionid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_notice_notice">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_notice_notice">
+        <MappingFragment StoreEntitySet="view_oa_notice_notice">
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="commentcount" ColumnName="commentcount" />
+          <ScalarProperty Name="clickcount" ColumnName="clickcount" />
+          <ScalarProperty Name="edittime" ColumnName="edittime" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="typeid" ColumnName="typeid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_notice_noticecomment">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_notice_noticecomment">
+        <MappingFragment StoreEntitySet="view_oa_notice_noticecomment">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="staffid" ColumnName="staffid" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="noticeid" ColumnName="noticeid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_power_pagemenu">
+      <EntityTypeMapping TypeName="oadbModel.oa_power_pagemenu">
+        <MappingFragment StoreEntitySet="oa_power_pagemenu">
+          <ScalarProperty Name="ispage" ColumnName="ispage" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_member_companylist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_member_companylist">
+        <MappingFragment StoreEntitySet="view_oa_member_companylist">
+          <ScalarProperty Name="staffcount" ColumnName="staffcount" />
+          <ScalarProperty Name="departmentcount" ColumnName="departmentcount" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="companyinfo" ColumnName="companyinfo" />
+          <ScalarProperty Name="companyname" ColumnName="companyname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_power_dologlist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_power_dologlist">
+        <MappingFragment StoreEntitySet="view_oa_power_dologlist">
+          <ScalarProperty Name="doinfo" ColumnName="doinfo" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="addip" ColumnName="addip" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="auserid" ColumnName="auserid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_power_powerloglist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_power_powerloglist">
+        <MappingFragment StoreEntitySet="view_oa_power_powerloglist">
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="addip" ColumnName="addip" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="auserid" ColumnName="auserid" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="tablename" ColumnName="tablename" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_power_auserlist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_power_auserlist">
+        <MappingFragment StoreEntitySet="view_oa_power_auserlist">
+          <ScalarProperty Name="userword" ColumnName="userword" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="qq" ColumnName="qq" />
+          <ScalarProperty Name="realname" ColumnName="realname" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="rolename" ColumnName="rolename" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc_updateauser" FunctionName="oadbModel.Store.proc_updateauser" />
+    <EntitySetMapping Name="view_oa_power_rolefunctionlist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_power_rolefunctionlist">
+        <MappingFragment StoreEntitySet="view_oa_power_rolefunctionlist">
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="functioninfo" ColumnName="functioninfo" />
+          <ScalarProperty Name="functionname" ColumnName="functionname" />
+          <ScalarProperty Name="roleinfo" ColumnName="roleinfo" />
+          <ScalarProperty Name="rolename" ColumnName="rolename" />
+          <ScalarProperty Name="functionid" ColumnName="functionid" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_power_functionactionlist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_power_functionactionlist">
+        <MappingFragment StoreEntitySet="view_oa_power_functionactionlist">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="actioninfo" ColumnName="actioninfo" />
+          <ScalarProperty Name="actionname" ColumnName="actionname" />
+          <ScalarProperty Name="functionid" ColumnName="functionid" />
+          <ScalarProperty Name="actionid" ColumnName="actionid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_member_positionfunctionlist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_member_positionfunctionlist">
+        <MappingFragment StoreEntitySet="view_oa_member_positionfunctionlist">
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="functioninfo" ColumnName="functioninfo" />
+          <ScalarProperty Name="functionname" ColumnName="functionname" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="positioninfo" ColumnName="positioninfo" />
+          <ScalarProperty Name="positionname" ColumnName="positionname" />
+          <ScalarProperty Name="functionid" ColumnName="functionid" />
+          <ScalarProperty Name="positionid" ColumnName="positionid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_oa_userpower_functionactionlist">
+      <EntityTypeMapping TypeName="oadbModel.view_oa_userpower_functionactionlist">
+        <MappingFragment StoreEntitySet="view_oa_userpower_functionactionlist">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="actioninfo" ColumnName="actioninfo" />
+          <ScalarProperty Name="actionname" ColumnName="actionname" />
+          <ScalarProperty Name="actionid" ColumnName="actionid" />
+          <ScalarProperty Name="functionid" ColumnName="functionid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oa_userpower_actions">
+      <EntityTypeMapping TypeName="oadbModel.oa_userpower_actions">
+        <MappingFragment StoreEntitySet="oa_userpower_actions">
+          <ScalarProperty Name="actioninfo" ColumnName="actioninfo" />
+          <ScalarProperty Name="actionname" ColumnName="actionname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

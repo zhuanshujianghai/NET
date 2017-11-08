@@ -1,0 +1,8 @@
+F:\代码综合\VS2013默认项目位置\OA\OA_IDAL\bin\Debug\OA_IDAL.dll
+F:\代码综合\VS2013默认项目位置\OA\OA_IDAL\bin\Debug\OA_IDAL.pdb
+F:\代码综合\VS2013默认项目位置\OA\OA_IDAL\obj\Debug\OA_IDAL.dll
+F:\代码综合\VS2013默认项目位置\OA\OA_IDAL\obj\Debug\OA_IDAL.pdb
+D:\E盘\VS2013\OA\OA\OA_IDAL\bin\Debug\OA_IDAL.dll
+D:\E盘\VS2013\OA\OA\OA_IDAL\bin\Debug\OA_IDAL.pdb
+D:\E盘\VS2013\OA\OA\OA_IDAL\obj\Debug\OA_IDAL.dll
+D:\E盘\VS2013\OA\OA\OA_IDAL\obj\Debug\OA_IDAL.pdb

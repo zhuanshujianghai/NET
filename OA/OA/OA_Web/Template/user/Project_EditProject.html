@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>昊良创投-会员管理</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                </button>
+                <h4 class="modal-title">
+                    <i class="icon-pencil"></i><span id="lblAddTitle" style="font-weight: bold">编辑项目</span>
+                </h4>
+            </div>
+            <form class="form-horizontal form-bordered form-row-strippe" action="#" data-toggle="validator" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                项目名称：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="projectname" class="m-wrap large" value="$projectname$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                项目描述：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="projectinfo" class="m-wrap large" value="$projectinfo$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                项目创建人：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="staff" class="m-wrap large" value="$staff$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                项目负责人：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="person_responsiblename" class="m-wrap large" value="$person_responsiblename$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                进度：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="progress" class="m-wrap large" value="$progress$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                状态：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <select class="m-wrap large" id="status"></select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                添加时间：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="addtime" class="m-wrap large" readonly="readonly" value="$addtime$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                预计开始时间：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input class="m-wrap large" id="expectbegintime" type="text" value="$expectbegintime$" onclick="SelectDate(this,'yyyy-MM-dd')">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                预计结束时间：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="expectfinishtime" class="m-wrap large" value="$expectfinishtime$" onclick="SelectDate(this, 'yyyy-MM-dd')" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-info">
+                    <input class="btn blue" type="button" id="btnsubmit" value="提交" onclick="update()" data-dismiss="modal" />
+                    <button type="button" class="btn green" data-dismiss="modal">
+                        取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var html = "<option value='0'>新建项目</option><option value='1'>进行中</option><option value='2'>已完成</option>";
+        var status = $status$;
+        switch (status)
+        {
+            case 0:
+                html.replace("'0'", "'0' selected='selected'")
+                break
+            case 1:
+                html.replace("'1'", "'1' selected='selected'")
+                break
+            case 2:
+                html.replace("'2'", "'2' selected='selected'")
+                break
+        }
+        $("#status").html(html);
+    });
+    function update() {
+        var projectname = $("#projectname").val();
+        var projectinfo = $("#projectinfo").val();
+        var person_responsiblename = $("#person_responsiblename").val();
+        var progress = $("#progress").val();
+        var status = $("#status").val();
+        $.post("/projectnoview/editproject", { pid: $pid$, projectname: projectname, projectinfo: projectinfo, person_responsiblename: person_responsiblename, progress: progress,status:status }, function (data) {
+            if (data.status == true) {
+                reload();
+            }
+            else {
+                alert(data.msg);
+            }
+        });
+    }
+</script>
+<!-- END BODY -->
+</html>

@@ -1,0 +1,1245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="oadbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="oa_achievements_achievementsinfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="institutionid" Type="Int64" Nullable="false" />
+    <Property Name="impactscore" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="explain" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="impactafterscore" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="oa_achievements_institution">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="content" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="sort" Type="Int32" Nullable="false" />
+    <Property Name="updatetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="impactscore" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_approvalprocess_approvalpersons">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="processid" Type="Int64" Nullable="false" />
+    <Property Name="sort" Type="Int32" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_approvalprocess_process">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="processname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="processinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="creator" Type="Int64" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_member_companys">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companyname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="companyinfo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="oa_member_departments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="departmentname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="departmentinfo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="oa_member_dologs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="addip" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="doinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_member_positions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="positionname" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="positioninfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="sort" Type="Int32" Nullable="false" />
+    <Property Name="departmentid" Type="Int64" Nullable="false" />
+    <Property Name="parentid" Type="Int64" Nullable="false" />
+    <Property Name="level" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_member_staffs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="userword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="departmentid" Type="Int64" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="isall" Type="Int32" Nullable="false" />
+    <Property Name="isachievement" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_member_staffsinfos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="realname" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sex" Type="Int32" Nullable="false" />
+    <Property Name="age" Type="Int32" Nullable="false" />
+    <Property Name="idcard" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_member_staffslogins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="addip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cookie" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="expiretime" Type="Int32" Nullable="false" />
+    <Property Name="dotime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="oa_notice_noticecomment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="noticeid" Type="Int64" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_notice_noticetype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="sort" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_actions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="actionname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="actioninfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_ausers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="userword" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="roleid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_ausersinfos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="auserid" Type="Int64" Nullable="false" />
+    <Property Name="realname" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="qq" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_auserslogins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="auserid" Type="Int64" Nullable="false" />
+    <Property Name="addip" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cookie" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="expiretime" Type="Int32" Nullable="false" />
+    <Property Name="dotime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="oa_power_dologs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="auserid" Type="Int64" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="addip" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="doinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_functions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="functionname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="functioninfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="parentid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_functionsactions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="functionid" Type="Int64" Nullable="false" />
+    <Property Name="actionid" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_powerlogs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tablename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="auserid" Type="Int64" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="addip" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="oa_power_roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rolename" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="roleinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_rolesfunctions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="roleid" Type="Int64" Nullable="false" />
+    <Property Name="functionid" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_project_projects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="projectname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="projectinfo" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="progress" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updatetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="person_responsibleid" Type="Int64" Nullable="false" />
+    <Property Name="expectbegintime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="realitybegintime" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="expectfinishtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="realityfinishtime" Type="DateTime" Precision="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_project_projectsstaffs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="projectid" Type="Int64" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="rolename" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_runtinework_memorandums">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="content" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="remindtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="deletetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="oadbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="oa_achievements_achievementsinfo" EntityType="Self.oa_achievements_achievementsinfo" />
+    <EntitySet Name="oa_achievements_institution" EntityType="Self.oa_achievements_institution" />
+    <EntitySet Name="oa_approvalprocess_approvalpersons" EntityType="Self.oa_approvalprocess_approvalpersons" />
+    <EntitySet Name="oa_approvalprocess_process" EntityType="Self.oa_approvalprocess_process" />
+    <EntitySet Name="oa_member_companys" EntityType="Self.oa_member_companys" />
+    <EntitySet Name="oa_member_departments" EntityType="Self.oa_member_departments" />
+    <EntitySet Name="oa_member_dologs" EntityType="Self.oa_member_dologs" />
+    <EntitySet Name="oa_member_positions" EntityType="Self.oa_member_positions" />
+    <EntitySet Name="oa_member_staffs" EntityType="Self.oa_member_staffs" />
+    <EntitySet Name="oa_member_staffsinfos" EntityType="Self.oa_member_staffsinfos" />
+    <EntitySet Name="oa_member_staffslogins" EntityType="Self.oa_member_staffslogins" />
+    <EntitySet Name="oa_notice_noticecomment" EntityType="Self.oa_notice_noticecomment" />
+    <EntitySet Name="oa_notice_noticetype" EntityType="Self.oa_notice_noticetype" />
+    <EntitySet Name="oa_power_actions" EntityType="Self.oa_power_actions" />
+    <EntitySet Name="oa_power_ausers" EntityType="Self.oa_power_ausers" />
+    <EntitySet Name="oa_power_ausersinfos" EntityType="Self.oa_power_ausersinfos" />
+    <EntitySet Name="oa_power_auserslogins" EntityType="Self.oa_power_auserslogins" />
+    <EntitySet Name="oa_power_dologs" EntityType="Self.oa_power_dologs" />
+    <EntitySet Name="oa_power_functions" EntityType="Self.oa_power_functions" />
+    <EntitySet Name="oa_power_functionsactions" EntityType="Self.oa_power_functionsactions" />
+    <EntitySet Name="oa_power_powerlogs" EntityType="Self.oa_power_powerlogs" />
+    <EntitySet Name="oa_power_roles" EntityType="Self.oa_power_roles" />
+    <EntitySet Name="oa_power_rolesfunctions" EntityType="Self.oa_power_rolesfunctions" />
+    <EntitySet Name="oa_project_projects" EntityType="Self.oa_project_projects" />
+    <EntitySet Name="oa_project_projectsstaffs" EntityType="Self.oa_project_projectsstaffs" />
+    <EntitySet Name="oa_runtinework_memorandums" EntityType="Self.oa_runtinework_memorandums" />
+    <EntitySet Name="view_oa_member_staffs_staffsinfos" EntityType="oadbModel.view_oa_member_staffs_staffsinfos" />
+    <EntitySet Name="view_oa_member_departmentstaffnumber" EntityType="oadbModel.view_oa_member_departmentstaffnumber" />
+    <EntitySet Name="view_oa_member_position" EntityType="oadbModel.view_oa_member_position" />
+    <EntitySet Name="oa_userpower_functions" EntityType="oadbModel.oa_userpower_functions" />
+    <EntitySet Name="oa_userpower_functionsactions" EntityType="oadbModel.oa_userpower_functionsactions" />
+    <EntitySet Name="oa_userpower_pagemenu" EntityType="oadbModel.oa_userpower_pagemenu" />
+    <EntitySet Name="oa_userpower_positionsfunctions" EntityType="oadbModel.oa_userpower_positionsfunctions" />
+    <EntitySet Name="oa_userpower_powerlogs" EntityType="oadbModel.oa_userpower_powerlogs" />
+    <EntitySet Name="oa_member_staffspositions" EntityType="oadbModel.oa_member_staffspositions" />
+    <EntitySet Name="view_oa_member_staffposition" EntityType="oadbModel.view_oa_member_staffposition" />
+    <EntitySet Name="view_oa_member_staffinfolist" EntityType="oadbModel.view_oa_member_staffinfolist" />
+    <EntitySet Name="view_oa_project_projectstafflist" EntityType="oadbModel.view_oa_project_projectstafflist" />
+    <EntitySet Name="view_oa_project_projectbug" EntityType="oadbModel.view_oa_project_projectbug" />
+    <EntitySet Name="oa_project_projectsbugs" EntityType="oadbModel.oa_project_projectsbugs" />
+    <EntitySet Name="view_oa_project_projectbuglist" EntityType="oadbModel.view_oa_project_projectbuglist" />
+    <EntitySet Name="view_oa_member_staffsidusername" EntityType="oadbModel.view_oa_member_staffsidusername" />
+    <EntitySet Name="oa_approvalprocess_staffapplyapprovals" EntityType="oadbModel.oa_approvalprocess_staffapplyapprovals" />
+    <EntitySet Name="oa_approvalprocess_staffapplys" EntityType="oadbModel.oa_approvalprocess_staffapplys" />
+    <EntitySet Name="oa_approvalprocess_projects" EntityType="oadbModel.oa_approvalprocess_projects" />
+    <EntitySet Name="oa_approvalprocess_projectprocess" EntityType="oadbModel.oa_approvalprocess_projectprocess" />
+    <EntitySet Name="view_oa_approvalprocess_projectprocess" EntityType="oadbModel.view_oa_approvalprocess_projectprocess" />
+    <EntitySet Name="view_oa_approvalprocess_processperson" EntityType="oadbModel.view_oa_approvalprocess_processperson" />
+    <EntitySet Name="view_oa_approvalprocess_staffapplylist" EntityType="oadbModel.view_oa_approvalprocess_staffapplylist" />
+    <EntitySet Name="view_oa_approvalprocess_staffapplyapprovallist" EntityType="oadbModel.view_oa_approvalprocess_staffapplyapprovallist" />
+    <EntitySet Name="view_oa_approvalprocess_staffapplyall" EntityType="oadbModel.view_oa_approvalprocess_staffapplyall" />
+    <EntitySet Name="view_oa_achievements_achievementinfolist" EntityType="oadbModel.view_oa_achievements_achievementinfolist" />
+    <EntitySet Name="view_oa_achievements_staffachievementlist" EntityType="oadbModel.view_oa_achievements_staffachievementlist" />
+    <EntitySet Name="oa_notice_notice" EntityType="oadbModel.oa_notice_notice" />
+    <EntitySet Name="oa_forum_reply" EntityType="oadbModel.oa_forum_reply" />
+    <EntitySet Name="oa_forum_section" EntityType="oadbModel.oa_forum_section" />
+    <EntitySet Name="oa_forum_topic" EntityType="oadbModel.oa_forum_topic" />
+    <EntitySet Name="view_oa_forum_section" EntityType="oadbModel.view_oa_forum_section" />
+    <EntitySet Name="view_oa_forum_reply" EntityType="oadbModel.view_oa_forum_reply" />
+    <EntitySet Name="view_oa_forum_topic" EntityType="oadbModel.view_oa_forum_topic" />
+    <EntitySet Name="view_oa_notice_notice" EntityType="oadbModel.view_oa_notice_notice" />
+    <EntitySet Name="view_oa_notice_noticecomment" EntityType="oadbModel.view_oa_notice_noticecomment" />
+    <EntitySet Name="oa_power_pagemenu" EntityType="oadbModel.oa_power_pagemenu" />
+    <EntitySet Name="view_oa_member_companylist" EntityType="oadbModel.view_oa_member_companylist" />
+    <EntitySet Name="view_oa_power_dologlist" EntityType="oadbModel.view_oa_power_dologlist" />
+    <EntitySet Name="view_oa_power_powerloglist" EntityType="oadbModel.view_oa_power_powerloglist" />
+    <EntitySet Name="view_oa_power_auserlist" EntityType="oadbModel.view_oa_power_auserlist" />
+    <FunctionImport Name="proc_updateauser">
+      <Parameter Name="id" Mode="In" Type="Int64" />
+      <Parameter Name="roleid" Mode="In" Type="Int64" />
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="userword" Mode="In" Type="String" />
+      <Parameter Name="realname" Mode="In" Type="String" />
+      <Parameter Name="qq" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="phone" Mode="In" Type="String" />
+      <Parameter Name="result" Mode="InOut" Type="Int32" />
+      <Parameter Name="msg" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetNameByCustomerId">
+      <Parameter Name="CustomerId" Mode="In" Type="String" />
+      <Parameter Name="ContactName" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="view_oa_power_rolefunctionlist" EntityType="oadbModel.view_oa_power_rolefunctionlist" />
+    <EntitySet Name="view_oa_power_functionactionlist" EntityType="oadbModel.view_oa_power_functionactionlist" />
+    <EntitySet Name="view_oa_member_positionfunctionlist" EntityType="oadbModel.view_oa_member_positionfunctionlist" />
+    <EntitySet Name="view_oa_userpower_functionactionlist" EntityType="oadbModel.view_oa_userpower_functionactionlist" />
+    <EntitySet Name="oa_userpower_actions" EntityType="oadbModel.oa_userpower_actions" />
+  </EntityContainer>
+  <EntityType Name="view_oa_member_staffs_staffsinfos">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="phone" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="realname" />
+      <PropertyRef Name="sex" />
+      <PropertyRef Name="age" />
+      <PropertyRef Name="idcard" />
+      <PropertyRef Name="address" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="departmentid" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="realname" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="sex" Type="Int32" Nullable="false" />
+    <Property Name="age" Type="Int32" Nullable="false" />
+    <Property Name="idcard" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="departmentid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_member_departmentstaffnumber">
+    <Key>
+      <PropertyRef Name="departmentname" />
+      <PropertyRef Name="departmentinfo" />
+      <PropertyRef Name="id" />
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="departmentname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="departmentinfo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="staffnumber" Type="Int32" />
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_member_position">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="positionname" />
+      <PropertyRef Name="positioninfo" />
+      <PropertyRef Name="level" />
+      <PropertyRef Name="departmentid" />
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="positionname" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="positioninfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="parentpositionname" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="departmentname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="level" Type="Int32" Nullable="false" />
+    <Property Name="departmentid" Type="Int64" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_userpower_functions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="functionname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="functioninfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="parentid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_userpower_functionsactions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="functionid" Type="Int64" Nullable="false" />
+    <Property Name="actionid" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_userpower_pagemenu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="url" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="parentid" Type="Int64" Nullable="false" />
+    <Property Name="remark" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ispage" Type="Int32" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_userpower_positionsfunctions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="positionid" Type="Int64" Nullable="false" />
+    <Property Name="functionid" Type="Int64" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_userpower_powerlogs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tablename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="content" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="staffname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="oa_member_staffspositions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="positionid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_member_staffposition">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="positionid" />
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="positionid" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="positionname" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="level" Type="Int32" />
+  </EntityType>
+  <EntityType Name="view_oa_member_staffinfolist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="realname" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="phone" />
+      <PropertyRef Name="positionname" />
+      <PropertyRef Name="departmentname" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="departmentid" />
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="realname" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="positionname" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="departmentname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="departmentid" Type="Int64" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_project_projectstafflist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="rolename" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="realname" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="phone" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="projectid" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="rolename" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="realname" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="projectid" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_project_projectbug">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="projectname" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="degree" />
+      <PropertyRef Name="reproducestep" />
+      <PropertyRef Name="dostep" />
+      <PropertyRef Name="writer" />
+      <PropertyRef Name="editor" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="confirmtime" />
+      <PropertyRef Name="solvetime" />
+      <PropertyRef Name="finishtime" />
+      <PropertyRef Name="projectid" />
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="projectname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="degree" Type="Int32" Nullable="false" />
+    <Property Name="reproducestep" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="dostep" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="writer" Type="Int64" Nullable="false" />
+    <Property Name="writerusername" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="editor" Type="Int64" Nullable="false" />
+    <Property Name="editorusername" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="confirmtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="solvetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="finishtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="projectid" Type="Int64" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_project_projectsbugs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="projectid" Type="Int64" Nullable="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="degree" Type="Int32" Nullable="false" />
+    <Property Name="reproducestep" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="dostep" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="writer" Type="Int64" Nullable="false" />
+    <Property Name="editor" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="confirmtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="solvetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="closetime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="view_oa_project_projectbuglist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="projectid" />
+      <PropertyRef Name="projectname" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="degree" />
+      <PropertyRef Name="writer" />
+      <PropertyRef Name="editor" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="projectid" Type="Int64" Nullable="false" />
+    <Property Name="projectname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="degree" Type="Int32" Nullable="false" />
+    <Property Name="writer" Type="Int64" Nullable="false" />
+    <Property Name="writerusername" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="editor" Type="Int64" Nullable="false" />
+    <Property Name="editorusername" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_member_staffsidusername">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_approvalprocess_staffapplyapprovals">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="staffapplyid" Type="Int64" Nullable="false" />
+    <Property Name="approvalpersonid" Type="Int64" Nullable="false" />
+    <Property Name="remark" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="approvaltime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="oa_approvalprocess_staffapplys">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="applyname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="projectprocessid" Type="Int64" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_approvalprocess_projects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="creator" Type="Int64" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="projectname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="projectinfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pathfile" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_approvalprocess_projectprocess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="projectid" Type="Int64" Nullable="false" />
+    <Property Name="processid" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="projectprocessname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="view_oa_approvalprocess_projectprocess">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="projectid" />
+      <PropertyRef Name="processid" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="projectprocessname" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="projectid" Type="Int64" Nullable="false" />
+    <Property Name="processid" Type="Int64" Nullable="false" />
+    <Property Name="projectname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="projectinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="processname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="processinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="pathfile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="projectprocessname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="view_oa_approvalprocess_processperson">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="processid" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="sort" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="processname" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="processid" Type="Int64" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="sort" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="processname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="view_oa_approvalprocess_staffapplylist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="projectprocessid" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="applyname" />
+      <PropertyRef Name="remark" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="projectid" />
+      <PropertyRef Name="processid" />
+      <PropertyRef Name="projectname" />
+      <PropertyRef Name="processname" />
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="projectprocessid" Type="Int64" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="applyname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="projectid" Type="Int64" Nullable="false" />
+    <Property Name="processid" Type="Int64" Nullable="false" />
+    <Property Name="projectname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="processname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="approvalusername" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="approvaltime" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="approvalstatus" Type="Int32" Nullable="false" />
+    <Property Name="approvalstaffid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_approvalprocess_staffapplyapprovallist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="staffapplyid" />
+      <PropertyRef Name="approvaltime" />
+      <PropertyRef Name="sort" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="staffapplyid" Type="Int64" Nullable="false" />
+    <Property Name="approvaltime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="sort" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="view_oa_approvalprocess_staffapplyall">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="projectid" />
+      <PropertyRef Name="processid" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="projectprocessid" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="approvalstaffid" />
+      <PropertyRef Name="approvalpersonid" />
+      <PropertyRef Name="applyname" />
+      <PropertyRef Name="sort" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="projectid" Type="Int64" Nullable="false" />
+    <Property Name="processid" Type="Int64" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="projectprocessid" Type="Int64" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="approvalstaffid" Type="Int64" Nullable="false" />
+    <Property Name="approvalpersonid" Type="Int64" Nullable="false" />
+    <Property Name="applyname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sort" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_achievements_achievementinfolist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="institutionid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="realname" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="impactscore" />
+      <PropertyRef Name="impactafterscore" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="departmentid" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="institutionid" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="realname" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="impactscore" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="impactafterscore" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="departmentid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_achievements_staffachievementlist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="realname" />
+      <PropertyRef Name="departmentname" />
+      <PropertyRef Name="departmentid" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="score" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="realname" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="departmentname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="departmentid" Type="Int64" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="score" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="oa_notice_notice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="typeid" Type="Int64" Nullable="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="sort" Type="Int32" Nullable="false" />
+    <Property Name="clickcount" Type="Int32" Nullable="false" />
+    <Property Name="commentcount" Type="Int32" Nullable="false" />
+    <Property Name="edittime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_forum_reply">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="topicid" Type="Int64" Nullable="false" />
+    <Property Name="content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_forum_section">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sectionname" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="sectioninfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="topiccount" Type="Int32" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_forum_topic">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sectionid" Type="Int64" Nullable="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="clickcount" Type="Int32" Nullable="false" />
+    <Property Name="lastclicktime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_forum_section">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="sectionname" />
+      <PropertyRef Name="sectioninfo" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="topiccount" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="sectionname" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="sectioninfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="topiccount" Type="Int32" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_forum_reply">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="topicid" />
+      <PropertyRef Name="sectionid" />
+      <PropertyRef Name="content" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="topicid" Type="Int64" Nullable="false" />
+    <Property Name="sectionid" Type="Int64" Nullable="false" />
+    <Property Name="content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_forum_topic">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="sectionid" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="content" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="clickcount" />
+      <PropertyRef Name="lastclicktime" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="sectionid" Type="Int64" Nullable="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="clickcount" Type="Int32" Nullable="false" />
+    <Property Name="lastclicktime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_notice_notice">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="typeid" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="content" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="sort" />
+      <PropertyRef Name="edittime" />
+      <PropertyRef Name="clickcount" />
+      <PropertyRef Name="commentcount" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="typeid" Type="Int64" Nullable="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sort" Type="Int32" Nullable="false" />
+    <Property Name="edittime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="clickcount" Type="Int32" Nullable="false" />
+    <Property Name="commentcount" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_notice_noticecomment">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="noticeid" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="comment" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="noticeid" Type="Int64" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="comment" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="staffid" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_pagemenu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="url" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="parentid" Type="Int64" Nullable="false" />
+    <Property Name="remark" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="ispage" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_member_companylist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="companyname" />
+      <PropertyRef Name="companyinfo" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="addtime" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companyname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="companyinfo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="departmentcount" Type="Int32" />
+    <Property Name="staffcount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="view_oa_power_dologlist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="auserid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="addip" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="doinfo" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="auserid" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="addip" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="doinfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="view_oa_power_powerloglist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="tablename" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="content" />
+      <PropertyRef Name="auserid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="addip" />
+      <PropertyRef Name="addtime" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="tablename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="auserid" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="addip" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="view_oa_power_auserlist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="roleid" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="userword" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="roleid" Type="Int64" Nullable="false" />
+    <Property Name="rolename" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="realname" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="qq" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="userword" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="proc_updateauser_Result">
+    <Property Type="Int64" Name="id" Nullable="false" />
+    <Property Type="String" Name="username" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="password" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="userword" Nullable="false" MaxLength="30" />
+    <Property Type="Int64" Name="roleid" Nullable="false" />
+    <Property Type="Int32" Name="status" Nullable="false" />
+    <Property Type="DateTime" Name="addtime" Nullable="false" Precision="23" />
+  </ComplexType>
+  <EntityType Name="view_oa_power_rolefunctionlist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="roleid" />
+      <PropertyRef Name="functionid" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="roleid" Type="Int64" Nullable="false" />
+    <Property Name="functionid" Type="Int64" Nullable="false" />
+    <Property Name="rolename" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="roleinfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="functionname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="functioninfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="parentid" Type="Int64" />
+  </EntityType>
+  <EntityType Name="view_oa_power_functionactionlist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="actionid" />
+      <PropertyRef Name="functionid" />
+      <PropertyRef Name="actionname" />
+      <PropertyRef Name="actioninfo" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="actionid" Type="Int64" Nullable="false" />
+    <Property Name="functionid" Type="Int64" Nullable="false" />
+    <Property Name="actionname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="actioninfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_member_positionfunctionlist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="positionid" />
+      <PropertyRef Name="functionid" />
+      <PropertyRef Name="positionname" />
+      <PropertyRef Name="positioninfo" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="functionname" />
+      <PropertyRef Name="functioninfo" />
+      <PropertyRef Name="parentid" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="companyid" Type="Int64" Nullable="false" />
+    <Property Name="positionid" Type="Int64" Nullable="false" />
+    <Property Name="functionid" Type="Int64" Nullable="false" />
+    <Property Name="positionname" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="positioninfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="functionname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="functioninfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="parentid" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_oa_userpower_functionactionlist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="functionid" />
+      <PropertyRef Name="actionid" />
+      <PropertyRef Name="actionname" />
+      <PropertyRef Name="actioninfo" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="functionid" Type="Int64" Nullable="false" />
+    <Property Name="actionid" Type="Int64" Nullable="false" />
+    <Property Name="actionname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="actioninfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_userpower_actions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="actionname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="actioninfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>OA-用户权限管理</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="/Content/hl/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style-metro.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/default.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="/Content/hl/css/uniform.default.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/bootstrap-modal.css" rel="stylesheet" type="text/css" />
+    <style>
+        .clearf
+        {
+            border-bottom: 1px solid #97cbff;
+            width: 1140px;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-dialog"  style=" height:740px;">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                </button>
+                <h4 class="modal-title">
+                    <i class="icon-pencil"></i><span id="lblAddTitle" style="font-weight: bold">编辑职位功能</span>
+                </h4>
+            </div>
+            <form class="form-horizontal form-bordered form-row-strippe" action="" data-toggle="validator"
+            enctype="multipart/form-data">
+            <div class="modal-body">
+                <div id="qxchosediv">
+                    <div style="display: block; padding-left: 0px; margin-left: 0px;">
+                        全选<input type="checkbox" value="all" id="qx_qx_chbox" class="qx_qx_chbox" /></div>
+                    <div id="qxul">
+                    </div>
+                </div>
+            </div>
+            </form>
+            <div class="modal-footer bg-info">
+                <input class="btn blue" type="button" id="SubmitQx" value="提交" data-dismiss="modal" />
+                <button type="button" class="btn green" data-dismiss="modal">
+                    取消</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(function () {
+        load();
+        $(".qx_qx_chbox").click(function () {
+            $.post("/userpowernoview/editpositionfunction", { positionid: $positionid$ }, function (data) {
+                if (data.status == true) {
+                    load();
+                }
+                else {
+                    alert(data.msg);
+                }
+            });
+        });
+    });
+    function load() {
+        $.post("/UserPowerNoView/QueryPositionFunctionList", { positionid: $positionid$ }, function (data) {
+            var ulhtmlstr = "";
+            $(data.aaData).each(function (a, b) {
+                ulhtmlstr += "<div class=\"titleLi\">";
+                ulhtmlstr += b.functionname;
+                ulhtmlstr += "<input type=\"checkbox\" value=\"" + b.id + "\" " + (b.status == 1 ? "checked='checked'" : "") + " onclick=\"qx_chboxclick(" + b.id + ")\" class=\"qx_chbox cbox\" />";
+                ulhtmlstr += "<div class=\"controls\" style=\"margin-left:0px;\">";
+                $(data.bbData).each(function (c, d) {
+                    if (d.parentid == b.functionid) {
+                        ulhtmlstr += "<lable class='checkbox' style='margin-right:20px !important;'><input style='margin-left:0px;' type=\"checkbox\" value=\"" + d.id + "\" id=\"" + b.id + "_" + d.id + "\" " + (d.status == 1 ? "checked='checked'" : "") + " onchange=\"choxchange('" + d.id + "')\" class=\"cbox jurid" + d.id + " group" + b.id + "\" />" + d.functionname + "</lable>";
+                    }
+                });
+                ulhtmlstr += "</div>";
+                ulhtmlstr += "</div>";
+                ulhtmlstr += "<div class=\"clearf\" style=\"clear:left;\"></div>";
+            });
+            $("#qxul").html(ulhtmlstr);
+            $("#gudingheight").attr("style", "");
+        });
+    }
+    function choxchange(id) {
+        $.post("/userpowernoview/editpositionfunction", { id: id }, function (data) {
+            if (data.status == true) {
+                load();
+            }
+            else {
+                alert(data.msg);
+            }
+        });
+    }
+    function qx_chboxclick(id) {
+        $.post("/userpowernoview/editpositionfunction", { id: id }, function (data) {
+            if (data.status == true) {
+                load();
+            }
+            else {
+                alert(data.msg);
+            }
+        });
+    }
+</script>
+</html>

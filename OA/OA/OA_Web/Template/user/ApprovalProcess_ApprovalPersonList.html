@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>OA-审批流程管理</title>
+</head>
+<body>
+    <div id="gudingheight" class="modal-dialog" style="height: 600px;">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                </button>
+                <h4 class="modal-title">
+                    <i class="icon-pencil"></i><span id="lblAddTitle" style="font-weight: bold">流程审批人列表</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class='clearfix' style='padding-bottom: 15px;' id='tiaojian'>
+                            <a class='btn blue' id='modal_ajax_demo_btn3' href="" rel='/approvalprocess/editapprovalperson?processid=$processid$' data-toggle='modal'>新增流程审批人</a>
+                        </div>
+                        <div class="portlet-body" style="overflow-x: auto;">
+                            <table class="table table-striped table-bordered table-hover dataTable" id="sample_editable_3" style="min-width: 530px;">
+                                <thead id="thead_3">
+                                </thead>
+                                <tbody id="tbody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ajax-modal" class="modal hide fade in" tabindex="-1">
+            </div>
+            <div class="modal-footer bg-info">
+                <button type="button" class="btn green" data-dismiss="modal">
+                    取消</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var tbl1;
+        jQuery(document).ready(function () {
+            $("#thead_3").html("<tr><th>ID</th><th>审批顺序</th><th>审批人</th><th>所属流程</th><th>操作</th></tr>");
+            load1();
+        });
+        function load1() {
+            tbl1 = $('#sample_editable_3').dataTable({
+                "bServerSide": true, //是否服务器端处理
+                "bSort": false, //是否排序
+                "sAjaxSource": "/ApprovalProcessnoview/QueryProcessPersonList", //mvc后台ajax调用接口。
+                //添加提交参数
+                "fnServerParams": function (aoData) {
+                    aoData.push({
+                        "name": "processid",
+                        "value": $processid$
+                    });
+                },
+                'bPaginate': true, //是否分页。
+                "oLanguage": {
+                    "sLengthMenu": "每页显示 _MENU_ 条记录",
+                    "sZeroRecords": "抱歉， 没有找到",
+                    "sInfo": "从 _START_ 到 _END_ /共 _TOTAL_ 条数据",
+                    "sInfoEmpty": "没有数据",
+                    "sSearch": "搜索:",
+                    "sInfoFiltered": "(从 _MAX_ 条数据中检索)",
+                    "oPaginate": {
+                        //"sFirst": "首页",
+                        "sPrevious": "上一页",
+                        "sNext": "下一页"
+                        //"sLast": "尾页"
+                    },
+                    "sZeroRecords": "没有检索到数据"
+                },
+                "bProcessing": true, //当datatable获取数据时候是否显示正在处理提示信息。
+                'bFilter': true, //是否使用内置的过滤功能。
+                'searching': true, //是否有搜索
+                "deferRender": true, //延迟渲染，数据大时有效果
+                "bLengthChange": true, //是否允许用户自定义每页显示条数。
+                "sPaginationType": 'simple_numbers', //分页样式{simple,simple_number,full,full_numbers}
+                "bRetrieve": true,
+                "bDestory": true,
+                //指定列的字段
+                "aoColumns": [
+                    { "data": "id" },
+                    { "data": "sort" },
+                    { "data": "username" },
+                    { "data": "processname" },
+                    { "data": "id" },
+                ],
+                //对指定列的字段进行重写
+                "columnDefs": [
+                    {
+                        "render": function (data, type, row) {
+                            return "第" + data + "审批人";
+                        },
+                        "targets": 1
+                    }, {
+                        "render": function (data, type, row) {
+                            return "<a href='javascript:;' class='btn mini green' rel='/approvalprocess/editprocessperson?processid=$processid$&id=" + row.id + "'>编辑审批人</a> <a class='btn mini blue' href='javacript:;' onclick='deletept(" + data + ")'>删除流程</a>";
+                        },
+                        "targets": 4
+                    }],
+                //datatables初始化完毕后的回调函数
+                "fnInitComplete": function (oSettings, json) {
+                    addsearch1();
+                },
+                //datatables重绘完毕后的回调函数,初始化也调用了该回调函数
+                "fnDrawCallback": function (oSettings) {
+                    $("#gudingheight").attr("style", "");
+                    UIModals.init();
+                }
+            });
+        }
+        function reload1() {
+            tbl1.fnDraw();
+        }
+        function deletept(id) {
+            var gnl = confirm("你确定要删除吗?");
+            if (gnl == true) {
+                $.post("/approvalprocessnoview/deleteprocessperson", { id: id }, function (data) {
+                    if (data.status) {
+                        reload1();
+                    }
+                    else {
+                        alert(data.msg);
+                    }
+                }, "json");
+            }
+        }
+        //添加搜索标签
+        function addsearch1() {
+            var html = "<div class='dataTables_filter'><lable><input id='actionname' class='m-wrap' type='text' placeholder='ACTION名称' /><input type='button' class='btn blue' value='搜索' onclick='reload1()'></lable></div>";
+            $("#sample_editable_3_filter").html(html);
+        }
+    </script>
+</body>
+<!-- END BODY -->
+</html>

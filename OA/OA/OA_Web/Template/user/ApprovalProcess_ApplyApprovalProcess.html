@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>OA-审批流程管理</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="shortcut icon" href="/Content/style/img/logo.ico" />
+    <link href="/Content/hl/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style-metro.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/default.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/select2_metro.css" />
+    <link rel="stylesheet" href="/Content/hl/css/DT_bootstrap.css" />
+    <link href="/Content/datatables/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/bootstrap-modal.css" rel="stylesheet" type="text/css">
+</head>
+<body class="page-header-fixed">
+    <div class="header navbar navbar-inverse navbar-fixed-top">
+        $topdiv$
+    </div>
+    <div class="page-container row-fluid">
+        <div class="page-sidebar nav-collapse collapse">
+            <ul class="page-sidebar-menu">
+                $leftdiv$
+            </ul>
+        </div>
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span12">
+                    </div>
+                </div>
+                <div class="span6">
+                    <p>
+                        <span class="bt">申请名称：</span><span class="nr"><input class="m-wrap large" type="text" id="applyname" value="$applyname$" /></span>
+                    </p>
+                    <p>
+                        <span class="bt">申请备注：</span><span class="nr"><input class="m-wrap large" type="text" id="remark" value="$remark$" /></span>
+                    </p>
+                    <p>
+                        <span class="bt">项目流程：</span><span class="nr"><select class="m-wrap large" id="projectprocessid"></select></span>
+                    </p>
+                    <p>
+                        <input class="btn blue" type="button" value="申请" id="update" />
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Content/datatables/js/jquery.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/jquery.cookie.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/Content/hl/js/select2.min.js"></script>
+    <script type="text/javascript" src="/Content/hl/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="/Content/hl/js/DT_bootstrap.js"></script>
+    <script src="/Content/hl/js/bootstrap-modal.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/bootstrap-modalmanager.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/app.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/table-editable.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/ui-modals.js" type="text/javascript"></script>
+    <script src="/Content/datatables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            App.init();
+            $.post("/ApprovalProcessNoView/queryprojectprocesslist_select", function (data) {
+                var html = "";
+                $(data).each(function (a, b) {
+                    if (b.id == $projectprocessid$)
+                    {
+                        html = "<option value='" + b.id + "'>" + b.projectprocessname + "</option>" + html;
+                    }
+                    else
+                    {
+                        html += "<option value='" + b.id + "'>" + b.projectprocessname + "</option>";
+                    }
+                });
+                $("#projectprocessid").html(html);
+            });
+        })
+        $(function () {
+            $("#update").click(function () {
+                var applyname = $("#applyname").val();
+                var remark = $("#remark").val();
+                var projectprocessid = $("#projectprocessid").val();
+                $.post("/approvalprocessnoview/applyapprovalprocess", { id:$id$,applyname: applyname, remark: remark, projectprocessid: projectprocessid}, function (data) {
+                    if (data.status == true) {
+                        parent.window.location.href = "/approvalprocess/staffapplylist";
+                    }
+                    else {
+                        alert(data.msg);
+                    }
+                }, "json");
+            });
+        })
+    </script>
+</body>
+<!-- END BODY -->
+</html>

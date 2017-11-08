@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f147c4feecf8414396d1443762c7aac7" Name="Diagram1" ShowGrid="false" SnapToGrid="true" DisplayType="true" ZoomLevel="80">
+        <EntityTypeShape EntityType="oadbModel.oa_achievements_achievementsinfo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_achievements_institution" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_approvalprocess_approvalpersons" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_approvalprocess_process" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_member_companys" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_member_departments" Width="1.5" PointX="4.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_member_dologs" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_member_positions" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_member_staffs" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_member_staffsinfos" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_member_staffslogins" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_notice_noticecomment" Width="1.5" PointX="4.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_notice_noticetype" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_power_actions" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_power_ausers" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_power_ausersinfos" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_power_auserslogins" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_power_dologs" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_power_functions" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_power_functionsactions" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_power_powerlogs" Width="1.5" PointX="4.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_power_roles" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_power_rolesfunctions" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_project_projects" Width="1.5" PointX="14.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_project_projectsstaffs" Width="1.5" PointX="6.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.oa_runtinework_memorandums" Width="1.5" PointX="10.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_member_staffs_staffsinfos" Width="1.5" PointX="4.75" PointY="13.5" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_member_departmentstaffnumber" Width="1.5" PointX="13.375" PointY="15.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_member_position" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_userpower_functions" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_userpower_functionsactions" Width="1.5" PointX="17.375" PointY="3.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_userpower_pagemenu" Width="1.5" PointX="3.375" PointY="17.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_userpower_positionsfunctions" Width="1.5" PointX="17.375" PointY="6.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_userpower_powerlogs" Width="1.5" PointX="17.375" PointY="9.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_member_staffspositions" Width="1.5" PointX="9.375" PointY="17.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_member_staffposition" Width="1.5" PointX="17.375" PointY="13.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_member_staffinfolist" Width="1.5" PointX="17.375" PointY="16.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_project_projectstafflist" Width="1.5" PointX="11.375" PointY="18.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_project_projectbug" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_project_projectsbugs" Width="1.5" PointX="5.375" PointY="19.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_project_projectbuglist" Width="1.5" PointX="13.375" PointY="18.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_member_staffsidusername" Width="1.5" PointX="19.375" PointY="6.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_approvalprocess_staffapplyapprovals" Width="1.5" PointX="19.375" PointY="9.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_approvalprocess_staffapplys" Width="1.5" PointX="19.375" PointY="12.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_approvalprocess_projects" Width="1.5" PointX="0.75" PointY="20.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_approvalprocess_projectprocess" Width="1.5" PointX="7.375" PointY="20.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_approvalprocess_projectprocess" Width="1.5" PointX="15.375" PointY="20.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_approvalprocess_processperson" Width="1.5" PointX="17.375" PointY="20.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_approvalprocess_staffapplylist" Width="1.5" PointX="19.375" PointY="16.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_approvalprocess_staffapplyapprovallist" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_approvalprocess_staffapplyall" Width="1.5" PointX="21.375" PointY="4.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_achievements_achievementinfolist" Width="1.5" PointX="21.375" PointY="8.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_achievements_staffachievementlist" Width="1.5" PointX="21.375" PointY="12.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_notice_notice" Width="1.5" PointX="21.375" PointY="16.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_forum_reply" Width="1.5" PointX="21.375" PointY="20.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_forum_section" Width="1.5" PointX="9.375" PointY="22.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_forum_topic" Width="1.5" PointX="23.375" PointY="0.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_forum_section" Width="1.5" PointX="23.375" PointY="4.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_forum_reply" Width="1.5" PointX="23.375" PointY="8.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_forum_topic" Width="1.5" PointX="11.375" PointY="23.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_notice_notice" Width="1.5" PointX="23.375" PointY="12.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_notice_noticecomment" Width="1.5" PointX="23.375" PointY="17.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_power_pagemenu" Width="1.5" PointX="23.375" PointY="21.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_member_companylist" Width="1.5" PointX="0.75" PointY="24.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_power_dologlist" Width="1.5" PointX="3.375" PointY="24.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_power_powerloglist" Width="1.5" PointX="5.375" PointY="24.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_power_auserlist" Width="1.5" PointX="13.375" PointY="24.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_power_rolefunctionlist" Width="1.5" PointX="15.375" PointY="24.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_power_functionactionlist" Width="1.5" PointX="17.375" PointY="24.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_member_positionfunctionlist" Width="1.5" PointX="19.375" PointY="24.75" />
+        <EntityTypeShape EntityType="oadbModel.view_oa_userpower_functionactionlist" Width="1.5" PointX="25.375" PointY="0.75" />
+        <EntityTypeShape EntityType="oadbModel.oa_userpower_actions" Width="1.5" PointX="25.375" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

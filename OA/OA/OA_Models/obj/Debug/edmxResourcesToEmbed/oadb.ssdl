@@ -1,0 +1,1649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="oadbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="oa_achievements_achievementsinfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="institutionid" Type="bigint" Nullable="false" />
+    <Property Name="impactscore" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="impactafterscore" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="explain" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_achievements_institution">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="content" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="updatetime" Type="datetime" Nullable="false" />
+    <Property Name="impactscore" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_approvalprocess_approvalpersons">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="processid" Type="bigint" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_approvalprocess_process">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="creator" Type="bigint" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="processname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="processinfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_approvalprocess_projectprocess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="projectprocessname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="projectid" Type="bigint" Nullable="false" />
+    <Property Name="processid" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_approvalprocess_projects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="creator" Type="bigint" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="projectname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="projectinfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pathfile" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_approvalprocess_staffapplyapprovals">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="staffapplyid" Type="bigint" Nullable="false" />
+    <Property Name="approvalpersonid" Type="bigint" Nullable="false" />
+    <Property Name="remark" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="approvaltime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_approvalprocess_staffapplys">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="projectprocessid" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="applyname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="remark" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_forum_reply">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="topicid" Type="bigint" Nullable="false" />
+    <Property Name="content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_forum_section">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sectionname" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="sectioninfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="topiccount" Type="int" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_forum_topic">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sectionid" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="content" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="clickcount" Type="int" Nullable="false" />
+    <Property Name="lastclicktime" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_member_companys">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="companyinfo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_member_departments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="departmentname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="departmentinfo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_member_dologs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="addip" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="doinfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_member_positions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="departmentid" Type="bigint" Nullable="false" />
+    <Property Name="positionname" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="positioninfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="parentid" Type="bigint" Nullable="false" />
+    <Property Name="level" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_member_staffs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="userword" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="departmentid" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="isall" Type="int" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="isachievement" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_member_staffsinfos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="realname" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="sex" Type="int" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="idcard" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_member_staffslogins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="addip" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="dotime" Type="datetime" Nullable="false" />
+    <Property Name="cookie" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="expiretime" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_member_staffspositions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="positionid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_notice_notice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="typeid" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+    <Property Name="clickcount" Type="int" Nullable="false" />
+    <Property Name="commentcount" Type="int" Nullable="false" />
+    <Property Name="edittime" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_notice_noticecomment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="noticeid" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="comment" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_notice_noticetype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_actions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="actionname" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="actioninfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_ausers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="userword" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="roleid" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_ausersinfos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="auserid" Type="bigint" Nullable="false" />
+    <Property Name="realname" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="qq" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_auserslogins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="auserid" Type="bigint" Nullable="false" />
+    <Property Name="addip" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="dotime" Type="datetime" Nullable="false" />
+    <Property Name="cookie" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="expiretime" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_dologs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="auserid" Type="bigint" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="addip" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="doinfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_functions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="functionname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="functioninfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="parentid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_functionsactions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="functionid" Type="bigint" Nullable="false" />
+    <Property Name="actionid" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_pagemenu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="url" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="image" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="parentid" Type="bigint" Nullable="false" />
+    <Property Name="remark" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="ispage" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_powerlogs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tablename" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="auserid" Type="bigint" Nullable="false" />
+    <Property Name="addip" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rolename" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="roleinfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_power_rolesfunctions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="roleid" Type="bigint" Nullable="false" />
+    <Property Name="functionid" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_project_projects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="person_responsibleid" Type="bigint" Nullable="false" />
+    <Property Name="projectname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="projectinfo" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="progress" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="expectbegintime" Type="datetime" Nullable="false" />
+    <Property Name="realitybegintime" Type="datetime" Nullable="false" />
+    <Property Name="updatetime" Type="datetime" Nullable="false" />
+    <Property Name="expectfinishtime" Type="datetime" Nullable="false" />
+    <Property Name="realityfinishtime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_project_projectsbugs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="projectid" Type="bigint" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="degree" Type="int" Nullable="false" />
+    <Property Name="reproducestep" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="dostep" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="writer" Type="bigint" Nullable="false" />
+    <Property Name="editor" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="confirmtime" Type="datetime" Nullable="false" />
+    <Property Name="solvetime" Type="datetime" Nullable="false" />
+    <Property Name="closetime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_project_projectsstaffs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="projectid" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="rolename" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_runtinework_memorandums">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="content" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="remindtime" Type="datetime" Nullable="false" />
+    <Property Name="deletetime" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_userpower_actions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="actionname" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="actioninfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_userpower_functions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="functionname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="functioninfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="parentid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_userpower_functionsactions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="functionid" Type="bigint" Nullable="false" />
+    <Property Name="actionid" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_userpower_pagemenu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="url" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="image" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="parentid" Type="bigint" Nullable="false" />
+    <Property Name="remark" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="ispage" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_userpower_positionsfunctions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="positionid" Type="bigint" Nullable="false" />
+    <Property Name="functionid" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oa_userpower_powerlogs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="tablename" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="content" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="staffname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_achievements_achievementinfolist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_achievements_achievementinfolist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="institutionid" />
+      <PropertyRef Name="realname" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="impactscore" />
+      <PropertyRef Name="impactafterscore" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="departmentid" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="institutionid" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="realname" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="impactscore" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="impactafterscore" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="departmentid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_achievements_staffachievementlist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_achievements_staffachievementlist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="realname" />
+      <PropertyRef Name="departmentid" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="score" />
+      <PropertyRef Name="departmentname" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="realname" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="departmentname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="departmentid" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="score" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_approvalprocess_processperson”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_approvalprocess_processperson">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="processid" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="sort" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="processname" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="processid" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="processname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_approvalprocess_projectprocess”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_approvalprocess_projectprocess">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="projectprocessname" />
+      <PropertyRef Name="projectid" />
+      <PropertyRef Name="processid" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="projectprocessname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="projectid" Type="bigint" Nullable="false" />
+    <Property Name="processid" Type="bigint" Nullable="false" />
+    <Property Name="projectname" Type="nvarchar" MaxLength="20" />
+    <Property Name="projectinfo" Type="nvarchar" MaxLength="50" />
+    <Property Name="pathfile" Type="nvarchar" MaxLength="100" />
+    <Property Name="processname" Type="nvarchar" MaxLength="20" />
+    <Property Name="processinfo" Type="nvarchar" MaxLength="50" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_approvalprocess_staffapplyall”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_approvalprocess_staffapplyall">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="applyname" />
+      <PropertyRef Name="projectid" />
+      <PropertyRef Name="processid" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="projectprocessid" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="approvalstaffid" />
+      <PropertyRef Name="approvalpersonid" />
+      <PropertyRef Name="sort" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="applyname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="projectid" Type="bigint" Nullable="false" />
+    <Property Name="processid" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="projectprocessid" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="approvalstaffid" Type="bigint" Nullable="false" />
+    <Property Name="approvalpersonid" Type="bigint" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_approvalprocess_staffapplyapprovallist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_approvalprocess_staffapplyapprovallist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="staffapplyid" />
+      <PropertyRef Name="approvaltime" />
+      <PropertyRef Name="sort" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="staffapplyid" Type="bigint" Nullable="false" />
+    <Property Name="approvaltime" Type="datetime" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_approvalprocess_staffapplylist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_approvalprocess_staffapplylist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="projectprocessid" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="applyname" />
+      <PropertyRef Name="remark" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="projectid" />
+      <PropertyRef Name="processid" />
+      <PropertyRef Name="projectname" />
+      <PropertyRef Name="processname" />
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="projectprocessid" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="applyname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="remark" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="projectid" Type="bigint" Nullable="false" />
+    <Property Name="processid" Type="bigint" Nullable="false" />
+    <Property Name="projectname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="processname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="approvalusername" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="approvaltime" Type="datetime" Nullable="false" />
+    <Property Name="approvalstatus" Type="int" Nullable="false" />
+    <Property Name="approvalstaffid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_forum_reply”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_forum_reply">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="topicid" />
+      <PropertyRef Name="sectionid" />
+      <PropertyRef Name="content" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="topicid" Type="bigint" Nullable="false" />
+    <Property Name="sectionid" Type="bigint" Nullable="false" />
+    <Property Name="content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_forum_section”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_forum_section">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="sectionname" />
+      <PropertyRef Name="sectioninfo" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="topiccount" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="sectionname" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="sectioninfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="topiccount" Type="int" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_forum_topic”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_forum_topic">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="sectionid" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="content" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="clickcount" />
+      <PropertyRef Name="lastclicktime" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="sectionid" Type="bigint" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="content" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="clickcount" Type="int" Nullable="false" />
+    <Property Name="lastclicktime" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_member_companylist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_member_companylist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="companyname" />
+      <PropertyRef Name="companyinfo" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="addtime" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="companyinfo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="departmentcount" Type="int" />
+    <Property Name="staffcount" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_member_departmentstaffnumber”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_member_departmentstaffnumber">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="departmentname" />
+      <PropertyRef Name="departmentinfo" />
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="departmentname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="departmentinfo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="staffnumber" Type="int" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_member_position”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_member_position">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="positionname" />
+      <PropertyRef Name="positioninfo" />
+      <PropertyRef Name="level" />
+      <PropertyRef Name="departmentid" />
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="positionname" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="positioninfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="parentpositionname" Type="nvarchar" MaxLength="10" />
+    <Property Name="departmentname" Type="nvarchar" MaxLength="50" />
+    <Property Name="level" Type="int" Nullable="false" />
+    <Property Name="departmentid" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_member_positionfunctionlist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_member_positionfunctionlist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="positionid" />
+      <PropertyRef Name="functionid" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="positionname" />
+      <PropertyRef Name="positioninfo" />
+      <PropertyRef Name="functionname" />
+      <PropertyRef Name="functioninfo" />
+      <PropertyRef Name="parentid" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="positionid" Type="bigint" Nullable="false" />
+    <Property Name="functionid" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="positionname" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="positioninfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="functionname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="functioninfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="parentid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_member_staffinfolist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_member_staffinfolist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="realname" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="phone" />
+      <PropertyRef Name="positionname" />
+      <PropertyRef Name="departmentname" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="departmentid" />
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="realname" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="positionname" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="departmentname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="departmentid" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_member_staffposition”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_member_staffposition">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="positionid" />
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="positionid" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" />
+    <Property Name="positionname" Type="nvarchar" MaxLength="10" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="level" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_member_staffs_staffsinfos”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_member_staffs_staffsinfos">
+    <Key>
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="departmentid" />
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="phone" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="realname" />
+      <PropertyRef Name="sex" />
+      <PropertyRef Name="age" />
+      <PropertyRef Name="idcard" />
+      <PropertyRef Name="address" />
+    </Key>
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="departmentid" Type="bigint" Nullable="false" />
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="realname" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="sex" Type="int" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="idcard" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_member_staffsidusername”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_member_staffsidusername">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_notice_notice”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_notice_notice">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="typeid" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="content" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="sort" />
+      <PropertyRef Name="edittime" />
+      <PropertyRef Name="clickcount" />
+      <PropertyRef Name="commentcount" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="typeid" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+    <Property Name="edittime" Type="datetime" Nullable="false" />
+    <Property Name="clickcount" Type="int" Nullable="false" />
+    <Property Name="commentcount" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_notice_noticecomment”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_notice_noticecomment">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="noticeid" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="comment" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="noticeid" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="comment" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_power_auserlist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_power_auserlist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="userword" />
+      <PropertyRef Name="roleid" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="addtime" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="userword" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="roleid" Type="bigint" Nullable="false" />
+    <Property Name="rolename" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="realname" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="qq" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_power_dologlist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_power_dologlist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="auserid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="addip" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="doinfo" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="auserid" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="addip" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="doinfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_power_functionactionlist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_power_functionactionlist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="actionid" />
+      <PropertyRef Name="functionid" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="actionname" />
+      <PropertyRef Name="actioninfo" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="actionid" Type="bigint" Nullable="false" />
+    <Property Name="functionid" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="actionname" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="actioninfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_power_powerloglist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_power_powerloglist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="tablename" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="content" />
+      <PropertyRef Name="auserid" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="addip" />
+      <PropertyRef Name="addtime" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="tablename" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="auserid" Type="bigint" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="addip" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_power_rolefunctionlist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_power_rolefunctionlist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="roleid" />
+      <PropertyRef Name="functionid" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="roleid" Type="bigint" Nullable="false" />
+    <Property Name="functionid" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="rolename" Type="nvarchar" MaxLength="20" />
+    <Property Name="roleinfo" Type="nvarchar" MaxLength="50" />
+    <Property Name="functionname" Type="nvarchar" MaxLength="20" />
+    <Property Name="functioninfo" Type="nvarchar" MaxLength="50" />
+    <Property Name="parentid" Type="bigint" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_project_projectbug”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_project_projectbug">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="projectname" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="degree" />
+      <PropertyRef Name="reproducestep" />
+      <PropertyRef Name="dostep" />
+      <PropertyRef Name="writer" />
+      <PropertyRef Name="editor" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="addtime" />
+      <PropertyRef Name="confirmtime" />
+      <PropertyRef Name="solvetime" />
+      <PropertyRef Name="finishtime" />
+      <PropertyRef Name="projectid" />
+      <PropertyRef Name="companyid" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="projectname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="degree" Type="int" Nullable="false" />
+    <Property Name="reproducestep" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="dostep" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="writer" Type="bigint" Nullable="false" />
+    <Property Name="writerusername" Type="nvarchar" MaxLength="20" />
+    <Property Name="editor" Type="bigint" Nullable="false" />
+    <Property Name="editorusername" Type="nvarchar" MaxLength="20" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="addtime" Type="datetime" Nullable="false" />
+    <Property Name="confirmtime" Type="datetime" Nullable="false" />
+    <Property Name="solvetime" Type="datetime" Nullable="false" />
+    <Property Name="finishtime" Type="datetime" Nullable="false" />
+    <Property Name="projectid" Type="bigint" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_project_projectbuglist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_project_projectbuglist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="projectid" />
+      <PropertyRef Name="projectname" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="degree" />
+      <PropertyRef Name="writer" />
+      <PropertyRef Name="editor" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="projectid" Type="bigint" Nullable="false" />
+    <Property Name="projectname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="degree" Type="int" Nullable="false" />
+    <Property Name="writer" Type="bigint" Nullable="false" />
+    <Property Name="writerusername" Type="nvarchar" MaxLength="20" />
+    <Property Name="editor" Type="bigint" Nullable="false" />
+    <Property Name="editorusername" Type="nvarchar" MaxLength="20" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_project_projectstafflist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_project_projectstafflist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="rolename" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="realname" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="phone" />
+      <PropertyRef Name="companyid" />
+      <PropertyRef Name="staffid" />
+      <PropertyRef Name="projectid" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="rolename" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="realname" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="companyid" Type="bigint" Nullable="false" />
+    <Property Name="staffid" Type="bigint" Nullable="false" />
+    <Property Name="projectid" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“oadb.dbo.view_oa_userpower_functionactionlist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_oa_userpower_functionactionlist">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="functionid" />
+      <PropertyRef Name="actionid" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="actionname" />
+      <PropertyRef Name="actioninfo" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="functionid" Type="bigint" Nullable="false" />
+    <Property Name="actionid" Type="bigint" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="actionname" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="actioninfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Function Name="proc_updateauser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="bigint" Mode="In" />
+    <Parameter Name="roleid" Type="bigint" Mode="In" />
+    <Parameter Name="username" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+    <Parameter Name="userword" Type="nvarchar" Mode="In" />
+    <Parameter Name="realname" Type="nvarchar" Mode="In" />
+    <Parameter Name="qq" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
+    <Parameter Name="result" Type="int" Mode="InOut" />
+    <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="oadbModelStoreContainer">
+    <EntitySet Name="oa_achievements_achievementsinfo" EntityType="Self.oa_achievements_achievementsinfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_achievements_institution" EntityType="Self.oa_achievements_institution" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_approvalprocess_approvalpersons" EntityType="Self.oa_approvalprocess_approvalpersons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_approvalprocess_process" EntityType="Self.oa_approvalprocess_process" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_approvalprocess_projectprocess" EntityType="Self.oa_approvalprocess_projectprocess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_approvalprocess_projects" EntityType="Self.oa_approvalprocess_projects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_approvalprocess_staffapplyapprovals" EntityType="Self.oa_approvalprocess_staffapplyapprovals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_approvalprocess_staffapplys" EntityType="Self.oa_approvalprocess_staffapplys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_forum_reply" EntityType="Self.oa_forum_reply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_forum_section" EntityType="Self.oa_forum_section" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_forum_topic" EntityType="Self.oa_forum_topic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_member_companys" EntityType="Self.oa_member_companys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_member_departments" EntityType="Self.oa_member_departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_member_dologs" EntityType="Self.oa_member_dologs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_member_positions" EntityType="Self.oa_member_positions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_member_staffs" EntityType="Self.oa_member_staffs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_member_staffsinfos" EntityType="Self.oa_member_staffsinfos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_member_staffslogins" EntityType="Self.oa_member_staffslogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_member_staffspositions" EntityType="Self.oa_member_staffspositions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_notice_notice" EntityType="Self.oa_notice_notice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_notice_noticecomment" EntityType="Self.oa_notice_noticecomment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_notice_noticetype" EntityType="Self.oa_notice_noticetype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_power_actions" EntityType="Self.oa_power_actions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_power_ausers" EntityType="Self.oa_power_ausers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_power_ausersinfos" EntityType="Self.oa_power_ausersinfos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_power_auserslogins" EntityType="Self.oa_power_auserslogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_power_dologs" EntityType="Self.oa_power_dologs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_power_functions" EntityType="Self.oa_power_functions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_power_functionsactions" EntityType="Self.oa_power_functionsactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_power_pagemenu" EntityType="Self.oa_power_pagemenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_power_powerlogs" EntityType="Self.oa_power_powerlogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_power_roles" EntityType="Self.oa_power_roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_power_rolesfunctions" EntityType="Self.oa_power_rolesfunctions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_project_projects" EntityType="Self.oa_project_projects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_project_projectsbugs" EntityType="Self.oa_project_projectsbugs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_project_projectsstaffs" EntityType="Self.oa_project_projectsstaffs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_runtinework_memorandums" EntityType="Self.oa_runtinework_memorandums" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_userpower_actions" EntityType="Self.oa_userpower_actions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_userpower_functions" EntityType="Self.oa_userpower_functions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_userpower_functionsactions" EntityType="Self.oa_userpower_functionsactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_userpower_pagemenu" EntityType="Self.oa_userpower_pagemenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_userpower_positionsfunctions" EntityType="Self.oa_userpower_positionsfunctions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oa_userpower_powerlogs" EntityType="Self.oa_userpower_powerlogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="view_oa_achievements_achievementinfolist" EntityType="Self.view_oa_achievements_achievementinfolist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_achievements_achievementinfolist].[id] AS [id], 
+    [view_oa_achievements_achievementinfolist].[staffid] AS [staffid], 
+    [view_oa_achievements_achievementinfolist].[institutionid] AS [institutionid], 
+    [view_oa_achievements_achievementinfolist].[username] AS [username], 
+    [view_oa_achievements_achievementinfolist].[realname] AS [realname], 
+    [view_oa_achievements_achievementinfolist].[title] AS [title], 
+    [view_oa_achievements_achievementinfolist].[impactscore] AS [impactscore], 
+    [view_oa_achievements_achievementinfolist].[impactafterscore] AS [impactafterscore], 
+    [view_oa_achievements_achievementinfolist].[addtime] AS [addtime], 
+    [view_oa_achievements_achievementinfolist].[companyid] AS [companyid], 
+    [view_oa_achievements_achievementinfolist].[departmentid] AS [departmentid]
+    FROM [dbo].[view_oa_achievements_achievementinfolist] AS [view_oa_achievements_achievementinfolist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_achievements_staffachievementlist" EntityType="Self.view_oa_achievements_staffachievementlist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_achievements_staffachievementlist].[id] AS [id], 
+    [view_oa_achievements_staffachievementlist].[username] AS [username], 
+    [view_oa_achievements_staffachievementlist].[realname] AS [realname], 
+    [view_oa_achievements_staffachievementlist].[departmentname] AS [departmentname], 
+    [view_oa_achievements_staffachievementlist].[departmentid] AS [departmentid], 
+    [view_oa_achievements_staffachievementlist].[companyid] AS [companyid], 
+    [view_oa_achievements_staffachievementlist].[score] AS [score]
+    FROM [dbo].[view_oa_achievements_staffachievementlist] AS [view_oa_achievements_staffachievementlist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_approvalprocess_processperson" EntityType="Self.view_oa_approvalprocess_processperson" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_approvalprocess_processperson].[id] AS [id], 
+    [view_oa_approvalprocess_processperson].[processid] AS [processid], 
+    [view_oa_approvalprocess_processperson].[staffid] AS [staffid], 
+    [view_oa_approvalprocess_processperson].[sort] AS [sort], 
+    [view_oa_approvalprocess_processperson].[status] AS [status], 
+    [view_oa_approvalprocess_processperson].[processname] AS [processname], 
+    [view_oa_approvalprocess_processperson].[companyid] AS [companyid], 
+    [view_oa_approvalprocess_processperson].[username] AS [username]
+    FROM [dbo].[view_oa_approvalprocess_processperson] AS [view_oa_approvalprocess_processperson]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_approvalprocess_projectprocess" EntityType="Self.view_oa_approvalprocess_projectprocess" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_approvalprocess_projectprocess].[id] AS [id], 
+    [view_oa_approvalprocess_projectprocess].[projectprocessname] AS [projectprocessname], 
+    [view_oa_approvalprocess_projectprocess].[projectid] AS [projectid], 
+    [view_oa_approvalprocess_projectprocess].[processid] AS [processid], 
+    [view_oa_approvalprocess_projectprocess].[projectname] AS [projectname], 
+    [view_oa_approvalprocess_projectprocess].[projectinfo] AS [projectinfo], 
+    [view_oa_approvalprocess_projectprocess].[pathfile] AS [pathfile], 
+    [view_oa_approvalprocess_projectprocess].[processname] AS [processname], 
+    [view_oa_approvalprocess_projectprocess].[processinfo] AS [processinfo], 
+    [view_oa_approvalprocess_projectprocess].[companyid] AS [companyid], 
+    [view_oa_approvalprocess_projectprocess].[status] AS [status]
+    FROM [dbo].[view_oa_approvalprocess_projectprocess] AS [view_oa_approvalprocess_projectprocess]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_approvalprocess_staffapplyall" EntityType="Self.view_oa_approvalprocess_staffapplyall" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_approvalprocess_staffapplyall].[id] AS [id], 
+    [view_oa_approvalprocess_staffapplyall].[applyname] AS [applyname], 
+    [view_oa_approvalprocess_staffapplyall].[projectid] AS [projectid], 
+    [view_oa_approvalprocess_staffapplyall].[processid] AS [processid], 
+    [view_oa_approvalprocess_staffapplyall].[companyid] AS [companyid], 
+    [view_oa_approvalprocess_staffapplyall].[projectprocessid] AS [projectprocessid], 
+    [view_oa_approvalprocess_staffapplyall].[staffid] AS [staffid], 
+    [view_oa_approvalprocess_staffapplyall].[approvalstaffid] AS [approvalstaffid], 
+    [view_oa_approvalprocess_staffapplyall].[approvalpersonid] AS [approvalpersonid], 
+    [view_oa_approvalprocess_staffapplyall].[sort] AS [sort]
+    FROM [dbo].[view_oa_approvalprocess_staffapplyall] AS [view_oa_approvalprocess_staffapplyall]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_approvalprocess_staffapplyapprovallist" EntityType="Self.view_oa_approvalprocess_staffapplyapprovallist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_approvalprocess_staffapplyapprovallist].[id] AS [id], 
+    [view_oa_approvalprocess_staffapplyapprovallist].[companyid] AS [companyid], 
+    [view_oa_approvalprocess_staffapplyapprovallist].[staffapplyid] AS [staffapplyid], 
+    [view_oa_approvalprocess_staffapplyapprovallist].[approvaltime] AS [approvaltime], 
+    [view_oa_approvalprocess_staffapplyapprovallist].[sort] AS [sort], 
+    [view_oa_approvalprocess_staffapplyapprovallist].[status] AS [status], 
+    [view_oa_approvalprocess_staffapplyapprovallist].[staffid] AS [staffid], 
+    [view_oa_approvalprocess_staffapplyapprovallist].[username] AS [username]
+    FROM [dbo].[view_oa_approvalprocess_staffapplyapprovallist] AS [view_oa_approvalprocess_staffapplyapprovallist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_approvalprocess_staffapplylist" EntityType="Self.view_oa_approvalprocess_staffapplylist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_approvalprocess_staffapplylist].[id] AS [id], 
+    [view_oa_approvalprocess_staffapplylist].[companyid] AS [companyid], 
+    [view_oa_approvalprocess_staffapplylist].[projectprocessid] AS [projectprocessid], 
+    [view_oa_approvalprocess_staffapplylist].[staffid] AS [staffid], 
+    [view_oa_approvalprocess_staffapplylist].[applyname] AS [applyname], 
+    [view_oa_approvalprocess_staffapplylist].[remark] AS [remark], 
+    [view_oa_approvalprocess_staffapplylist].[addtime] AS [addtime], 
+    [view_oa_approvalprocess_staffapplylist].[status] AS [status], 
+    [view_oa_approvalprocess_staffapplylist].[projectid] AS [projectid], 
+    [view_oa_approvalprocess_staffapplylist].[processid] AS [processid], 
+    [view_oa_approvalprocess_staffapplylist].[projectname] AS [projectname], 
+    [view_oa_approvalprocess_staffapplylist].[processname] AS [processname], 
+    [view_oa_approvalprocess_staffapplylist].[username] AS [username], 
+    [view_oa_approvalprocess_staffapplylist].[approvalusername] AS [approvalusername], 
+    [view_oa_approvalprocess_staffapplylist].[approvaltime] AS [approvaltime], 
+    [view_oa_approvalprocess_staffapplylist].[approvalstatus] AS [approvalstatus], 
+    [view_oa_approvalprocess_staffapplylist].[approvalstaffid] AS [approvalstaffid]
+    FROM [dbo].[view_oa_approvalprocess_staffapplylist] AS [view_oa_approvalprocess_staffapplylist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_forum_reply" EntityType="Self.view_oa_forum_reply" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_forum_reply].[id] AS [id], 
+    [view_oa_forum_reply].[companyid] AS [companyid], 
+    [view_oa_forum_reply].[staffid] AS [staffid], 
+    [view_oa_forum_reply].[username] AS [username], 
+    [view_oa_forum_reply].[topicid] AS [topicid], 
+    [view_oa_forum_reply].[sectionid] AS [sectionid], 
+    [view_oa_forum_reply].[content] AS [content], 
+    [view_oa_forum_reply].[addtime] AS [addtime], 
+    [view_oa_forum_reply].[status] AS [status]
+    FROM [dbo].[view_oa_forum_reply] AS [view_oa_forum_reply]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_forum_section" EntityType="Self.view_oa_forum_section" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_forum_section].[id] AS [id], 
+    [view_oa_forum_section].[sectionname] AS [sectionname], 
+    [view_oa_forum_section].[sectioninfo] AS [sectioninfo], 
+    [view_oa_forum_section].[companyid] AS [companyid], 
+    [view_oa_forum_section].[staffid] AS [staffid], 
+    [view_oa_forum_section].[username] AS [username], 
+    [view_oa_forum_section].[topiccount] AS [topiccount], 
+    [view_oa_forum_section].[addtime] AS [addtime], 
+    [view_oa_forum_section].[status] AS [status]
+    FROM [dbo].[view_oa_forum_section] AS [view_oa_forum_section]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_forum_topic" EntityType="Self.view_oa_forum_topic" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_forum_topic].[id] AS [id], 
+    [view_oa_forum_topic].[companyid] AS [companyid], 
+    [view_oa_forum_topic].[sectionid] AS [sectionid], 
+    [view_oa_forum_topic].[title] AS [title], 
+    [view_oa_forum_topic].[content] AS [content], 
+    [view_oa_forum_topic].[staffid] AS [staffid], 
+    [view_oa_forum_topic].[username] AS [username], 
+    [view_oa_forum_topic].[addtime] AS [addtime], 
+    [view_oa_forum_topic].[clickcount] AS [clickcount], 
+    [view_oa_forum_topic].[lastclicktime] AS [lastclicktime], 
+    [view_oa_forum_topic].[status] AS [status]
+    FROM [dbo].[view_oa_forum_topic] AS [view_oa_forum_topic]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_member_companylist" EntityType="Self.view_oa_member_companylist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_member_companylist].[id] AS [id], 
+    [view_oa_member_companylist].[companyname] AS [companyname], 
+    [view_oa_member_companylist].[companyinfo] AS [companyinfo], 
+    [view_oa_member_companylist].[status] AS [status], 
+    [view_oa_member_companylist].[addtime] AS [addtime], 
+    [view_oa_member_companylist].[departmentcount] AS [departmentcount], 
+    [view_oa_member_companylist].[staffcount] AS [staffcount]
+    FROM [dbo].[view_oa_member_companylist] AS [view_oa_member_companylist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_member_departmentstaffnumber" EntityType="Self.view_oa_member_departmentstaffnumber" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_member_departmentstaffnumber].[id] AS [id], 
+    [view_oa_member_departmentstaffnumber].[departmentname] AS [departmentname], 
+    [view_oa_member_departmentstaffnumber].[departmentinfo] AS [departmentinfo], 
+    [view_oa_member_departmentstaffnumber].[staffnumber] AS [staffnumber], 
+    [view_oa_member_departmentstaffnumber].[companyid] AS [companyid]
+    FROM [dbo].[view_oa_member_departmentstaffnumber] AS [view_oa_member_departmentstaffnumber]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_member_position" EntityType="Self.view_oa_member_position" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_member_position].[id] AS [id], 
+    [view_oa_member_position].[positionname] AS [positionname], 
+    [view_oa_member_position].[positioninfo] AS [positioninfo], 
+    [view_oa_member_position].[parentpositionname] AS [parentpositionname], 
+    [view_oa_member_position].[departmentname] AS [departmentname], 
+    [view_oa_member_position].[level] AS [level], 
+    [view_oa_member_position].[departmentid] AS [departmentid], 
+    [view_oa_member_position].[companyid] AS [companyid]
+    FROM [dbo].[view_oa_member_position] AS [view_oa_member_position]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_member_positionfunctionlist" EntityType="Self.view_oa_member_positionfunctionlist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_member_positionfunctionlist].[id] AS [id], 
+    [view_oa_member_positionfunctionlist].[companyid] AS [companyid], 
+    [view_oa_member_positionfunctionlist].[positionid] AS [positionid], 
+    [view_oa_member_positionfunctionlist].[functionid] AS [functionid], 
+    [view_oa_member_positionfunctionlist].[status] AS [status], 
+    [view_oa_member_positionfunctionlist].[positionname] AS [positionname], 
+    [view_oa_member_positionfunctionlist].[positioninfo] AS [positioninfo], 
+    [view_oa_member_positionfunctionlist].[functionname] AS [functionname], 
+    [view_oa_member_positionfunctionlist].[functioninfo] AS [functioninfo], 
+    [view_oa_member_positionfunctionlist].[parentid] AS [parentid]
+    FROM [dbo].[view_oa_member_positionfunctionlist] AS [view_oa_member_positionfunctionlist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_member_staffinfolist" EntityType="Self.view_oa_member_staffinfolist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_member_staffinfolist].[id] AS [id], 
+    [view_oa_member_staffinfolist].[username] AS [username], 
+    [view_oa_member_staffinfolist].[realname] AS [realname], 
+    [view_oa_member_staffinfolist].[email] AS [email], 
+    [view_oa_member_staffinfolist].[phone] AS [phone], 
+    [view_oa_member_staffinfolist].[positionname] AS [positionname], 
+    [view_oa_member_staffinfolist].[departmentname] AS [departmentname], 
+    [view_oa_member_staffinfolist].[addtime] AS [addtime], 
+    [view_oa_member_staffinfolist].[status] AS [status], 
+    [view_oa_member_staffinfolist].[departmentid] AS [departmentid], 
+    [view_oa_member_staffinfolist].[companyid] AS [companyid]
+    FROM [dbo].[view_oa_member_staffinfolist] AS [view_oa_member_staffinfolist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_member_staffposition" EntityType="Self.view_oa_member_staffposition" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_member_staffposition].[id] AS [id], 
+    [view_oa_member_staffposition].[staffid] AS [staffid], 
+    [view_oa_member_staffposition].[positionid] AS [positionid], 
+    [view_oa_member_staffposition].[username] AS [username], 
+    [view_oa_member_staffposition].[positionname] AS [positionname], 
+    [view_oa_member_staffposition].[companyid] AS [companyid], 
+    [view_oa_member_staffposition].[level] AS [level]
+    FROM [dbo].[view_oa_member_staffposition] AS [view_oa_member_staffposition]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_member_staffs_staffsinfos" EntityType="Self.view_oa_member_staffs_staffsinfos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_member_staffs_staffsinfos].[companyid] AS [companyid], 
+    [view_oa_member_staffs_staffsinfos].[departmentid] AS [departmentid], 
+    [view_oa_member_staffs_staffsinfos].[id] AS [id], 
+    [view_oa_member_staffs_staffsinfos].[username] AS [username], 
+    [view_oa_member_staffs_staffsinfos].[email] AS [email], 
+    [view_oa_member_staffs_staffsinfos].[phone] AS [phone], 
+    [view_oa_member_staffs_staffsinfos].[password] AS [password], 
+    [view_oa_member_staffs_staffsinfos].[realname] AS [realname], 
+    [view_oa_member_staffs_staffsinfos].[sex] AS [sex], 
+    [view_oa_member_staffs_staffsinfos].[age] AS [age], 
+    [view_oa_member_staffs_staffsinfos].[idcard] AS [idcard], 
+    [view_oa_member_staffs_staffsinfos].[address] AS [address]
+    FROM [dbo].[view_oa_member_staffs_staffsinfos] AS [view_oa_member_staffs_staffsinfos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_member_staffsidusername" EntityType="Self.view_oa_member_staffsidusername" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_member_staffsidusername].[id] AS [id], 
+    [view_oa_member_staffsidusername].[username] AS [username], 
+    [view_oa_member_staffsidusername].[companyid] AS [companyid]
+    FROM [dbo].[view_oa_member_staffsidusername] AS [view_oa_member_staffsidusername]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_notice_notice" EntityType="Self.view_oa_notice_notice" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_notice_notice].[id] AS [id], 
+    [view_oa_notice_notice].[typeid] AS [typeid], 
+    [view_oa_notice_notice].[companyid] AS [companyid], 
+    [view_oa_notice_notice].[title] AS [title], 
+    [view_oa_notice_notice].[content] AS [content], 
+    [view_oa_notice_notice].[staffid] AS [staffid], 
+    [view_oa_notice_notice].[username] AS [username], 
+    [view_oa_notice_notice].[sort] AS [sort], 
+    [view_oa_notice_notice].[edittime] AS [edittime], 
+    [view_oa_notice_notice].[clickcount] AS [clickcount], 
+    [view_oa_notice_notice].[commentcount] AS [commentcount], 
+    [view_oa_notice_notice].[status] AS [status]
+    FROM [dbo].[view_oa_notice_notice] AS [view_oa_notice_notice]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_notice_noticecomment" EntityType="Self.view_oa_notice_noticecomment" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_notice_noticecomment].[id] AS [id], 
+    [view_oa_notice_noticecomment].[noticeid] AS [noticeid], 
+    [view_oa_notice_noticecomment].[companyid] AS [companyid], 
+    [view_oa_notice_noticecomment].[comment] AS [comment], 
+    [view_oa_notice_noticecomment].[staffid] AS [staffid], 
+    [view_oa_notice_noticecomment].[username] AS [username], 
+    [view_oa_notice_noticecomment].[addtime] AS [addtime], 
+    [view_oa_notice_noticecomment].[status] AS [status]
+    FROM [dbo].[view_oa_notice_noticecomment] AS [view_oa_notice_noticecomment]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_power_auserlist" EntityType="Self.view_oa_power_auserlist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_power_auserlist].[id] AS [id], 
+    [view_oa_power_auserlist].[username] AS [username], 
+    [view_oa_power_auserlist].[password] AS [password], 
+    [view_oa_power_auserlist].[userword] AS [userword], 
+    [view_oa_power_auserlist].[roleid] AS [roleid], 
+    [view_oa_power_auserlist].[rolename] AS [rolename], 
+    [view_oa_power_auserlist].[status] AS [status], 
+    [view_oa_power_auserlist].[addtime] AS [addtime], 
+    [view_oa_power_auserlist].[realname] AS [realname], 
+    [view_oa_power_auserlist].[qq] AS [qq], 
+    [view_oa_power_auserlist].[email] AS [email], 
+    [view_oa_power_auserlist].[phone] AS [phone]
+    FROM [dbo].[view_oa_power_auserlist] AS [view_oa_power_auserlist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_power_dologlist" EntityType="Self.view_oa_power_dologlist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_power_dologlist].[id] AS [id], 
+    [view_oa_power_dologlist].[auserid] AS [auserid], 
+    [view_oa_power_dologlist].[username] AS [username], 
+    [view_oa_power_dologlist].[type] AS [type], 
+    [view_oa_power_dologlist].[addip] AS [addip], 
+    [view_oa_power_dologlist].[addtime] AS [addtime], 
+    [view_oa_power_dologlist].[doinfo] AS [doinfo]
+    FROM [dbo].[view_oa_power_dologlist] AS [view_oa_power_dologlist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_power_functionactionlist" EntityType="Self.view_oa_power_functionactionlist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_power_functionactionlist].[id] AS [id], 
+    [view_oa_power_functionactionlist].[actionid] AS [actionid], 
+    [view_oa_power_functionactionlist].[functionid] AS [functionid], 
+    [view_oa_power_functionactionlist].[status] AS [status], 
+    [view_oa_power_functionactionlist].[actionname] AS [actionname], 
+    [view_oa_power_functionactionlist].[actioninfo] AS [actioninfo]
+    FROM [dbo].[view_oa_power_functionactionlist] AS [view_oa_power_functionactionlist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_power_powerloglist" EntityType="Self.view_oa_power_powerloglist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_power_powerloglist].[id] AS [id], 
+    [view_oa_power_powerloglist].[tablename] AS [tablename], 
+    [view_oa_power_powerloglist].[type] AS [type], 
+    [view_oa_power_powerloglist].[content] AS [content], 
+    [view_oa_power_powerloglist].[auserid] AS [auserid], 
+    [view_oa_power_powerloglist].[username] AS [username], 
+    [view_oa_power_powerloglist].[addip] AS [addip], 
+    [view_oa_power_powerloglist].[addtime] AS [addtime]
+    FROM [dbo].[view_oa_power_powerloglist] AS [view_oa_power_powerloglist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_power_rolefunctionlist" EntityType="Self.view_oa_power_rolefunctionlist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_power_rolefunctionlist].[id] AS [id], 
+    [view_oa_power_rolefunctionlist].[roleid] AS [roleid], 
+    [view_oa_power_rolefunctionlist].[functionid] AS [functionid], 
+    [view_oa_power_rolefunctionlist].[status] AS [status], 
+    [view_oa_power_rolefunctionlist].[rolename] AS [rolename], 
+    [view_oa_power_rolefunctionlist].[roleinfo] AS [roleinfo], 
+    [view_oa_power_rolefunctionlist].[functionname] AS [functionname], 
+    [view_oa_power_rolefunctionlist].[functioninfo] AS [functioninfo], 
+    [view_oa_power_rolefunctionlist].[parentid] AS [parentid]
+    FROM [dbo].[view_oa_power_rolefunctionlist] AS [view_oa_power_rolefunctionlist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_project_projectbug" EntityType="Self.view_oa_project_projectbug" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_project_projectbug].[id] AS [id], 
+    [view_oa_project_projectbug].[projectname] AS [projectname], 
+    [view_oa_project_projectbug].[title] AS [title], 
+    [view_oa_project_projectbug].[type] AS [type], 
+    [view_oa_project_projectbug].[degree] AS [degree], 
+    [view_oa_project_projectbug].[reproducestep] AS [reproducestep], 
+    [view_oa_project_projectbug].[dostep] AS [dostep], 
+    [view_oa_project_projectbug].[writer] AS [writer], 
+    [view_oa_project_projectbug].[writerusername] AS [writerusername], 
+    [view_oa_project_projectbug].[editor] AS [editor], 
+    [view_oa_project_projectbug].[editorusername] AS [editorusername], 
+    [view_oa_project_projectbug].[status] AS [status], 
+    [view_oa_project_projectbug].[addtime] AS [addtime], 
+    [view_oa_project_projectbug].[confirmtime] AS [confirmtime], 
+    [view_oa_project_projectbug].[solvetime] AS [solvetime], 
+    [view_oa_project_projectbug].[finishtime] AS [finishtime], 
+    [view_oa_project_projectbug].[projectid] AS [projectid], 
+    [view_oa_project_projectbug].[companyid] AS [companyid]
+    FROM [dbo].[view_oa_project_projectbug] AS [view_oa_project_projectbug]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_project_projectbuglist" EntityType="Self.view_oa_project_projectbuglist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_project_projectbuglist].[id] AS [id], 
+    [view_oa_project_projectbuglist].[projectid] AS [projectid], 
+    [view_oa_project_projectbuglist].[projectname] AS [projectname], 
+    [view_oa_project_projectbuglist].[companyid] AS [companyid], 
+    [view_oa_project_projectbuglist].[title] AS [title], 
+    [view_oa_project_projectbuglist].[type] AS [type], 
+    [view_oa_project_projectbuglist].[degree] AS [degree], 
+    [view_oa_project_projectbuglist].[writer] AS [writer], 
+    [view_oa_project_projectbuglist].[writerusername] AS [writerusername], 
+    [view_oa_project_projectbuglist].[editor] AS [editor], 
+    [view_oa_project_projectbuglist].[editorusername] AS [editorusername], 
+    [view_oa_project_projectbuglist].[status] AS [status]
+    FROM [dbo].[view_oa_project_projectbuglist] AS [view_oa_project_projectbuglist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_project_projectstafflist" EntityType="Self.view_oa_project_projectstafflist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_project_projectstafflist].[id] AS [id], 
+    [view_oa_project_projectstafflist].[rolename] AS [rolename], 
+    [view_oa_project_projectstafflist].[username] AS [username], 
+    [view_oa_project_projectstafflist].[realname] AS [realname], 
+    [view_oa_project_projectstafflist].[email] AS [email], 
+    [view_oa_project_projectstafflist].[phone] AS [phone], 
+    [view_oa_project_projectstafflist].[companyid] AS [companyid], 
+    [view_oa_project_projectstafflist].[staffid] AS [staffid], 
+    [view_oa_project_projectstafflist].[projectid] AS [projectid], 
+    [view_oa_project_projectstafflist].[status] AS [status]
+    FROM [dbo].[view_oa_project_projectstafflist] AS [view_oa_project_projectstafflist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_oa_userpower_functionactionlist" EntityType="Self.view_oa_userpower_functionactionlist" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_oa_userpower_functionactionlist].[id] AS [id], 
+    [view_oa_userpower_functionactionlist].[functionid] AS [functionid], 
+    [view_oa_userpower_functionactionlist].[actionid] AS [actionid], 
+    [view_oa_userpower_functionactionlist].[status] AS [status], 
+    [view_oa_userpower_functionactionlist].[actionname] AS [actionname], 
+    [view_oa_userpower_functionactionlist].[actioninfo] AS [actioninfo]
+    FROM [dbo].[view_oa_userpower_functionactionlist] AS [view_oa_userpower_functionactionlist]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>OA-审批流程管理</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="/Content/hl/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style-metro.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/default.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="/Content/hl/css/uniform.default.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                </button>
+                <h4 class="modal-title">
+                    <i class="icon-pencil"></i><span id="lblAddTitle" style="font-weight: bold">编辑审批项目</span>
+                </h4>
+            </div>
+            <form class="form-horizontal form-bordered form-row-strippe"  enctype="multipart/form-data" method="post" name="fileinfo" id="fileinfo" data-toggle="validator">
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                审批项目名称：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="id" name="id" style="display:none;" value="$id$" />
+                                <input type="text" id="projectname" name="projectname" class="m-wrap large" value="$projectname$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                审批项目说明：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input class="m-wrap large" type="text" id="projectinfo" name="projectinfo" value="$projectinfo$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                审批项目文件：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="file" id="filepath" name="filepath" style="display:none" onchange="changetext()" />
+                                <input class="m-wrap" type="text" id="pathfile" name="pathfile" readonly="readonly" value="$filepath$" />
+                                <input class="btn green" type="button" value="选择文件" id="uploadpath" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-info">
+                    <input class="btn blue" type="button" id="btnsubmit" value="提交" onclick="update()" data-dismiss="modal" />
+                    <button type="button" class="btn green" data-dismiss="modal">
+                        取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        $('#uploadpath').click('click', function () {
+            $('#filepath').trigger('click');
+        });
+    })
+    function changetext()
+    {
+        if ($("#filepath").val() == "") {
+            //当用户没有选择文件时,不修改原有路径
+        }
+        else {
+            $("#pathfile").val($("#filepath").val());
+        }
+    }
+    function update() {
+        var projectname = $("#projectname").val();
+        var projectinfo = $("#projectinfo").val();
+        var filepath = $("#pathfile").val();
+        //var formData = new FormData($("#fileinfo")[0]);//两者皆可
+        var formData = new FormData(document.forms.namedItem("fileinfo"));
+        $.ajax({
+            url: "/Admin_ApprovalProcessNoView/editproject",
+            type: "POST",
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                if (data.status == true) {
+                    reload();
+                } else {
+                    alert(data.msg);
+                }
+            },
+            error: function (data) {
+                alert("AJAX提交失败");
+            }
+        });
+    }
+</script>
+<!-- END BODY -->
+</html>

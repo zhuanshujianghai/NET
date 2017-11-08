@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>OA-人员管理</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="/Content/hl/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style-metro.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/default.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="/Content/hl/css/uniform.default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                </button>
+                <h4 class="modal-title">
+                    <i class="icon-pencil"></i><span id="lblAddTitle" style="font-weight: bold">修改信息</span>
+                </h4>
+            </div>
+            <form class="form-horizontal form-bordered form-row-strippe" action="" data-toggle="validator" enctype="multipart/form-data">
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label" style="width: 125px;">
+                            用户名：</label>
+                        <div class="controls" style="margin-left: 0px;">
+                            <input type="text" id="username" name="username" class="m-wrap large" value="$username$" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" style="width: 125px;">
+                            邮箱：</label>
+                        <div class="controls" style="margin-left: 0px;">
+                            <input type="text" id="email" name="email" class="m-wrap large" value="$email$" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" style="width: 125px;">
+                            手机：</label>
+                        <div class="controls" style="margin-left: 0px;">
+                            <input type="text" id="phone" name="phone" class="m-wrap large" value="$phone$" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" style="width: 125px;">
+                            真实姓名：</label>
+                        <div class="controls" style="margin-left: 0px;">
+                            <input type="text" id="realname" name="realname" class="m-wrap large" value="$realname$" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" style="width: 125px;">
+                            性别：</label>
+                        <div class="controls" style="margin-left: 0px;">
+                            <input type="text" id="sex" name="sex" class="m-wrap large" value="$sex$" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" style="width: 125px;">
+                            年龄：</label>
+                        <div class="controls" style="margin-left: 0px;">
+                            <input type="text" id="age" name="age" class="m-wrap large" value="$age$" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" style="width: 125px;">
+                            身份证：</label>
+                        <div class="controls" style="margin-left: 0px;">
+                            <input type="text" id="idcard" name="idcard" class="m-wrap large" value="$idcard$" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" style="width: 125px;">
+                            地址：</label>
+                        <div class="controls" style="margin-left: 0px;">
+                            <input type="text" id="address" name="address" class="m-wrap large" value="$address$" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer bg-info">
+                <input class="btn blue" type="button" id="btnsubmit" value="提交" onclick="update()" data-dismiss="modal" />
+                <button type="button" class="btn green" data-dismiss="modal">
+                    取消</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    function update() {
+        var username = $("#username").val();
+        var email = $("#email").val();
+        var phone = $("#phone").val();
+        var realname = $("#realname").val();
+        var sex = $("#sex").val();
+        var age = $("#age").val();
+        var idcard = $("#idcard").val();
+        var address = $("#address").val();
+        $.post("/Admin_MemberNoView/editstaffview", { staffid: $staffid$, username: username, email: email, phone: phone, realname: realname, sex: sex, age: age, idcard: idcard, address: address }, function (data) {
+            if (data.status==true) {
+                reload();
+            }
+            else {
+                alert(data.msg);
+            }
+        });
+    }
+</script>
+</html>

@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>OA-项目管理</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+</head>
+<body>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                </button>
+                <h4 class="modal-title">
+                    <i class="icon-pencil"></i><span id="lblAddTitle" style="font-weight: bold">编辑项目Bug</span>
+                </h4>
+            </div>
+            <form class="form-horizontal form-bordered form-row-strippe" action="#" data-toggle="validator" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                Bug标题：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="bugtitle" class="m-wrap large" value="$title$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                重现步骤：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <textarea id="reproducestep" class="m-wrap large" rows="4" >$reproducestep$</textarea>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                Bug类型：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <select class="m-wrap large" id="type"></select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                级别：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <select class="m-wrap large" id="degree"></select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                修改人：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="editor" class="m-wrap large" value="$editor$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                状态：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="status" class="m-wrap large" value="$status$" readonly="readonly" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                历史记录：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <textarea id="dostep" class="m-wrap large" readonly="readonly" rows="4" >$dostep$</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-info">
+                    <input class="btn blue" type="button" id="btnsubmit" value="提交" onclick="update()" data-dismiss="modal" />
+                    <button type="button" class="btn green" data-dismiss="modal">
+                        取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#degree").html($degree$);
+        $("#type").html($type$);
+    });
+    function update() {
+        var title = $("#bugtitle").val();
+        var reproducestep = $("#reproducestep").val();
+        var type = $("#type").val();
+        var degree = $("#degree").val();
+        var editor = $("#editor").val();
+        $.post("/admin_projectnoview/editprojectbug", { id:$id$,pid: $pid$, title: title, reproducestep: reproducestep, type: type, degree: degree, editor: editor }, function (data) {
+            if (data.status == true) {
+                reload();
+            }
+            else {
+                alert(data.msg);
+            }
+        });
+    }
+</script>
+<!-- END BODY -->
+</html>

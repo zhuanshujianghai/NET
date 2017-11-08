@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>OA-人员管理</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="shortcut icon" href="/Content/style/img/logo.ico" />
+    <link href="/Content/hl/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style-metro.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/default.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="/Content/hl/css/select2_metro.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/DT_bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/bootstrap-modal.css" rel="stylesheet" type="text/css">
+</head>
+<body class="page-header-fixed">
+    <div class="header navbar navbar-inverse navbar-fixed-top">
+        $topdiv$
+    </div>
+    <div class="page-container row-fluid">
+        <div class="page-sidebar nav-collapse collapse">
+            <ul class="page-sidebar-menu">
+                $leftdiv$
+            </ul>
+        </div>
+        <div class="page-content">
+            <div class="row-fluid">
+                <div class="span12">
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label">
+                        公司名称：</label>
+                    <div class="controls">
+                        <input class="m-wrap medium" type="text" id="companyname" value="$companyname$" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">
+                        公司介绍：</label>
+                    <div class="controls">
+                        <input class="m-wrap medium" type="text" id="companyinfo" value="$companyinfo$" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">
+                        部门数量：</label>
+                    <div class="controls">
+                        <label class="control-label" style="width:auto;">$departmentnumber$</label>&nbsp;<a class="btn blue" id="department" href="/member/departmentlist">查看</a>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">
+                        员工数量：</label>
+                    <div class="controls">
+                        <label class="control-label" style="width:auto;">$staffnumber$</label>&nbsp;<a class="btn blue" id="staff" href="/member/stafflist">查看</a>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label"></label>
+                    <input class="btn blue" id="submit" type="button" value="提交" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Content/hl/js/jquery-1.11.3.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/jquery.cookie.min.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/select2.min.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/DT_bootstrap.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/bootstrap-modal.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/bootstrap-modalmanager.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/app.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/table-editable.js" type="text/javascript"></script>
+    <script src="/Content/hl/js/ui-modals.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            App.init();
+            $("#submit").click(function () {
+                var companyname = $("#companyname").val();
+                var companyinfo = $("#companyinfo").val();
+                $.post("/membernoview/editcompany", { companyname: companyname, companyinfo: companyinfo }, function (data) {
+                    alert(data.msg);
+                })
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,450 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>昊良OA-首页</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="shortcut icon" href="/Content/style/img/logo.ico" />
+    <link href="/content/hl/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/content/hl/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="/content/hl/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/content/hl/css/style-metro.css" rel="stylesheet" type="text/css" />
+    <link href="/content/hl/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/content/hl/css/style-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/content/hl/css/default.css" rel="stylesheet" type="text/css" id="Link2" />
+    <link href="/content/hl/css/uniform.default.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link href="/content/hl/css/jquery.gritter.css" rel="stylesheet" type="text/css" />
+    <link href="/content/hl/css/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="/content/hl/css/fullcalendar.css" rel="stylesheet" type="text/css" />
+    <link href="/content/hl/css/jqvmap.css" rel="stylesheet" type="text/css" />
+    <link href="/content/hl/css/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="page-header-fixed">
+    <div class="header navbar navbar-inverse navbar-fixed-top">
+        $topdiv$
+    </div>
+    <div class="page-container row-fluid">
+        <div class="page-sidebar nav-collapse collapse">
+            <ul class="page-sidebar-menu">
+                $leftdiv$
+            </ul>
+        </div>
+        <div class="page-content">
+            <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+            <div id="portlet-config" class="modal hide">
+                <div class="modal-header">
+                    <button data-dismiss="modal" class="close" type="button">
+                    </button>
+                    <h3>Widget Settings</h3>
+                </div>
+                <div class="modal-body">
+                    Widget settings form goes here
+                </div>
+            </div>
+            <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+            <!-- BEGIN PAGE CONTAINER-->
+            <div class="container-fluid">
+                <!-- BEGIN PAGE HEADER-->
+                <div class="row-fluid">
+                    <div class="span12">
+                    </div>
+                </div>
+                <!-- END PAGE HEADER-->
+                <div id="dashboard">
+                    <!-- BEGIN DASHBOARD STATS -->
+                    <div class="row-fluid">
+                        <div class="span3 responsive" data-tablet="span6" data-desktop="span3">
+                            <div class="dashboard-stat blue">
+                                <div class="visual">
+                                    <i class="icon-comments"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        $useramount$/$investoramount$
+                                    </div>
+                                    <div class="desc">
+                                        用户总数/投资用户
+                                    </div>
+                                </div>
+                                <a class="more" href="/adminnew/capital/websitecapital">查看详情<i class="m-icon-swapright m-icon-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="span3 responsive" data-tablet="span6" data-desktop="span3">
+                            <div class="dashboard-stat green">
+                                <div class="visual">
+                                    <i class="icon-shopping-cart"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        $thisloginamount$
+                                    </div>
+                                    <div class="desc">
+                                        当前登陆人数
+                                    </div>
+                                </div>
+                                <a class="more" href="#">查看详情<i class="m-icon-swapright m-icon-white"></i> </a>
+                            </div>
+                        </div>
+                        <div class="span3 responsive" data-tablet="span6  fix-offset" data-desktop="span3">
+                            <div class="dashboard-stat purple">
+                                <div class="visual">
+                                    <i class="icon-globe"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        $borrowamount$/$borrowmoney$
+                                    </div>
+                                    <div class="desc">
+                                        标的总数/借款总金额
+                                    </div>
+                                </div>
+                                <a class="more" href="/adminnew/capital/websitecapital">查看详情<i class="m-icon-swapright m-icon-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="span3 responsive" data-tablet="span6" data-desktop="span3">
+                            <div class="dashboard-stat yellow">
+                                <div class="visual">
+                                    <i class="icon-bar-chart"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        $allborrowfee$
+                                    </div>
+                                    <div class="desc">
+                                        借款管理费
+                                    </div>
+                                </div>
+                                <a class="more" href="/adminnew/capital/websitecapital">查看详情<i class="m-icon-swapright m-icon-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span4 responsive" data-desktop="span4">
+                            <div class="dashboard-stat redless">
+                                <div class="visual">
+                                    <i class="icon-shopping-cart"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        $onlinepay$
+                                    </div>
+                                    <div class="desc">
+                                        充值
+                                    </div>
+                                </div>
+                                <a class="more" href="/adminnew/capital/websitecapital">查看详情<i class="m-icon-swapright m-icon-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="span4 responsive" data-desktop="span4">
+                            <div class="dashboard-stat redyellow">
+                                <div class="visual">
+                                    <i class="icon-comments"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        $withdraw$
+                                    </div>
+                                    <div class="desc">
+                                        提现
+                                    </div>
+                                </div>
+                                <a class="more" href="/adminnew/capital/websitecapital">查看详情<i class="m-icon-swapright m-icon-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="span4 responsive" data-desktop="span4">
+                            <div class="dashboard-stat bluegreen">
+                                <div class="visual">
+                                    <i class="icon-globe"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        $websiteamount$/$usermoney$
+                                    </div>
+                                    <div class="desc">
+                                        平台资金总量/余额总量
+                                    </div>
+                                </div>
+                                <a class="more" href="/adminnew/capital/websitecapital">查看详情<i class="m-icon-swapright m-icon-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END DASHBOARD STATS -->
+                    <div class="clearfix">
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <div id="container_0" style="min-width: 220px; height: 387px">
+                            </div>
+                        </div>
+                        <div class="span6">
+                            <div id="container_3" style="min-width: 220px; height: 400px">
+                            </div>
+                            ﻿
+                            <div id="sliders" style="min-width: 220px; max-width: 800px;">
+                                <table style="margin: 0 auto;">
+                                    <tr>
+                                        <td>α角
+                                        </td>
+                                        <td>
+                                            <input id="R0" type="range" min="0" max="45" value="15" />
+                                            <span id="R0-value" class="value"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>β角
+                                        </td>
+                                        <td>
+                                            <input id="R1" type="range" min="0" max="45" value="15" />
+                                            <span id="R1-value" class="value"></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <div id="container_1" style="min-width: 220px;">
+                            </div>
+                        </div>
+                        <div class="span6">
+                            <div id="container_2" style="min-width: 220px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                </div>
+            </div>
+            <!-- END PAGE CONTAINER-->
+        </div>
+    </div>
+    <script src="/content/hl/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+    <script src="/content/hl/js/bootstrap.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+	<script src="/content/hl/js/excanvas.min.js"></script>
+	<script src="/content/hl/js/respond.min.js"></script>  
+	<![endif]-->
+    <script src="/content/hl/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.cookie.min.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.uniform.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="/content/hl/js/jquery.vmap.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.vmap.russia.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.vmap.world.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.vmap.europe.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.vmap.germany.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.vmap.usa.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.vmap.sampledata.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.flot.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.flot.resize.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.pulsate.min.js" type="text/javascript"></script>
+    <script src="/content/hl/js/date.js" type="text/javascript"></script>
+    <script src="/content/hl/js/daterangepicker.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.gritter.js" type="text/javascript"></script>
+    <script src="/content/hl/js/fullcalendar.min.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.easy-pie-chart.js" type="text/javascript"></script>
+    <script src="/content/hl/js/jquery.sparkline.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="/content/hl/js/app.js" type="text/javascript"></script>
+    <script src="/content/hl/js/index.js" type="text/javascript"></script>
+    <script src="/Scripts/highcharts-js/highcharts.js" type="text/javascript"></script>
+    <script src="/Scripts/highcharts-js/highcharts-3d.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/modules/exporting.js"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            App.init();
+        });
+        jQuery(document).ready(function () {
+            $('#container_1').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false
+                },
+                title: {
+                    text: '充值金额范围分布图'
+                },
+                exporting: {
+                    filename: 'chart',
+                    url: 'http://localhost:8080/HighChartsDemo/SaveAsImage'//这里是一个重点哦,也可以修改exporting.js中对应的url  
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            color: '#000000',
+                            connectorColor: '#000000',
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: '占比',
+                    data: [$onlinepayfenbudata$]
+                }]
+            });
+        });
+        jQuery(document).ready(function () {
+            $('#container_2').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false
+                },
+                title: {
+                    text: '投资金额范围分布图'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            color: '#000000',
+                            connectorColor: '#000000',
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: '占比',
+                    data: [$investfenbudata$]
+                }]
+            });
+        });
+        jQuery(document).ready(function () {
+            $('#container_0').highcharts({
+                title: {
+                    text: '充值提现投资数据对比',
+                    x: -20 //center
+                },
+                colors: ['#058DC7', '#E02222', '#28b779'],
+                xAxis: {
+                    categories: $onlinepaywithdrawtime$
+                },
+                yAxis: {
+                    title: {
+                        text: '交易额（元）'
+                    },
+                    min: 0,
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                },
+                tooltip: {
+                    valueSuffix: '万元'
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle',
+                    borderWidth: 0
+                },
+                series: [{
+                    name: '充值',
+                    data: $onlinepaydata$
+                }, {
+                    name: '提现',
+                    data: $withdrawdata$
+                }, {
+                    name: '投资',
+                    data: $investdata$
+                }]
+            });
+        });
+        jQuery(document).ready(function () {
+            var chart = new Highcharts.Chart({
+                chart: {
+                    renderTo: 'container_3',
+                    type: 'column',
+                    margin: 75,
+                    options3d: {
+                        enabled: true,
+                        alpha: 15,
+                        beta: 15,
+                        depth: 50,
+                        viewDistance: 25
+                    }
+                },
+                xAxis: {
+                    categories: $onlinepaywithdrawtime$
+                },
+                yAxis: {
+                    labels: {//格式化纵坐标的显示风格
+                        formatter: function () {
+                            return this.value;
+                        }
+                    },
+                    opposite: false//反转
+                },
+                tooltip: {
+                    valueSuffix: '万元'
+                },
+                title: {
+                    text: '平台借款情况'
+                },
+                plotOptions: {
+                    column: {
+                        depth: 25
+                    }
+                },
+                series: [{
+                    name: '借款金额',
+                    data: $borrowdata$
+                }]
+            });
+
+
+            // Activate the sliders
+            $('#R0').on('change', function () {
+                chart.options.chart.options3d.alpha = this.value;
+                showValues();
+                chart.redraw(false);
+            });
+            $('#R1').on('change', function () {
+                chart.options.chart.options3d.beta = this.value;
+                showValues();
+                chart.redraw(false);
+            });
+
+            function showValues() {
+                $('#R0-value').html(chart.options.chart.options3d.alpha);
+                $('#R1-value').html(chart.options.chart.options3d.beta);
+            }
+            showValues();
+        });
+    </script>
+</body>
+<!-- END BODY -->
+</html>

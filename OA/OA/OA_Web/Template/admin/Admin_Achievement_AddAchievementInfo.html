@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>OA-项目管理</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <link href="/Content/hl/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style-metro.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/default.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="/Content/hl/css/uniform.default.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/bootstrap-fileupload.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/select2_metro.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/jquery.tagsinput.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/clockface.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/bootstrap-wysihtml5.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/timepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/colorpicker.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/bootstrap-toggle-buttons.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/datetimepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/hl/css/multi-select-metro.css" />
+    <link href="/Content/hl/css/bootstrap-modal.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/Content/hl/image/favicon.ico" />
+</head>
+<body>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                </button>
+                <h4 class="modal-title">
+                    <i class="icon-pencil"></i><span id="lblAddTitle" style="font-weight: bold">考勤绩效</span>
+                </h4>
+            </div>
+            <form class="form-horizontal form-bordered form-row-strippe" action="#" data-toggle="validator" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">人员：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <select id="select2_sample1" class="m-wrap large select2" style="margin-left:0px; margin-bottom:10px;">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">制度：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <select id="select2_sample2" class="m-wrap large select2" style="margin-left:0px; margin-bottom:10px;">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-info">
+                    <input class="btn blue" type="button" id="btnsubmit" value="提交" onclick="update()" data-dismiss="modal" />
+                    <button type="button" class="btn green" data-dismiss="modal">
+                        取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        jQuery(document).ready(function () {
+            $.post("/Admin_MemberNoView/querystaffsonlyidusername", function (data) {
+                var html = "<option value=''></option>";
+                $(data).each(function (a, b) {
+                    html += "<option value='" + b.id + "'>" + b.username + "</option>";
+                });
+                $("#select2_sample1").html(html);
+                FormComponents.init();
+            });
+            $.post("/Admin_AchievementNoView/queryinstitutionlist_select", function (data) {
+                var html = "<option value=''></option>";
+                $(data).each(function (a, b) {
+                    html += "<option value='" + b.id + "'>" + b.title + "</option>";
+                });
+                $("#select2_sample2").html(html);
+                FormComponents.init();
+            });
+        });
+        function update() {
+            var staffid = $("#select2_sample1").val();
+            var institutionid = $("#select2_sample2").val();
+            if (staffid == '')
+            {
+                alert("新增失败，未选择人员");
+                return;
+            }
+            if (institutionid == '')
+            {
+                alert("新增失败，未选择制度");
+                return;
+            }
+            $.post("/admin_achievementnoview/addachievementinfo", { staffid: staffid, institutionid: institutionid }, function (data) {
+                if (data.status == true) {
+                    reload();
+                }
+                else {
+                    alert(data.msg);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

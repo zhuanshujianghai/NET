@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{189C626E-62D1-451E-93F7-22E11AF1B83A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OA_BLL</RootNamespace>
+    <AssemblyName>OA_BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin\admin_achievementmanage_achievement.cs" />
+    <Compile Include="admin\admin_powermanage_power.cs" />
+    <Compile Include="admin\admin_userpowermanage_pagemenu.cs" />
+    <Compile Include="admin\admin_approvalprocessmanage_process.cs" />
+    <Compile Include="admin\admin_approvalprocessmanage_project.cs" />
+    <Compile Include="admin\BaseAdminService.cs" />
+    <Compile Include="admin\admin_powermanage_auser.cs" />
+    <Compile Include="admin\admin_forummanage_forum.cs" />
+    <Compile Include="admin\admin_membermanage_company.cs" />
+    <Compile Include="admin\admin_membermanage_department.cs" />
+    <Compile Include="admin\admin_membermanage_index.cs" />
+    <Compile Include="admin\admin_membermanage_login.cs" />
+    <Compile Include="admin\admin_membermanage_staff.cs" />
+    <Compile Include="admin\admin_noticemanage_notice.cs" />
+    <Compile Include="admin\admin_projectmanage_bug.cs" />
+    <Compile Include="admin\admin_projectmanage_project.cs" />
+    <Compile Include="admin\admin_runtineworkmanage_memorandum.cs" />
+    <Compile Include="admin\admin_userpowermanage_function.cs" />
+    <Compile Include="admin\admin_userpowermanage_powerlog.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="user\achievementmanage_achievement.cs" />
+    <Compile Include="user\approvalprocessmanage_process.cs" />
+    <Compile Include="user\approvalprocessmanage_project.cs" />
+    <Compile Include="user\BaseUserService.cs" />
+    <Compile Include="user\forummanage_forum.cs" />
+    <Compile Include="user\membermanage_company.cs" />
+    <Compile Include="user\membermanage_department.cs" />
+    <Compile Include="user\membermanage_index.cs" />
+    <Compile Include="user\membermanage_login.cs" />
+    <Compile Include="user\membermanage_staff.cs" />
+    <Compile Include="user\noticemanage_notice.cs" />
+    <Compile Include="user\projectmanage_bug.cs" />
+    <Compile Include="user\projectmanage_project.cs" />
+    <Compile Include="user\runtineworkmanage_memorandum.cs" />
+    <Compile Include="user\userpowermanage_function.cs" />
+    <Compile Include="user\userpowermanage_pagemenu.cs" />
+    <Compile Include="user\userpowermanage_powerlog.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OA_DAL\OA_DAL.csproj">
+      <Project>{0ddbe2bd-04cb-47f8-bcb0-2c537a073429}</Project>
+      <Name>OA_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OA_IBLL\OA_IBLL.csproj">
+      <Project>{748fc831-a488-4d17-b61f-13ccd5dcd761}</Project>
+      <Name>OA_IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OA_IDAL\OA_IDAL.csproj">
+      <Project>{78ee71df-bc0d-49b4-b247-4c051d3fcf64}</Project>
+      <Name>OA_IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OA_Models\OA_Models.csproj">
+      <Project>{e209c757-02f9-4b92-8917-d8e8534f6884}</Project>
+      <Name>OA_Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>OA-权限管理</title>
+</head>
+<body>
+    <div id="gudingheight" class="modal-dialog" style="min-height:600px;">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                </button>
+                <h4 class="modal-title">
+                    <i class="icon-pencil"></i><span id="lblAddTitle" style="font-weight: bold">ACTION列表</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="portlet-body" style="overflow-x: auto;">
+                            <table class="table table-striped table-bordered table-hover dataTable" id="sample_editable_2">
+                                <thead id="thead_2">
+                                </thead>
+                                <tbody id="tbody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer bg-info">
+                <button type="button" class="btn green" data-dismiss="modal">
+                    取消</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var tbl1;
+        jQuery(document).ready(function () {
+            $("#thead_2").html("<tr><th>ID</th><th>名称</th><th>操作</th></tr>");
+            load1();
+        });
+        function load1() {
+            tbl1 = $('#sample_editable_2').dataTable({
+                "bServerSide": true, //是否服务器端处理
+                "bSort": false, //是否排序
+                "sAjaxSource": "/Admin_PowerNoView/QueryFunctionActionList", //mvc后台ajax调用接口。
+                //添加提交参数
+                "fnServerParams": function (aoData) {
+                    aoData.push({
+                        "name": "fid",
+                        "value": $fid$
+                    });
+                    aoData.push({
+                        "name": "actionname",
+                        "value": $("#action").val()
+                    });
+                },
+                'bPaginate': true, //是否分页。
+                "oLanguage": {
+                    "sLengthMenu": "每页显示 _MENU_ 条记录",
+                    "sZeroRecords": "抱歉， 没有找到",
+                    "sInfo": "从 _START_ 到 _END_ /共 _TOTAL_ 条数据",
+                    "sInfoEmpty": "没有数据",
+                    "sSearch": "搜索:",
+                    "sInfoFiltered": "(从 _MAX_ 条数据中检索)",
+                    "oPaginate": {
+                        //"sFirst": "首页",
+                        "sPrevious": "上一页",
+                        "sNext": "下一页"
+                        //"sLast": "尾页"
+                    },
+                    "sZeroRecords": "没有检索到数据"
+                },
+                "bProcessing": true, //当datatable获取数据时候是否显示正在处理提示信息。
+                'bFilter': true, //是否使用内置的过滤功能。
+                'searching': true, //是否有搜索
+                "deferRender": true, //延迟渲染，数据大时有效果
+                "bLengthChange": true, //是否允许用户自定义每页显示条数。
+                "sPaginationType": 'simple_numbers', //分页样式{simple,simple_number,full,full_numbers}
+                "bRetrieve": true,
+                "bDestory": true,
+                //指定列的字段
+                "aoColumns": [
+                    { "data": "id" },
+                    { "data": "actionname" },
+                    { "data": "id" },
+                ],
+                //对指定列的字段进行重写
+                "columnDefs": [
+                    {
+                        "render": function (data, type, row) {
+                            return '<input type="checkbox" name="' + row.actionname.split('/')[2] + '" onclick="change(' + row.id + ')" id="status_' + row.id + '" ' + (row.status == 0 ? '' : 'checked="checked"') + ' />';
+                        },
+                        "targets": 2
+                    }],
+                //datatables初始化完毕后的回调函数
+                "fnInitComplete": function (oSettings, json) {
+                    addsearch1();
+                },
+                //datatables重绘完毕后的回调函数,初始化也调用了该回调函数
+                "fnDrawCallback": function (oSettings) {
+                }
+            });
+        }
+        function reload1() {
+            tbl1.fnDraw();
+        }
+        //添加搜索标签
+        function addsearch1() {
+            var html = "<div class='dataTables_filter'><lable><input id='action' class='m-wrap' type='text' placeholder='ACTION名称' /><input type='button' class='btn blue' value='搜索' onclick='reload1()'></lable></div>";
+            $("#sample_editable_2_filter").html(html);
+        }
+        function change(id) {
+            $.post("/Admin_PowerNoView/EditFunctionAction", { id: id }, function (data) {
+                if (data.status) {
+                    reload1();
+                }
+                else {
+                    alert(data.msg);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

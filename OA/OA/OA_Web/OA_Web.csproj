@@ -1,0 +1,1307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{16378B1A-6711-4B77-986E-D0BE5038F775}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OA_Web</RootNamespace>
+    <AssemblyName>OA_Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Verification, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Verification.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\admin\Admin_AchievementController.cs" />
+    <Compile Include="Controllers\admin\Admin_AchievementNoViewController.cs" />
+    <Compile Include="Controllers\admin\Admin_ApprovalprocessController.cs" />
+    <Compile Include="Controllers\admin\Admin_ApprovalprocessNoViewController.cs" />
+    <Compile Include="Controllers\admin\Admin_BaseController.cs" />
+    <Compile Include="Controllers\admin\Admin_CommonController.cs" />
+    <Compile Include="Controllers\admin\Admin_CommonNoViewController.cs" />
+    <Compile Include="Controllers\admin\Admin_ForumController.cs" />
+    <Compile Include="Controllers\admin\Admin_ForumNoViewController.cs" />
+    <Compile Include="Controllers\admin\Admin_MemberController.cs" />
+    <Compile Include="Controllers\admin\Admin_MemberNoViewController.cs" />
+    <Compile Include="Controllers\admin\Admin_NoticeController.cs" />
+    <Compile Include="Controllers\admin\Admin_NoticeNoViewController.cs" />
+    <Compile Include="Controllers\admin\Admin_PowerController.cs" />
+    <Compile Include="Controllers\admin\Admin_PowerNoViewController.cs" />
+    <Compile Include="Controllers\admin\Admin_ProjectNoViewController.cs" />
+    <Compile Include="Controllers\admin\Admin_ProjectController.cs" />
+    <Compile Include="Controllers\admin\Admin_RuntineworkController.cs" />
+    <Compile Include="Controllers\admin\Admin_RuntineworkNoViewController.cs" />
+    <Compile Include="Controllers\admin\Admin_UserPowerController.cs" />
+    <Compile Include="Controllers\admin\Admin_UserPowerNoViewController.cs" />
+    <Compile Include="Controllers\MyBaseController.cs" />
+    <Compile Include="Controllers\MyCommonController.cs" />
+    <Compile Include="Controllers\user\AchievementController.cs" />
+    <Compile Include="Controllers\user\AchievementNoViewController.cs" />
+    <Compile Include="Controllers\user\ApprovalprocessController.cs" />
+    <Compile Include="Controllers\user\ApprovalprocessNoViewController.cs" />
+    <Compile Include="Controllers\user\BaseController.cs" />
+    <Compile Include="Controllers\user\CommonController.cs" />
+    <Compile Include="Controllers\user\CommonNoViewController.cs" />
+    <Compile Include="Controllers\user\ForumController.cs" />
+    <Compile Include="Controllers\user\ForumNoViewController.cs" />
+    <Compile Include="Controllers\user\MemberNoViewController.cs" />
+    <Compile Include="Controllers\user\MemberController.cs" />
+    <Compile Include="Controllers\user\NoticeController.cs" />
+    <Compile Include="Controllers\user\NoticeNoViewController.cs" />
+    <Compile Include="Controllers\user\ProjectController.cs" />
+    <Compile Include="Controllers\user\ProjectNoViewController.cs" />
+    <Compile Include="Controllers\user\RuntineworkController.cs" />
+    <Compile Include="Controllers\user\RuntineworkNoViewController.cs" />
+    <Compile Include="Controllers\user\UserPowerController.cs" />
+    <Compile Include="Controllers\user\UserPowerNoViewController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\adddate.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\datatables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\datatables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\datatables\css\dataTables.foundation.css" />
+    <Content Include="Content\datatables\css\dataTables.foundation.min.css" />
+    <Content Include="Content\datatables\css\dataTables.jqueryui.css" />
+    <Content Include="Content\datatables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\datatables\css\jquery.dataTables.css" />
+    <Content Include="Content\datatables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\datatables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\datatables\images\favicon.ico" />
+    <Content Include="Content\datatables\images\sort_asc.png" />
+    <Content Include="Content\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Content\datatables\images\sort_both.png" />
+    <Content Include="Content\datatables\images\sort_desc.png" />
+    <Content Include="Content\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Content\datatables\js\dataTables.bootstrap.js" />
+    <Content Include="Content\datatables\js\dataTables.bootstrap.min.js" />
+    <Content Include="Content\datatables\js\dataTables.foundation.js" />
+    <Content Include="Content\datatables\js\dataTables.foundation.min.js" />
+    <Content Include="Content\datatables\js\dataTables.jqueryui.js" />
+    <Content Include="Content\datatables\js\dataTables.jqueryui.min.js" />
+    <Content Include="Content\datatables\js\jquery.dataTables.js" />
+    <Content Include="Content\datatables\js\jquery.dataTables.min.js" />
+    <Content Include="Content\datatables\js\jquery.js" />
+    <Content Include="Content\hl\css\about-us.css" />
+    <Content Include="Content\hl\css\animate.css" />
+    <Content Include="Content\hl\css\blog.css" />
+    <Content Include="Content\hl\css\blue.css" />
+    <Content Include="Content\hl\css\bootstrap-fileupload.css" />
+    <Content Include="Content\hl\css\bootstrap-modal.css" />
+    <Content Include="Content\hl\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\hl\css\bootstrap-responsive1.min.css" />
+    <Content Include="Content\hl\css\bootstrap-tag.css" />
+    <Content Include="Content\hl\css\bootstrap-toggle-buttons.css" />
+    <Content Include="Content\hl\css\bootstrap-tree.css" />
+    <Content Include="Content\hl\css\bootstrap-wysihtml5.css" />
+    <Content Include="Content\hl\css\bootstrap.min.css" />
+    <Content Include="Content\hl\css\brown.css" />
+    <Content Include="Content\hl\css\chosen.css" />
+    <Content Include="Content\hl\css\clockface.css" />
+    <Content Include="Content\hl\css\colorpicker.css" />
+    <Content Include="Content\hl\css\coming-soon.css" />
+    <Content Include="Content\hl\css\datepicker.css" />
+    <Content Include="Content\hl\css\daterangepicker.css" />
+    <Content Include="Content\hl\css\datetimepicker.css" />
+    <Content Include="Content\hl\css\default.css" />
+    <Content Include="Content\hl\css\dropzone.css" />
+    <Content Include="Content\hl\css\DT_bootstrap.css" />
+    <Content Include="Content\hl\css\email.css" />
+    <Content Include="Content\hl\css\error.css" />
+    <Content Include="Content\hl\css\font-awesome.css" />
+    <Content Include="Content\hl\css\font-awesome.min.css" />
+    <Content Include="Content\hl\css\fullcalendar.css" />
+    <Content Include="Content\hl\css\glyphicons.css" />
+    <Content Include="Content\hl\css\grey.css" />
+    <Content Include="Content\hl\css\halflings.css" />
+    <Content Include="Content\hl\css\inbox.css" />
+    <Content Include="Content\hl\css\invoice.css" />
+    <Content Include="Content\hl\css\jquery-ui-1.10.1.custom.min.css" />
+    <Content Include="Content\hl\css\jquery.easy-pie-chart.css" />
+    <Content Include="Content\hl\css\jquery.fancybox.css" />
+    <Content Include="Content\hl\css\jquery.fileupload-ui.css" />
+    <Content Include="Content\hl\css\jquery.gritter.css" />
+    <Content Include="Content\hl\css\jquery.nestable.css" />
+    <Content Include="Content\hl\css\jquery.tagsinput.css" />
+    <Content Include="Content\hl\css\jquery.ui.slider.css" />
+    <Content Include="Content\hl\css\jqvmap.css" />
+    <Content Include="Content\hl\css\light.css" />
+    <Content Include="Content\hl\css\lock.css" />
+    <Content Include="Content\hl\css\login-soft.css" />
+    <Content Include="Content\hl\css\login.css" />
+    <Content Include="Content\hl\css\multi-select-metro.css" />
+    <Content Include="Content\hl\css\news.css" />
+    <Content Include="Content\hl\css\pricing-tables.css" />
+    <Content Include="Content\hl\css\print.css" />
+    <Content Include="Content\hl\css\profile.css" />
+    <Content Include="Content\hl\css\promo.css" />
+    <Content Include="Content\hl\css\purple.css" />
+    <Content Include="Content\hl\css\search.css" />
+    <Content Include="Content\hl\css\select2_metro.css" />
+    <Content Include="Content\hl\css\style-metro.css" />
+    <Content Include="Content\hl\css\style-non-responsive.css" />
+    <Content Include="Content\hl\css\style-responsive.css" />
+    <Content Include="Content\hl\css\style.css" />
+    <Content Include="Content\hl\css\timeline.css" />
+    <Content Include="Content\hl\css\timepicker.css" />
+    <Content Include="Content\hl\css\uniform.default.css" />
+    <Content Include="Content\hl\image\1.jpg" />
+    <Content Include="Content\hl\image\10.jpg" />
+    <Content Include="Content\hl\image\11.jpg" />
+    <Content Include="Content\hl\image\2.jpg" />
+    <Content Include="Content\hl\image\3.jpg" />
+    <Content Include="Content\hl\image\4.jpg" />
+    <Content Include="Content\hl\image\5.jpg" />
+    <Content Include="Content\hl\image\6.jpg" />
+    <Content Include="Content\hl\image\7.jpg" />
+    <Content Include="Content\hl\image\8.jpg" />
+    <Content Include="Content\hl\image\9.jpg" />
+    <Content Include="Content\hl\image\alpha.png" />
+    <Content Include="Content\hl\image\amazon.png" />
+    <Content Include="Content\hl\image\animated-overlay.gif" />
+    <Content Include="Content\hl\image\avatar.png" />
+    <Content Include="Content\hl\image\avatar1.jpg" />
+    <Content Include="Content\hl\image\avatar1_small.jpg" />
+    <Content Include="Content\hl\image\avatar2.jpg" />
+    <Content Include="Content\hl\image\avatar3.jpg" />
+    <Content Include="Content\hl\image\behance.png" />
+    <Content Include="Content\hl\image\bg-input-focus.png" />
+    <Content Include="Content\hl\image\bg-input.png" />
+    <Content Include="Content\hl\image\bg-opacity.png" />
+    <Content Include="Content\hl\image\bg-white-lock.png" />
+    <Content Include="Content\hl\image\bg\1.jpg" />
+    <Content Include="Content\hl\image\bg\2.jpg" />
+    <Content Include="Content\hl\image\bg\3.jpg" />
+    <Content Include="Content\hl\image\bg\4.jpg" />
+    <Content Include="Content\hl\image\blank.gif" />
+    <Content Include="Content\hl\image\blogger.png" />
+    <Content Include="Content\hl\image\bstree-halflings.png" />
+    <Content Include="Content\hl\image\chosen-sprite.png" />
+    <Content Include="Content\hl\image\datatable-row-openclose.png" />
+    <Content Include="Content\hl\image\deviantart.png" />
+    <Content Include="Content\hl\image\dribbble.png" />
+    <Content Include="Content\hl\image\dropbox.png" />
+    <Content Include="Content\hl\image\earth.jpg" />
+    <Content Include="Content\hl\image\evernote.png" />
+    <Content Include="Content\hl\image\facebook.png" />
+    <Content Include="Content\hl\image\fancybox_loading.gif" />
+    <Content Include="Content\hl\image\fancybox_overlay.png" />
+    <Content Include="Content\hl\image\fancybox_sprite.png" />
+    <Content Include="Content\hl\image\favicon.ico" />
+    <Content Include="Content\hl\image\fontawesome-webfont.svg" />
+    <Content Include="Content\hl\image\forrst.png" />
+    <Content Include="Content\hl\image\github.png" />
+    <Content Include="Content\hl\image\glyphicons-halflings-white.png" />
+    <Content Include="Content\hl\image\glyphicons-halflings.png" />
+    <Content Include="Content\hl\image\glyphicons-regular.svg" />
+    <Content Include="Content\hl\image\glyphicons-white.png" />
+    <Content Include="Content\hl\image\glyphicons-white.svg" />
+    <Content Include="Content\hl\image\glyphicons.png" />
+    <Content Include="Content\hl\image\glyphiconshalflings-regular.svg" />
+    <Content Include="Content\hl\image\glyphicons_halflings-white.png" />
+    <Content Include="Content\hl\image\glyphicons_halflings-white.svg" />
+    <Content Include="Content\hl\image\glyphicons_halflings.png" />
+    <Content Include="Content\hl\image\glyphicons_halflings.svg" />
+    <Content Include="Content\hl\image\googleplus.png" />
+    <Content Include="Content\hl\image\gritter-light.png" />
+    <Content Include="Content\hl\image\gritter.png" />
+    <Content Include="Content\hl\image\hor-menu-search-close-white.png" />
+    <Content Include="Content\hl\image\hor-menu-search-close.png" />
+    <Content Include="Content\hl\image\hor-menu-search.png" />
+    <Content Include="Content\hl\image\hue.png" />
+    <Content Include="Content\hl\image\icon-color-close.png" />
+    <Content Include="Content\hl\image\icon-color.png" />
+    <Content Include="Content\hl\image\icon-img-down.png" />
+    <Content Include="Content\hl\image\icon-img-up.png" />
+    <Content Include="Content\hl\image\ie-spacer.gif" />
+    <Content Include="Content\hl\image\image1.jpg" />
+    <Content Include="Content\hl\image\image2.jpg" />
+    <Content Include="Content\hl\image\image3.jpg" />
+    <Content Include="Content\hl\image\image4.jpg" />
+    <Content Include="Content\hl\image\image5.jpg" />
+    <Content Include="Content\hl\image\img1.png" />
+    <Content Include="Content\hl\image\img1_2.png" />
+    <Content Include="Content\hl\image\img2.png" />
+    <Content Include="Content\hl\image\img3.png" />
+    <Content Include="Content\hl\image\img4.png" />
+    <Content Include="Content\hl\image\inbox-nav-arrow-blue.png" />
+    <Content Include="Content\hl\image\instagram.png" />
+    <Content Include="Content\hl\image\iphone.png" />
+    <Content Include="Content\hl\image\item_img.jpg" />
+    <Content Include="Content\hl\image\item_img1.jpg" />
+    <Content Include="Content\hl\image\jolicloud.png" />
+    <Content Include="Content\hl\image\KwPYo.jpg" />
+    <Content Include="Content\hl\image\last-fm.png" />
+    <Content Include="Content\hl\image\linkedin.png" />
+    <Content Include="Content\hl\image\loading.gif" />
+    <Content Include="Content\hl\image\logo-big.png" />
+    <Content Include="Content\hl\image\logo.png" />
+    <Content Include="Content\hl\image\logo_azteca.jpg" />
+    <Content Include="Content\hl\image\logo_conquer.jpg" />
+    <Content Include="Content\hl\image\logo_metronic.jpg" />
+    <Content Include="Content\hl\image\menu-toggler.png" />
+    <Content Include="Content\hl\image\overlay-icon.png" />
+    <Content Include="Content\hl\image\photo1.jpg" />
+    <Content Include="Content\hl\image\photo2.jpg" />
+    <Content Include="Content\hl\image\photo3.jpg" />
+    <Content Include="Content\hl\image\photo4.jpg" />
+    <Content Include="Content\hl\image\photo5.jpg" />
+    <Content Include="Content\hl\image\photo6.jpg" />
+    <Content Include="Content\hl\image\picasa.png" />
+    <Content Include="Content\hl\image\pintrest.png" />
+    <Content Include="Content\hl\image\portlet-collapse-icon-white.png" />
+    <Content Include="Content\hl\image\portlet-collapse-icon.png" />
+    <Content Include="Content\hl\image\portlet-config-icon-white.png" />
+    <Content Include="Content\hl\image\portlet-config-icon.png" />
+    <Content Include="Content\hl\image\portlet-expand-icon-white.png" />
+    <Content Include="Content\hl\image\portlet-expand-icon.png" />
+    <Content Include="Content\hl\image\portlet-reload-icon-white.png" />
+    <Content Include="Content\hl\image\portlet-reload-icon.png" />
+    <Content Include="Content\hl\image\portlet-remove-icon-white.png" />
+    <Content Include="Content\hl\image\portlet-remove-icon.png" />
+    <Content Include="Content\hl\image\preview_02.png" />
+    <Content Include="Content\hl\image\preview_03.png" />
+    <Content Include="Content\hl\image\preview_04.png" />
+    <Content Include="Content\hl\image\preview_05.png" />
+    <Content Include="Content\hl\image\preview_06.png" />
+    <Content Include="Content\hl\image\preview_07.png" />
+    <Content Include="Content\hl\image\preview_08.png" />
+    <Content Include="Content\hl\image\preview_09.png" />
+    <Content Include="Content\hl\image\preview_10.png" />
+    <Content Include="Content\hl\image\preview_11.png" />
+    <Content Include="Content\hl\image\preview_12.png" />
+    <Content Include="Content\hl\image\preview_13.png" />
+    <Content Include="Content\hl\image\preview_14.png" />
+    <Content Include="Content\hl\image\preview_15.png" />
+    <Content Include="Content\hl\image\preview_16.png" />
+    <Content Include="Content\hl\image\preview_17.png" />
+    <Content Include="Content\hl\image\profile-img.png" />
+    <Content Include="Content\hl\image\profile.jpg" />
+    <Content Include="Content\hl\image\progressbar.gif" />
+    <Content Include="Content\hl\image\remove-icon-small.png" />
+    <Content Include="Content\hl\image\rss.png" />
+    <Content Include="Content\hl\image\saturation.png" />
+    <Content Include="Content\hl\image\search-icon.png" />
+    <Content Include="Content\hl\image\select2-spinner.gif" />
+    <Content Include="Content\hl\image\select2.png" />
+    <Content Include="Content\hl\image\select2x2.png" />
+    <Content Include="Content\hl\image\sidebar-menu-arrow.png" />
+    <Content Include="Content\hl\image\sidebar-search-close.png" />
+    <Content Include="Content\hl\image\sidebar-toggler.jpg" />
+    <Content Include="Content\hl\image\skype.png" />
+    <Content Include="Content\hl\image\social_facebook.png" />
+    <Content Include="Content\hl\image\social_googleplus.png" />
+    <Content Include="Content\hl\image\social_linkedin.png" />
+    <Content Include="Content\hl\image\social_rss.png" />
+    <Content Include="Content\hl\image\social_twitter.png" />
+    <Content Include="Content\hl\image\sort_asc.png" />
+    <Content Include="Content\hl\image\sort_asc_disabled.png" />
+    <Content Include="Content\hl\image\sort_both.png" />
+    <Content Include="Content\hl\image\sort_desc.png" />
+    <Content Include="Content\hl\image\sort_desc_disabled.png" />
+    <Content Include="Content\hl\image\spotify.png" />
+    <Content Include="Content\hl\image\sprite.png" />
+    <Content Include="Content\hl\image\spritemap%402x.png" />
+    <Content Include="Content\hl\image\spritemap.png" />
+    <Content Include="Content\hl\image\stumbleupon.png" />
+    <Content Include="Content\hl\image\switch.png" />
+    <Content Include="Content\hl\image\syncfusion-icons-white.png" />
+    <Content Include="Content\hl\image\syncfusion-icons.png" />
+    <Content Include="Content\hl\image\tumblr.png" />
+    <Content Include="Content\hl\image\twitter.png" />
+    <Content Include="Content\hl\image\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\hl\image\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\hl\image\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\hl\image\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\hl\image\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\hl\image\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\hl\image\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\hl\image\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\hl\image\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\hl\image\ui-icons_222222_256x240.png" />
+    <Content Include="Content\hl\image\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\hl\image\ui-icons_888888_256x240.png" />
+    <Content Include="Content\hl\image\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\hl\image\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\hl\image\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\hl\image\vimeo.png" />
+    <Content Include="Content\hl\image\vk.png" />
+    <Content Include="Content\hl\image\walmart.png" />
+    <Content Include="Content\hl\image\wordpress.png" />
+    <Content Include="Content\hl\image\xing.png" />
+    <Content Include="Content\hl\image\yahoo.png" />
+    <Content Include="Content\hl\image\youtube.png" />
+    <Content Include="Content\hl\js\additional-methods.min.js" />
+    <Content Include="Content\hl\js\app.js" />
+    <Content Include="Content\hl\js\bootstrap-colorpicker.js" />
+    <Content Include="Content\hl\js\bootstrap-datepicker.js" />
+    <Content Include="Content\hl\js\bootstrap-datetimepicker.js" />
+    <Content Include="Content\hl\js\bootstrap-fileupload.js" />
+    <Content Include="Content\hl\js\bootstrap-modal.js" />
+    <Content Include="Content\hl\js\bootstrap-modalmanager.js" />
+    <Content Include="Content\hl\js\bootstrap-rtl.min.js" />
+    <Content Include="Content\hl\js\bootstrap-tag.js" />
+    <Content Include="Content\hl\js\bootstrap-timepicker.js" />
+    <Content Include="Content\hl\js\bootstrap-tree.js" />
+    <Content Include="Content\hl\js\bootstrap-wysihtml5.js" />
+    <Content Include="Content\hl\js\bootstrap.min.js" />
+    <Content Include="Content\hl\js\breakpoints.js" />
+    <Content Include="Content\hl\js\breakpoints.min.js" />
+    <Content Include="Content\hl\js\calendar.js" />
+    <Content Include="Content\hl\js\canvas-to-blob.min.js" />
+    <Content Include="Content\hl\js\charts.js" />
+    <Content Include="Content\hl\js\chosen.jquery.min.js" />
+    <Content Include="Content\hl\js\ckeditor.js" />
+    <Content Include="Content\hl\js\clockface.js" />
+    <Content Include="Content\hl\js\coming-soon.js" />
+    <Content Include="Content\hl\js\contact-us.js" />
+    <Content Include="Content\hl\js\date.js" />
+    <Content Include="Content\hl\js\daterangepicker.js" />
+    <Content Include="Content\hl\js\dropzone.js" />
+    <Content Include="Content\hl\js\DT_bootstrap.js" />
+    <Content Include="Content\hl\js\excanvas.js" />
+    <Content Include="Content\hl\js\excanvas.min.js" />
+    <Content Include="Content\hl\js\form-components.js" />
+    <Content Include="Content\hl\js\form-fileupload.js" />
+    <Content Include="Content\hl\js\form-samples.js" />
+    <Content Include="Content\hl\js\form-validation.js" />
+    <Content Include="Content\hl\js\form-wizard.js" />
+    <Content Include="Content\hl\js\fullcalendar.min.js" />
+    <Content Include="Content\hl\js\gallery.js" />
+    <Content Include="Content\hl\js\gmaps.js" />
+    <Content Include="Content\hl\js\inbox.js" />
+    <Content Include="Content\hl\js\index.js" />
+    <Content Include="Content\hl\js\jquery-1.10.1.min.js" />
+    <Content Include="Content\hl\js\jquery-1.8.3.min.js" />
+    <Content Include="Content\hl\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Content\hl\js\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="Content\hl\js\jquery.backstretch.min.js" />
+    <Content Include="Content\hl\js\jquery.blockui.min.js" />
+    <Content Include="Content\hl\js\jquery.bootpag.min.js" />
+    <Content Include="Content\hl\js\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Content\hl\js\jquery.cookie.min.js" />
+    <Content Include="Content\hl\js\jquery.countdown.js" />
+    <Content Include="Content\hl\js\jquery.dataTables.js" />
+    <Content Include="Content\hl\js\jquery.dataTables.min.js" />
+    <Content Include="Content\hl\js\jquery.easy-pie-chart.js" />
+    <Content Include="Content\hl\js\jquery.fancybox.pack.js" />
+    <Content Include="Content\hl\js\jquery.fileupload-fp.js" />
+    <Content Include="Content\hl\js\jquery.fileupload-ui.js" />
+    <Content Include="Content\hl\js\jquery.fileupload.js" />
+    <Content Include="Content\hl\js\jquery.flot.crosshair.js" />
+    <Content Include="Content\hl\js\jquery.flot.js" />
+    <Content Include="Content\hl\js\jquery.flot.pie.js" />
+    <Content Include="Content\hl\js\jquery.flot.resize.js" />
+    <Content Include="Content\hl\js\jquery.flot.stack.js" />
+    <Content Include="Content\hl\js\jquery.gritter.js" />
+    <Content Include="Content\hl\js\jquery.iframe-transport.js" />
+    <Content Include="Content\hl\js\jquery.input-ip-address-control-1.0.min.js" />
+    <Content Include="Content\hl\js\jquery.inputmask.bundle.min.js" />
+    <Content Include="Content\hl\js\jquery-1.11.3.js" />
+    <Content Include="Content\hl\js\jquery.knob.js" />
+    <Content Include="Content\hl\js\jquery.multi-select.js" />
+    <Content Include="Content\hl\js\jquery.nestable.js" />
+    <Content Include="Content\hl\js\jquery.pulsate.min.js" />
+    <Content Include="Content\hl\js\jquery.slimscroll.min.js" />
+    <Content Include="Content\hl\js\jquery.sparkline.min.js" />
+    <Content Include="Content\hl\js\jquery.tagsinput.min.js" />
+    <Content Include="Content\hl\js\jquery.toggle.buttons.js" />
+    <Content Include="Content\hl\js\jquery.ui.widget.js" />
+    <Content Include="Content\hl\js\jquery.uniform.min.js" />
+    <Content Include="Content\hl\js\jquery.validate.min.js" />
+    <Content Include="Content\hl\js\jquery.vmap.europe.js" />
+    <Content Include="Content\hl\js\jquery.vmap.germany.js" />
+    <Content Include="Content\hl\js\jquery.vmap.js" />
+    <Content Include="Content\hl\js\jquery.vmap.russia.js" />
+    <Content Include="Content\hl\js\jquery.vmap.sampledata.js" />
+    <Content Include="Content\hl\js\jquery.vmap.usa.js" />
+    <Content Include="Content\hl\js\jquery.vmap.world.js" />
+    <Content Include="Content\hl\js\jquery.xdr-transport.js" />
+    <Content Include="Content\hl\js\load-image.min.js" />
+    <Content Include="Content\hl\js\lock.js" />
+    <Content Include="Content\hl\js\login-soft.js" />
+    <Content Include="Content\hl\js\login.js" />
+    <Content Include="Content\hl\js\maps-google.js" />
+    <Content Include="Content\hl\js\maps-vector.js" />
+    <Content Include="Content\hl\js\portlet-draggable.js" />
+    <Content Include="Content\hl\js\respond.js" />
+    <Content Include="Content\hl\js\respond.min.js" />
+    <Content Include="Content\hl\js\search.js" />
+    <Content Include="Content\hl\js\select2.min.js" />
+    <Content Include="Content\hl\js\table-advanced.js" />
+    <Content Include="Content\hl\js\table-editable.js" />
+    <Content Include="Content\hl\js\table-managed.js" />
+    <Content Include="Content\hl\js\tmpl.min.js" />
+    <Content Include="Content\hl\js\ui-general.js" />
+    <Content Include="Content\hl\js\ui-jqueryui.js" />
+    <Content Include="Content\hl\js\ui-modals.js" />
+    <Content Include="Content\hl\js\ui-nestable.js" />
+    <Content Include="Content\hl\js\ui-sliders.js" />
+    <Content Include="Content\hl\js\ui-tree.js" />
+    <Content Include="Content\hl\js\wysihtml5-0.3.0.js" />
+    <Content Include="Content\public.js" />
+    <Content Include="Content\user\img\loginbackgroud.jpg" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\hl\image\fontawesome-webfont.eot" />
+    <Content Include="Content\hl\image\fontawesome-webfont.ttf" />
+    <Content Include="Content\hl\image\fontawesome-webfont.woff" />
+    <Content Include="Content\hl\image\glyphicons-regular.eot" />
+    <Content Include="Content\hl\image\glyphicons-regular.ttf" />
+    <Content Include="Content\hl\image\glyphicons-regular.woff" />
+    <Content Include="Content\hl\image\glyphiconshalflings-regular.eot" />
+    <Content Include="Content\hl\image\glyphiconshalflings-regular.ttf" />
+    <Content Include="Content\hl\image\glyphiconshalflings-regular.woff" />
+    <Content Include="Content\hl\image\js" />
+    <Content Include="Content\datatables\images\Sorting icons.psd" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Template\admin\Admin_Achievement_AchievementInfoList.html" />
+    <Content Include="Template\admin\Admin_Achievement_AddAchievementInfo.html" />
+    <Content Include="Template\admin\Admin_Achievement_EditInstitution.html" />
+    <Content Include="Template\admin\Admin_Achievement_InstitutionList.html" />
+    <Content Include="Template\admin\Admin_Achievement_StaffAchievementList.html" />
+    <Content Include="Template\admin\Admin_Member_CompanyList.html" />
+    <Content Include="Template\admin\Admin_Power_ActionList.html" />
+    <Content Include="Template\admin\Admin_Power_AuserList.html" />
+    <Content Include="Template\admin\Admin_Power_DoLogList.html" />
+    <Content Include="Template\admin\Admin_Power_EditAction.html" />
+    <Content Include="Template\admin\Admin_Power_EditAuser.html" />
+    <Content Include="Template\admin\Admin_Power_EditFunction.html" />
+    <Content Include="Template\admin\Admin_Power_EditPageMenu.html" />
+    <Content Include="Template\admin\Admin_Power_EditRole.html" />
+    <Content Include="Template\admin\Admin_Power_FunctionActionList.html" />
+    <Content Include="Template\admin\Admin_Power_FunctionList.html" />
+    <Content Include="Template\admin\Admin_Power_PageMenuList.html" />
+    <Content Include="Template\admin\Admin_Power_PowerLogList.html" />
+    <Content Include="Template\admin\Admin_Power_RoleFunctionList.html" />
+    <Content Include="Template\admin\Admin_Power_RoleList.html" />
+    <Content Include="Template\admin\Admin_Power_TopFunctionList.html" />
+    <Content Include="Template\admin\Admin_UserPower_EditPageMenu.html" />
+    <Content Include="Template\admin\Admin_UserPower_PageMenuList.html" />
+    <Content Include="Template\admin\Admin_Power_Login.html" />
+    <Content Include="Template\admin\Admin_ApprovalProcess_ApplyApprovalProcess.html" />
+    <Content Include="Template\admin\Admin_ApprovalProcess_ApprovalPersonList.html" />
+    <Content Include="Template\admin\Admin_ApprovalProcess_EditApprovalPerson.html" />
+    <Content Include="Template\admin\Admin_ApprovalProcess_EditProcess.html" />
+    <Content Include="Template\admin\Admin_ApprovalProcess_EditProject.html" />
+    <Content Include="Template\admin\Admin_ApprovalProcess_EditProjectProcess.html" />
+    <Content Include="Template\admin\Admin_ApprovalProcess_ProcessList.html" />
+    <Content Include="Template\admin\Admin_ApprovalProcess_ProjectList.html" />
+    <Content Include="Template\admin\Admin_ApprovalProcess_ProjectProcessList.html" />
+    <Content Include="Template\admin\Admin_ApprovalProcess_StaffApplyApproval.html" />
+    <Content Include="Template\admin\Admin_ApprovalProcess_StaffApplyList.html" />
+    <Content Include="Template\admin\Admin_Forum_AddReply.html" />
+    <Content Include="Template\admin\Admin_Forum_AddTopic.html" />
+    <Content Include="Template\admin\Admin_Forum_EditSection.html" />
+    <Content Include="Template\admin\Admin_Forum_ReplyList.html" />
+    <Content Include="Template\admin\Admin_Forum_SectionList.html" />
+    <Content Include="Template\admin\Admin_Forum_TopicList.html" />
+    <Content Include="Template\admin\Admin_UserPower_TopFunctionList.html" />
+    <Content Include="Template\admin\Index.html" />
+    <Content Include="Template\admin\Admin_Member_AddStaff.html" />
+    <Content Include="Template\admin\Admin_Member_EditCompany.html" />
+    <Content Include="Template\admin\Admin_Member_DepartmentInfo.html" />
+    <Content Include="Template\admin\Admin_Member_DepartmentList.html" />
+    <Content Include="Template\admin\Admin_Member_EditPosition.html" />
+    <Content Include="Template\admin\Admin_Member_EditStaffInfo.html" />
+    <Content Include="Template\admin\Admin_Member_EditStaffPosition.html" />
+    <Content Include="Template\admin\Admin_Member_Index.html" />
+    <Content Include="Template\admin\Admin_Member_PositionList.html" />
+    <Content Include="Template\admin\Admin_Member_Staff.html" />
+    <Content Include="Template\admin\Admin_Member_StaffList.html" />
+    <Content Include="Template\admin\Admin_Member_StaffPositionList.html" />
+    <Content Include="Template\admin\Admin_Notice_AddNoticeComment.html" />
+    <Content Include="Template\admin\Admin_Notice_EditNotice.html" />
+    <Content Include="Template\admin\Admin_Notice_EditNoticetype.html" />
+    <Content Include="Template\admin\Admin_Notice_NoticeCommentList.html" />
+    <Content Include="Template\admin\Admin_Notice_NoticeList.html" />
+    <Content Include="Template\admin\Admin_Notice_NoticetypeList.html" />
+    <Content Include="Template\admin\Admin_Project_EditProject.html" />
+    <Content Include="Template\admin\Admin_Project_EditProjectBug.html" />
+    <Content Include="Template\admin\Admin_Project_EditProjectBugEditor.html" />
+    <Content Include="Template\admin\Admin_Project_EditProjectStaff.html" />
+    <Content Include="Template\admin\Admin_Project_ProjectBug.html" />
+    <Content Include="Template\admin\Admin_Project_ProjectBugList.html" />
+    <Content Include="Template\admin\Admin_Project_ProjectList.html" />
+    <Content Include="Template\admin\Admin_Project_ProjectStaffList.html" />
+    <Content Include="Template\admin\Admin_Runtinework_EditMemorandum.html" />
+    <Content Include="Template\admin\Admin_Runtinework_MemorandumList.html" />
+    <Content Include="Template\admin\Admin_UserPower_ActionList.html" />
+    <Content Include="Template\admin\Admin_UserPower_EditAction.html" />
+    <Content Include="Template\admin\Admin_UserPower_EditActionList.html" />
+    <Content Include="Template\admin\Admin_UserPower_EditFunction.html" />
+    <Content Include="Template\admin\Admin_UserPower_EditFunctionList.html" />
+    <Content Include="Template\admin\Admin_UserPower_FunctionList.html" />
+    <Content Include="Template\admin\Admin_UserPower_UserPowerLogList.html" />
+    <Content Include="Template\metro\charts.html" />
+    <Content Include="Template\metro\email1.html" />
+    <Content Include="Template\metro\email2.html" />
+    <Content Include="Template\metro\email3.html" />
+    <Content Include="Template\metro\email4.html" />
+    <Content Include="Template\metro\email5.html" />
+    <Content Include="Template\metro\email6.html" />
+    <Content Include="Template\metro\extra_404_option1.html" />
+    <Content Include="Template\metro\extra_404_option2.html" />
+    <Content Include="Template\metro\extra_404_option3.html" />
+    <Content Include="Template\metro\extra_500_option1.html" />
+    <Content Include="Template\metro\extra_500_option2.html" />
+    <Content Include="Template\metro\extra_faq.html" />
+    <Content Include="Template\metro\extra_image_manager.html" />
+    <Content Include="Template\metro\extra_invoice.html" />
+    <Content Include="Template\metro\extra_lock.html" />
+    <Content Include="Template\metro\extra_pricing_table.html" />
+    <Content Include="Template\metro\extra_profile.html" />
+    <Content Include="Template\metro\extra_search.html" />
+    <Content Include="Template\metro\form_component.html" />
+    <Content Include="Template\metro\form_dropzone.html" />
+    <Content Include="Template\metro\form_fileupload.html" />
+    <Content Include="Template\metro\form_layout.html" />
+    <Content Include="Template\metro\form_samples.html" />
+    <Content Include="Template\metro\form_validation.html" />
+    <Content Include="Template\metro\form_wizard.html" />
+    <Content Include="Template\metro\Home\Index.htm" />
+    <Content Include="Template\metro\Home\Index1.htm" />
+    <Content Include="Template\metro\Home\Index_Ajax.htm" />
+    <Content Include="Template\metro\inbox.html" />
+    <Content Include="Template\metro\inbox_inbox.html" />
+    <Content Include="Template\metro\index.html" />
+    <Content Include="Template\metro\layout_ajax.html" />
+    <Content Include="Template\metro\layout_ajax_content_2.html" />
+    <Content Include="Template\metro\layout_ajax_content_3.html" />
+    <Content Include="Template\metro\layout_blank_page.html" />
+    <Content Include="Template\metro\layout_boxed_not_responsive.html" />
+    <Content Include="Template\metro\layout_boxed_page.html" />
+    <Content Include="Template\metro\layout_email.html" />
+    <Content Include="Template\metro\layout_horizontal_menu1.html" />
+    <Content Include="Template\metro\layout_horizontal_menu2.html" />
+    <Content Include="Template\metro\layout_horizontal_sidebar_menu.html" />
+    <Content Include="Template\metro\layout_promo.html" />
+    <Content Include="Template\metro\layout_sidebar_closed.html" />
+    <Content Include="Template\metro\login.html" />
+    <Content Include="Template\metro\login_soft.html" />
+    <Content Include="Template\metro\maps_google.html" />
+    <Content Include="Template\metro\maps_vector.html" />
+    <Content Include="Template\metro\media\css\about-us.css" />
+    <Content Include="Template\metro\media\css\animate.css" />
+    <Content Include="Template\metro\media\css\blog.css" />
+    <Content Include="Template\metro\media\css\blue.css" />
+    <Content Include="Template\metro\media\css\bootstrap-fileupload.css" />
+    <Content Include="Template\metro\media\css\bootstrap-modal.css" />
+    <Content Include="Template\metro\media\css\bootstrap-responsive.min.css" />
+    <Content Include="Template\metro\media\css\bootstrap-responsive1.min.css" />
+    <Content Include="Template\metro\media\css\bootstrap-tag.css" />
+    <Content Include="Template\metro\media\css\bootstrap-toggle-buttons.css" />
+    <Content Include="Template\metro\media\css\bootstrap-tree.css" />
+    <Content Include="Template\metro\media\css\bootstrap-wysihtml5.css" />
+    <Content Include="Template\metro\media\css\bootstrap.min.css" />
+    <Content Include="Template\metro\media\css\brown.css" />
+    <Content Include="Template\metro\media\css\chosen.css" />
+    <Content Include="Template\metro\media\css\clockface.css" />
+    <Content Include="Template\metro\media\css\colorpicker.css" />
+    <Content Include="Template\metro\media\css\coming-soon.css" />
+    <Content Include="Template\metro\media\css\datepicker.css" />
+    <Content Include="Template\metro\media\css\daterangepicker.css" />
+    <Content Include="Template\metro\media\css\datetimepicker.css" />
+    <Content Include="Template\metro\media\css\default.css" />
+    <Content Include="Template\metro\media\css\dropzone.css" />
+    <Content Include="Template\metro\media\css\DT_bootstrap.css" />
+    <Content Include="Template\metro\media\css\email.css" />
+    <Content Include="Template\metro\media\css\error.css" />
+    <Content Include="Template\metro\media\css\font-awesome.css" />
+    <Content Include="Template\metro\media\css\font-awesome.min.css" />
+    <Content Include="Template\metro\media\css\fullcalendar.css" />
+    <Content Include="Template\metro\media\css\glyphicons.css" />
+    <Content Include="Template\metro\media\css\grey.css" />
+    <Content Include="Template\metro\media\css\halflings.css" />
+    <Content Include="Template\metro\media\css\inbox.css" />
+    <Content Include="Template\metro\media\css\invoice.css" />
+    <Content Include="Template\metro\media\css\jquery-ui-1.10.1.custom.min.css" />
+    <Content Include="Template\metro\media\css\jquery.easy-pie-chart.css" />
+    <Content Include="Template\metro\media\css\jquery.fancybox.css" />
+    <Content Include="Template\metro\media\css\jquery.fileupload-ui.css" />
+    <Content Include="Template\metro\media\css\jquery.gritter.css" />
+    <Content Include="Template\metro\media\css\jquery.nestable.css" />
+    <Content Include="Template\metro\media\css\jquery.tagsinput.css" />
+    <Content Include="Template\metro\media\css\jquery.ui.slider.css" />
+    <Content Include="Template\metro\media\css\jqvmap.css" />
+    <Content Include="Template\metro\media\css\light.css" />
+    <Content Include="Template\metro\media\css\lock.css" />
+    <Content Include="Template\metro\media\css\login-soft.css" />
+    <Content Include="Template\metro\media\css\login.css" />
+    <Content Include="Template\metro\media\css\multi-select-metro.css" />
+    <Content Include="Template\metro\media\css\news.css" />
+    <Content Include="Template\metro\media\css\pricing-tables.css" />
+    <Content Include="Template\metro\media\css\print.css" />
+    <Content Include="Template\metro\media\css\profile.css" />
+    <Content Include="Template\metro\media\css\promo.css" />
+    <Content Include="Template\metro\media\css\purple.css" />
+    <Content Include="Template\metro\media\css\search.css" />
+    <Content Include="Template\metro\media\css\select2_metro.css" />
+    <Content Include="Template\metro\media\css\style-metro.css" />
+    <Content Include="Template\metro\media\css\style-non-responsive.css" />
+    <Content Include="Template\metro\media\css\style-responsive.css" />
+    <Content Include="Template\metro\media\css\style.css" />
+    <Content Include="Template\metro\media\css\timeline.css" />
+    <Content Include="Template\metro\media\css\timepicker.css" />
+    <Content Include="Template\metro\media\css\uniform.default.css" />
+    <Content Include="Template\metro\media\image\1.jpg" />
+    <Content Include="Template\metro\media\image\10.jpg" />
+    <Content Include="Template\metro\media\image\11.jpg" />
+    <Content Include="Template\metro\media\image\2.jpg" />
+    <Content Include="Template\metro\media\image\3.jpg" />
+    <Content Include="Template\metro\media\image\4.jpg" />
+    <Content Include="Template\metro\media\image\5.jpg" />
+    <Content Include="Template\metro\media\image\6.jpg" />
+    <Content Include="Template\metro\media\image\7.jpg" />
+    <Content Include="Template\metro\media\image\8.jpg" />
+    <Content Include="Template\metro\media\image\9.jpg" />
+    <Content Include="Template\metro\media\image\alpha.png" />
+    <Content Include="Template\metro\media\image\amazon.png" />
+    <Content Include="Template\metro\media\image\animated-overlay.gif" />
+    <Content Include="Template\metro\media\image\avatar.png" />
+    <Content Include="Template\metro\media\image\avatar1.jpg" />
+    <Content Include="Template\metro\media\image\avatar1_small.jpg" />
+    <Content Include="Template\metro\media\image\avatar2.jpg" />
+    <Content Include="Template\metro\media\image\avatar3.jpg" />
+    <Content Include="Template\metro\media\image\behance.png" />
+    <Content Include="Template\metro\media\image\bg-input-focus.png" />
+    <Content Include="Template\metro\media\image\bg-input.png" />
+    <Content Include="Template\metro\media\image\bg-opacity.png" />
+    <Content Include="Template\metro\media\image\bg-white-lock.png" />
+    <Content Include="Template\metro\media\image\bg\1.jpg" />
+    <Content Include="Template\metro\media\image\bg\2.jpg" />
+    <Content Include="Template\metro\media\image\bg\3.jpg" />
+    <Content Include="Template\metro\media\image\bg\4.jpg" />
+    <Content Include="Template\metro\media\image\blank.gif" />
+    <Content Include="Template\metro\media\image\blogger.png" />
+    <Content Include="Template\metro\media\image\bstree-halflings.png" />
+    <Content Include="Template\metro\media\image\chosen-sprite.png" />
+    <Content Include="Template\metro\media\image\datatable-row-openclose.png" />
+    <Content Include="Template\metro\media\image\deviantart.png" />
+    <Content Include="Template\metro\media\image\dribbble.png" />
+    <Content Include="Template\metro\media\image\dropbox.png" />
+    <Content Include="Template\metro\media\image\earth.jpg" />
+    <Content Include="Template\metro\media\image\evernote.png" />
+    <Content Include="Template\metro\media\image\facebook.png" />
+    <Content Include="Template\metro\media\image\fancybox_loading.gif" />
+    <Content Include="Template\metro\media\image\fancybox_overlay.png" />
+    <Content Include="Template\metro\media\image\fancybox_sprite.png" />
+    <Content Include="Template\metro\media\image\favicon.ico" />
+    <Content Include="Template\metro\media\image\fontawesome-webfont.svg" />
+    <Content Include="Template\metro\media\image\forrst.png" />
+    <Content Include="Template\metro\media\image\github.png" />
+    <Content Include="Template\metro\media\image\glyphicons-halflings-white.png" />
+    <Content Include="Template\metro\media\image\glyphicons-halflings.png" />
+    <Content Include="Template\metro\media\image\glyphicons-regular.svg" />
+    <Content Include="Template\metro\media\image\glyphicons-white.png" />
+    <Content Include="Template\metro\media\image\glyphicons-white.svg" />
+    <Content Include="Template\metro\media\image\glyphicons.png" />
+    <Content Include="Template\metro\media\image\glyphiconshalflings-regular.svg" />
+    <Content Include="Template\metro\media\image\glyphicons_halflings-white.png" />
+    <Content Include="Template\metro\media\image\glyphicons_halflings-white.svg" />
+    <Content Include="Template\metro\media\image\glyphicons_halflings.png" />
+    <Content Include="Template\metro\media\image\glyphicons_halflings.svg" />
+    <Content Include="Template\metro\media\image\googleplus.png" />
+    <Content Include="Template\metro\media\image\gritter-light.png" />
+    <Content Include="Template\metro\media\image\gritter.png" />
+    <Content Include="Template\metro\media\image\hor-menu-search-close-white.png" />
+    <Content Include="Template\metro\media\image\hor-menu-search-close.png" />
+    <Content Include="Template\metro\media\image\hor-menu-search.png" />
+    <Content Include="Template\metro\media\image\hue.png" />
+    <Content Include="Template\metro\media\image\icon-color-close.png" />
+    <Content Include="Template\metro\media\image\icon-color.png" />
+    <Content Include="Template\metro\media\image\icon-img-down.png" />
+    <Content Include="Template\metro\media\image\icon-img-up.png" />
+    <Content Include="Template\metro\media\image\ie-spacer.gif" />
+    <Content Include="Template\metro\media\image\image1.jpg" />
+    <Content Include="Template\metro\media\image\image2.jpg" />
+    <Content Include="Template\metro\media\image\image3.jpg" />
+    <Content Include="Template\metro\media\image\image4.jpg" />
+    <Content Include="Template\metro\media\image\image5.jpg" />
+    <Content Include="Template\metro\media\image\img1.png" />
+    <Content Include="Template\metro\media\image\img1_2.png" />
+    <Content Include="Template\metro\media\image\img2.png" />
+    <Content Include="Template\metro\media\image\img3.png" />
+    <Content Include="Template\metro\media\image\img4.png" />
+    <Content Include="Template\metro\media\image\inbox-nav-arrow-blue.png" />
+    <Content Include="Template\metro\media\image\instagram.png" />
+    <Content Include="Template\metro\media\image\iphone.png" />
+    <Content Include="Template\metro\media\image\item_img.jpg" />
+    <Content Include="Template\metro\media\image\item_img1.jpg" />
+    <Content Include="Template\metro\media\image\jolicloud.png" />
+    <Content Include="Template\metro\media\image\KwPYo.jpg" />
+    <Content Include="Template\metro\media\image\last-fm.png" />
+    <Content Include="Template\metro\media\image\linkedin.png" />
+    <Content Include="Template\metro\media\image\loading.gif" />
+    <Content Include="Template\metro\media\image\logo-big.png" />
+    <Content Include="Template\metro\media\image\logo.png" />
+    <Content Include="Template\metro\media\image\logo_azteca.jpg" />
+    <Content Include="Template\metro\media\image\logo_conquer.jpg" />
+    <Content Include="Template\metro\media\image\logo_metronic.jpg" />
+    <Content Include="Template\metro\media\image\menu-toggler.png" />
+    <Content Include="Template\metro\media\image\overlay-icon.png" />
+    <Content Include="Template\metro\media\image\photo1.jpg" />
+    <Content Include="Template\metro\media\image\photo2.jpg" />
+    <Content Include="Template\metro\media\image\photo3.jpg" />
+    <Content Include="Template\metro\media\image\photo4.jpg" />
+    <Content Include="Template\metro\media\image\photo5.jpg" />
+    <Content Include="Template\metro\media\image\photo6.jpg" />
+    <Content Include="Template\metro\media\image\picasa.png" />
+    <Content Include="Template\metro\media\image\pintrest.png" />
+    <Content Include="Template\metro\media\image\portlet-collapse-icon-white.png" />
+    <Content Include="Template\metro\media\image\portlet-collapse-icon.png" />
+    <Content Include="Template\metro\media\image\portlet-config-icon-white.png" />
+    <Content Include="Template\metro\media\image\portlet-config-icon.png" />
+    <Content Include="Template\metro\media\image\portlet-expand-icon-white.png" />
+    <Content Include="Template\metro\media\image\portlet-expand-icon.png" />
+    <Content Include="Template\metro\media\image\portlet-reload-icon-white.png" />
+    <Content Include="Template\metro\media\image\portlet-reload-icon.png" />
+    <Content Include="Template\metro\media\image\portlet-remove-icon-white.png" />
+    <Content Include="Template\metro\media\image\portlet-remove-icon.png" />
+    <Content Include="Template\metro\media\image\preview_02.png" />
+    <Content Include="Template\metro\media\image\preview_03.png" />
+    <Content Include="Template\metro\media\image\preview_04.png" />
+    <Content Include="Template\metro\media\image\preview_05.png" />
+    <Content Include="Template\metro\media\image\preview_06.png" />
+    <Content Include="Template\metro\media\image\preview_07.png" />
+    <Content Include="Template\metro\media\image\preview_08.png" />
+    <Content Include="Template\metro\media\image\preview_09.png" />
+    <Content Include="Template\metro\media\image\preview_10.png" />
+    <Content Include="Template\metro\media\image\preview_11.png" />
+    <Content Include="Template\metro\media\image\preview_12.png" />
+    <Content Include="Template\metro\media\image\preview_13.png" />
+    <Content Include="Template\metro\media\image\preview_14.png" />
+    <Content Include="Template\metro\media\image\preview_15.png" />
+    <Content Include="Template\metro\media\image\preview_16.png" />
+    <Content Include="Template\metro\media\image\preview_17.png" />
+    <Content Include="Template\metro\media\image\profile-img.png" />
+    <Content Include="Template\metro\media\image\profile.jpg" />
+    <Content Include="Template\metro\media\image\progressbar.gif" />
+    <Content Include="Template\metro\media\image\remove-icon-small.png" />
+    <Content Include="Template\metro\media\image\rss.png" />
+    <Content Include="Template\metro\media\image\saturation.png" />
+    <Content Include="Template\metro\media\image\search-icon.png" />
+    <Content Include="Template\metro\media\image\select2-spinner.gif" />
+    <Content Include="Template\metro\media\image\select2.png" />
+    <Content Include="Template\metro\media\image\select2x2.png" />
+    <Content Include="Template\metro\media\image\sidebar-menu-arrow.png" />
+    <Content Include="Template\metro\media\image\sidebar-search-close.png" />
+    <Content Include="Template\metro\media\image\sidebar-toggler.jpg" />
+    <Content Include="Template\metro\media\image\skype.png" />
+    <Content Include="Template\metro\media\image\social_facebook.png" />
+    <Content Include="Template\metro\media\image\social_googleplus.png" />
+    <Content Include="Template\metro\media\image\social_linkedin.png" />
+    <Content Include="Template\metro\media\image\social_rss.png" />
+    <Content Include="Template\metro\media\image\social_twitter.png" />
+    <Content Include="Template\metro\media\image\sort_asc.png" />
+    <Content Include="Template\metro\media\image\sort_asc_disabled.png" />
+    <Content Include="Template\metro\media\image\sort_both.png" />
+    <Content Include="Template\metro\media\image\sort_desc.png" />
+    <Content Include="Template\metro\media\image\sort_desc_disabled.png" />
+    <Content Include="Template\metro\media\image\spotify.png" />
+    <Content Include="Template\metro\media\image\sprite.png" />
+    <Content Include="Template\metro\media\image\spritemap%402x.png" />
+    <Content Include="Template\metro\media\image\spritemap.png" />
+    <Content Include="Template\metro\media\image\stumbleupon.png" />
+    <Content Include="Template\metro\media\image\switch.png" />
+    <Content Include="Template\metro\media\image\syncfusion-icons-white.png" />
+    <Content Include="Template\metro\media\image\syncfusion-icons.png" />
+    <Content Include="Template\metro\media\image\tumblr.png" />
+    <Content Include="Template\metro\media\image\twitter.png" />
+    <Content Include="Template\metro\media\image\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Template\metro\media\image\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Template\metro\media\image\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Template\metro\media\image\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Template\metro\media\image\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Template\metro\media\image\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Template\metro\media\image\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Template\metro\media\image\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Template\metro\media\image\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Template\metro\media\image\ui-icons_222222_256x240.png" />
+    <Content Include="Template\metro\media\image\ui-icons_228ef1_256x240.png" />
+    <Content Include="Template\metro\media\image\ui-icons_888888_256x240.png" />
+    <Content Include="Template\metro\media\image\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Template\metro\media\image\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Template\metro\media\image\ui-icons_ffffff_256x240.png" />
+    <Content Include="Template\metro\media\image\vimeo.png" />
+    <Content Include="Template\metro\media\image\vk.png" />
+    <Content Include="Template\metro\media\image\walmart.png" />
+    <Content Include="Template\metro\media\image\wordpress.png" />
+    <Content Include="Template\metro\media\image\xing.png" />
+    <Content Include="Template\metro\media\image\yahoo.png" />
+    <Content Include="Template\metro\media\image\youtube.png" />
+    <Content Include="Template\metro\media\js\additional-methods.min.js" />
+    <Content Include="Template\metro\media\js\app.js" />
+    <Content Include="Template\metro\media\js\bootstrap-colorpicker.js" />
+    <Content Include="Template\metro\media\js\bootstrap-datepicker.js" />
+    <Content Include="Template\metro\media\js\bootstrap-datetimepicker.js" />
+    <Content Include="Template\metro\media\js\bootstrap-fileupload.js" />
+    <Content Include="Template\metro\media\js\bootstrap-modal.js" />
+    <Content Include="Template\metro\media\js\bootstrap-modalmanager.js" />
+    <Content Include="Template\metro\media\js\bootstrap-rtl.min.js" />
+    <Content Include="Template\metro\media\js\bootstrap-tag.js" />
+    <Content Include="Template\metro\media\js\bootstrap-timepicker.js" />
+    <Content Include="Template\metro\media\js\bootstrap-tree.js" />
+    <Content Include="Template\metro\media\js\bootstrap-wysihtml5.js" />
+    <Content Include="Template\metro\media\js\bootstrap.min.js" />
+    <Content Include="Template\metro\media\js\breakpoints.js" />
+    <Content Include="Template\metro\media\js\breakpoints.min.js" />
+    <Content Include="Template\metro\media\js\calendar.js" />
+    <Content Include="Template\metro\media\js\canvas-to-blob.min.js" />
+    <Content Include="Template\metro\media\js\charts.js" />
+    <Content Include="Template\metro\media\js\chosen.jquery.min.js" />
+    <Content Include="Template\metro\media\js\ckeditor.js" />
+    <Content Include="Template\metro\media\js\clockface.js" />
+    <Content Include="Template\metro\media\js\coming-soon.js" />
+    <Content Include="Template\metro\media\js\contact-us.js" />
+    <Content Include="Template\metro\media\js\date.js" />
+    <Content Include="Template\metro\media\js\daterangepicker.js" />
+    <Content Include="Template\metro\media\js\dropzone.js" />
+    <Content Include="Template\metro\media\js\DT_bootstrap.js" />
+    <Content Include="Template\metro\media\js\excanvas.js" />
+    <Content Include="Template\metro\media\js\excanvas.min.js" />
+    <Content Include="Template\metro\media\js\form-components.js" />
+    <Content Include="Template\metro\media\js\form-fileupload.js" />
+    <Content Include="Template\metro\media\js\form-samples.js" />
+    <Content Include="Template\metro\media\js\form-validation.js" />
+    <Content Include="Template\metro\media\js\form-wizard.js" />
+    <Content Include="Template\metro\media\js\fullcalendar.min.js" />
+    <Content Include="Template\metro\media\js\gallery.js" />
+    <Content Include="Template\metro\media\js\gmaps.js" />
+    <Content Include="Template\metro\media\js\inbox.js" />
+    <Content Include="Template\metro\media\js\index.js" />
+    <Content Include="Template\metro\media\js\jquery-1.10.1.min.js" />
+    <Content Include="Template\metro\media\js\jquery-1.8.3.min.js" />
+    <Content Include="Template\metro\media\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Template\metro\media\js\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="Template\metro\media\js\jquery.backstretch.min.js" />
+    <Content Include="Template\metro\media\js\jquery.blockui.min.js" />
+    <Content Include="Template\metro\media\js\jquery.bootpag.min.js" />
+    <Content Include="Template\metro\media\js\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Template\metro\media\js\jquery.cookie.min.js" />
+    <Content Include="Template\metro\media\js\jquery.countdown.js" />
+    <Content Include="Template\metro\media\js\jquery.dataTables.js" />
+    <Content Include="Template\metro\media\js\jquery.dataTables.min.js" />
+    <Content Include="Template\metro\media\js\jquery.easy-pie-chart.js" />
+    <Content Include="Template\metro\media\js\jquery.fancybox.pack.js" />
+    <Content Include="Template\metro\media\js\jquery.fileupload-fp.js" />
+    <Content Include="Template\metro\media\js\jquery.fileupload-ui.js" />
+    <Content Include="Template\metro\media\js\jquery.fileupload.js" />
+    <Content Include="Template\metro\media\js\jquery.flot.crosshair.js" />
+    <Content Include="Template\metro\media\js\jquery.flot.js" />
+    <Content Include="Template\metro\media\js\jquery.flot.pie.js" />
+    <Content Include="Template\metro\media\js\jquery.flot.resize.js" />
+    <Content Include="Template\metro\media\js\jquery.flot.stack.js" />
+    <Content Include="Template\metro\media\js\jquery.gritter.js" />
+    <Content Include="Template\metro\media\js\jquery.iframe-transport.js" />
+    <Content Include="Template\metro\media\js\jquery.input-ip-address-control-1.0.min.js" />
+    <Content Include="Template\metro\media\js\jquery.inputmask.bundle.min.js" />
+    <Content Include="Template\metro\media\js\jquery.knob.js" />
+    <Content Include="Template\metro\media\js\jquery.multi-select.js" />
+    <Content Include="Template\metro\media\js\jquery.nestable.js" />
+    <Content Include="Template\metro\media\js\jquery.pulsate.min.js" />
+    <Content Include="Template\metro\media\js\jquery.slimscroll.min.js" />
+    <Content Include="Template\metro\media\js\jquery.sparkline.min.js" />
+    <Content Include="Template\metro\media\js\jquery.tagsinput.min.js" />
+    <Content Include="Template\metro\media\js\jquery.toggle.buttons.js" />
+    <Content Include="Template\metro\media\js\jquery.ui.widget.js" />
+    <Content Include="Template\metro\media\js\jquery.uniform.min.js" />
+    <Content Include="Template\metro\media\js\jquery.validate.min.js" />
+    <Content Include="Template\metro\media\js\jquery.vmap.europe.js" />
+    <Content Include="Template\metro\media\js\jquery.vmap.germany.js" />
+    <Content Include="Template\metro\media\js\jquery.vmap.js" />
+    <Content Include="Template\metro\media\js\jquery.vmap.russia.js" />
+    <Content Include="Template\metro\media\js\jquery.vmap.sampledata.js" />
+    <Content Include="Template\metro\media\js\jquery.vmap.usa.js" />
+    <Content Include="Template\metro\media\js\jquery.vmap.world.js" />
+    <Content Include="Template\metro\media\js\jquery.xdr-transport.js" />
+    <Content Include="Template\metro\media\js\load-image.min.js" />
+    <Content Include="Template\metro\media\js\lock.js" />
+    <Content Include="Template\metro\media\js\login-soft.js" />
+    <Content Include="Template\metro\media\js\login.js" />
+    <Content Include="Template\metro\media\js\maps-google.js" />
+    <Content Include="Template\metro\media\js\maps-vector.js" />
+    <Content Include="Template\metro\media\js\portlet-draggable.js" />
+    <Content Include="Template\metro\media\js\respond.js" />
+    <Content Include="Template\metro\media\js\respond.min.js" />
+    <Content Include="Template\metro\media\js\search.js" />
+    <Content Include="Template\metro\media\js\select2.min.js" />
+    <Content Include="Template\metro\media\js\table-advanced.js" />
+    <Content Include="Template\metro\media\js\table-editable.js" />
+    <Content Include="Template\metro\media\js\table-managed.js" />
+    <Content Include="Template\metro\media\js\tmpl.min.js" />
+    <Content Include="Template\metro\media\js\ui-general.js" />
+    <Content Include="Template\metro\media\js\ui-jqueryui.js" />
+    <Content Include="Template\metro\media\js\ui-modals.js" />
+    <Content Include="Template\metro\media\js\ui-nestable.js" />
+    <Content Include="Template\metro\media\js\ui-sliders.js" />
+    <Content Include="Template\metro\media\js\ui-tree.js" />
+    <Content Include="Template\metro\media\js\wysihtml5-0.3.0.js" />
+    <Content Include="Template\metro\Member\MemberList.htm" />
+    <Content Include="Template\metro\Member\MemberList1.htm" />
+    <Content Include="Template\metro\page_about.html" />
+    <Content Include="Template\metro\page_blog.html" />
+    <Content Include="Template\metro\page_blog_item.html" />
+    <Content Include="Template\metro\page_calendar.html" />
+    <Content Include="Template\metro\page_coming_soon.html" />
+    <Content Include="Template\metro\page_contact.html" />
+    <Content Include="Template\metro\page_news.html" />
+    <Content Include="Template\metro\page_news_item.html" />
+    <Content Include="Template\metro\page_timeline.html" />
+    <Content Include="Template\metro\portlet_draggable.html" />
+    <Content Include="Template\metro\portlet_general.html" />
+    <Content Include="Template\metro\source.txt" />
+    <Content Include="Template\metro\table_advanced.html" />
+    <Content Include="Template\metro\table_basic.html" />
+    <Content Include="Template\metro\table_editable.html" />
+    <Content Include="Template\metro\table_managed.html" />
+    <Content Include="Template\metro\table_responsive.html" />
+    <Content Include="Template\metro\ui_buttons.html" />
+    <Content Include="Template\metro\ui_general.html" />
+    <Content Include="Template\metro\ui_jqueryui.html" />
+    <Content Include="Template\metro\ui_modals.html" />
+    <Content Include="Template\metro\ui_nestable.html" />
+    <Content Include="Template\metro\ui_sliders.html" />
+    <Content Include="Template\metro\ui_tabs_accordions.html" />
+    <Content Include="Template\metro\ui_tiles.html" />
+    <Content Include="Template\metro\ui_tree.html" />
+    <Content Include="Template\metro\ui_typography.html" />
+    <Content Include="Template\user\Achievement_AddAchievementInfo.html" />
+    <Content Include="Template\user\Achievement_EditInstitution.html" />
+    <Content Include="Template\user\Achievement_InstitutionList.html" />
+    <Content Include="Template\user\Achievement_AchievementInfoList.html" />
+    <Content Include="Template\user\Achievement_StaffAchievementList.html" />
+    <Content Include="Template\user\ApprovalProcess_ApplyApprovalProcess.html" />
+    <Content Include="Template\user\ApprovalProcess_EditProcess.html" />
+    <Content Include="Template\user\ApprovalProcess_EditApprovalPerson.html" />
+    <Content Include="Template\user\ApprovalProcess_EditProject.html" />
+    <Content Include="Template\user\ApprovalProcess_EditProjectProcess.html" />
+    <Content Include="Template\user\ApprovalProcess_ProcessList.html" />
+    <Content Include="Template\user\ApprovalProcess_ApprovalPersonList.html" />
+    <Content Include="Template\user\ApprovalProcess_ProjectList.html" />
+    <Content Include="Template\user\ApprovalProcess_ProjectProcessList.html" />
+    <Content Include="Template\user\ApprovalProcess_StaffApplyApproval.html" />
+    <Content Include="Template\user\ApprovalProcess_StaffApplyList.html" />
+    <Content Include="Template\user\Forum_AddReply.html" />
+    <Content Include="Template\user\Forum_AddTopic.html" />
+    <Content Include="Template\user\Forum_EditSection.html" />
+    <Content Include="Template\user\Forum_ReplyList.html" />
+    <Content Include="Template\user\Forum_SectionList.html" />
+    <Content Include="Template\user\Forum_TopicList.html" />
+    <Content Include="Template\user\Member_AddDepartment.html" />
+    <Content Include="Template\user\Member_AddStaff.html" />
+    <Content Include="Template\user\Member_EditStaffPosition.html" />
+    <Content Include="Template\user\Index.html" />
+    <Content Include="Template\user\Member_CompanyInfo.html" />
+    <Content Include="Template\user\Member_DepartmentInfo.html" />
+    <Content Include="Template\user\Member_DepartmentList.html" />
+    <Content Include="Template\user\Member_EditPosition.html" />
+    <Content Include="Template\user\Member_Index.html" />
+    <Content Include="Template\user\Member_Login.html" />
+    <Content Include="Template\user\Member_PositionList.html" />
+    <Content Include="Template\user\Member_Staff.html" />
+    <Content Include="Template\user\Member_StaffList.html" />
+    <Content Include="Template\user\Member_StaffPositionList.html" />
+    <Content Include="Template\user\Member_EditStaffInfo.html" />
+    <Content Include="Template\user\Notice_AddNoticeComment.html" />
+    <Content Include="Template\user\Notice_EditNotice.html" />
+    <Content Include="Template\user\Notice_EditNoticetype.html" />
+    <Content Include="Template\user\Notice_NoticeCommentList.html" />
+    <Content Include="Template\user\Notice_NoticeList.html" />
+    <Content Include="Template\user\Notice_NoticetypeList.html" />
+    <Content Include="Template\user\Project_EditProjectBug.html" />
+    <Content Include="Template\user\Project_EditProject.html" />
+    <Content Include="Template\user\Project_EditProjectBugEditor.html" />
+    <Content Include="Template\user\Project_EditProjectStaff.html" />
+    <Content Include="Template\user\Project_ProjectBug.html" />
+    <Content Include="Template\user\Project_ProjectBugList.html" />
+    <Content Include="Template\user\Project_ProjectList.html" />
+    <Content Include="Template\user\Project_ProjectStaffList.html" />
+    <Content Include="Template\user\Runtinework_EditMemorandum.html" />
+    <Content Include="Template\user\Runtinework_MemorandumList.html" />
+    <Content Include="Template\user\UserPower_EditFunctionList.html" />
+    <Content Include="Template\user\UserPower_ActionList.html" />
+    <Content Include="Template\user\UserPower_EditAction.html" />
+    <Content Include="Template\user\UserPower_EditActionList.html" />
+    <Content Include="Template\user\UserPower_EditFunction.html" />
+    <Content Include="Template\user\UserPower_EditPageMenu.html" />
+    <Content Include="Template\user\UserPower_FunctionList.html" />
+    <Content Include="Template\user\UserPower_PageMenuList.html" />
+    <Content Include="Template\user\UserPower_UserPowerLogList.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Template\metro\media\image\css" />
+    <Content Include="Template\metro\media\image\fontawesome-webfont.eot" />
+    <Content Include="Template\metro\media\image\fontawesome-webfont.ttf" />
+    <Content Include="Template\metro\media\image\fontawesome-webfont.woff" />
+    <Content Include="Template\metro\media\image\glyphicons-regular.eot" />
+    <Content Include="Template\metro\media\image\glyphicons-regular.ttf" />
+    <Content Include="Template\metro\media\image\glyphicons-regular.woff" />
+    <Content Include="Template\metro\media\image\glyphiconshalflings-regular.eot" />
+    <Content Include="Template\metro\media\image\glyphiconshalflings-regular.ttf" />
+    <Content Include="Template\metro\media\image\glyphiconshalflings-regular.woff" />
+    <Content Include="Template\metro\media\image\js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\admin\" />
+    <Folder Include="Models\" />
+    <Folder Include="Template\metro\Common\" />
+    <Folder Include="Views\Admin_Base\" />
+    <Folder Include="Views\Admin_ForumNoView\" />
+    <Folder Include="Views\Admin_Forum\" />
+    <Folder Include="Views\Admin_UserPowerNoView\" />
+    <Folder Include="Views\Admin_UserPower\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\Common\" />
+    <Folder Include="Views\ForumNoView\" />
+    <Folder Include="Views\Forum\" />
+    <Folder Include="Views\UserPowerNoView\" />
+    <Folder Include="Views\UserPower\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OA_BLL\OA_BLL.csproj">
+      <Project>{189c626e-62d1-451e-93f7-22e11af1b83a}</Project>
+      <Name>OA_BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OA_Common\OA_Common.csproj">
+      <Project>{1af4b253-ca38-489e-b801-56f7b740e0ae}</Project>
+      <Name>OA_Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OA_DAL\OA_DAL.csproj">
+      <Project>{0ddbe2bd-04cb-47f8-bcb0-2c537a073429}</Project>
+      <Name>OA_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OA_IBLL\OA_IBLL.csproj">
+      <Project>{748fc831-a488-4d17-b61f-13ccd5dcd761}</Project>
+      <Name>OA_IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OA_IDAL\OA_IDAL.csproj">
+      <Project>{78ee71df-bc0d-49b4-b247-4c051d3fcf64}</Project>
+      <Name>OA_IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OA_Models\OA_Models.csproj">
+      <Project>{e209c757-02f9-4b92-8917-d8e8534f6884}</Project>
+      <Name>OA_Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>16723</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:16723/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

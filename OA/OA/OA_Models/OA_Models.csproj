@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E209C757-02F9-4B92-8917-D8E8534F6884}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OA_Models</RootNamespace>
+    <AssemblyName>OA_Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="oadb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>oadb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oadb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oadb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>oadb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="oa_achievements_achievementsinfo.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_achievements_institution.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_approvalprocess_approvalpersons.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_approvalprocess_process.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_approvalprocess_projectprocess.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_approvalprocess_projects.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_approvalprocess_staffapplyapprovals.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_approvalprocess_staffapplys.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_forum_reply.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_forum_section.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_forum_topic.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_member_companys.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_member_departments.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_member_dologs.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_member_positions.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_member_staffs.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_member_staffsinfos.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_member_staffslogins.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_member_staffspositions.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_notice_notice.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_notice_noticecomment.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_notice_noticetype.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_power_actions.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_power_ausers.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_power_ausersinfos.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_power_auserslogins.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_power_dologs.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_power_functions.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_power_functionsactions.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_power_pagemenu.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_power_powerlogs.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_power_roles.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_power_rolesfunctions.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_project_projects.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_project_projectsbugs.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_project_projectsstaffs.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_runtinework_memorandums.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_userpower_actions.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_userpower_functions.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_userpower_functionsactions.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_userpower_pagemenu.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_userpower_positionsfunctions.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oa_userpower_powerlogs.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proc_updateauser_Result.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view_oa_achievements_achievementinfolist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_achievements_staffachievementlist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_approvalprocess_processperson.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_approvalprocess_projectprocess.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_approvalprocess_staffapplyall.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_approvalprocess_staffapplyapprovallist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_approvalprocess_staffapplylist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_forum_reply.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_forum_section.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_forum_topic.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_member_companylist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_member_departmentstaffnumber.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_member_position.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_member_positionfunctionlist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_member_staffinfolist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_member_staffposition.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_member_staffsidusername.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_member_staffs_staffsinfos.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_notice_notice.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_notice_noticecomment.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_power_auserlist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_power_dologlist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_power_functionactionlist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_power_powerloglist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_power_rolefunctionlist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_project_projectbug.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_project_projectbuglist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_project_projectstafflist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_oa_userpower_functionactionlist.cs">
+      <DependentUpon>oadb.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="oadb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>oadb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="oadb.edmx.diagram">
+      <DependentUpon>oadb.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="oadb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>oadb.edmx</DependentUpon>
+      <LastGenOutput>oadb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="oadb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>oadb.edmx</DependentUpon>
+      <LastGenOutput>oadb.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

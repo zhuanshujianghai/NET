@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>OA-权限管理</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="/Content/hl/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style-metro.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/style-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/default.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="/Content/hl/css/uniform.default.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/hl/css/bootstrap-fileupload.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                </button>
+                <h4 class="modal-title">
+                    <i class="icon-pencil"></i><span id="lblAddTitle" style="font-weight: bold">编辑管理员</span>
+                </h4>
+            </div>
+            <form class="form-horizontal form-bordered form-row-strippe" action="" data-toggle="validator" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                用户名：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="editusername" class="m-wrap large" value="$username$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                密码：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="password" class="m-wrap large" value="" placeholder="$password$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                口令：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="userword" class="m-wrap large" value="" placeholder="$userword$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                真实姓名：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="realname" class="m-wrap large" value="$realname$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                所属角色：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <select class="m-wrap large" id="roleid"></select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                QQ：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="qq" class="m-wrap large" value="$qq$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                邮箱：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="email" class="m-wrap large" value="$email$" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" style="width: 125px;">
+                                手机：</label>
+                            <div class="controls" style="margin-left: 0px;">
+                                <input type="text" id="phone" class="m-wrap large" value="$phone$" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-info">
+                    <input class="btn blue" type="button" id="btnsubmit" value="提交" onclick="update()" data-dismiss="modal" />
+                    <button type="button" class="btn green" data-dismiss="modal">
+                        取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.post("/Admin_PowerNoView/queryrolelist_select", function (data) {
+            var html = "";
+            $(data).each(function (a, b) {
+                if (b.id == $roleid$) {
+                    html = "<option value='" + b.id + "'>" + b.rolename + "</option>" + html;
+                }
+                else {
+                    html += "<option value='" + b.id + "'>" + b.rolename + "</option>";
+                }
+            });
+            $("#roleid").html(html);
+        });
+    })
+    function update() {
+        var roleid = $("#roleid").val();
+        var username = $("#editusername").val();
+        var realname = $("#realname").val();
+        var qq = $("#qq").val();
+        var email = $("#email").val();
+        var phone = $("#phone").val();
+        var password = $("#password").val();
+        var userword = $("#userword").val();
+        $.post("/admin_powernoview/editauser", { id:$id$,roleid: roleid, username: username, password:password,userword:userword,realname: realname, qq: qq, email: email, phone: phone }, function (data) {
+            if (data.status == true) {
+                reload();
+            }
+            else {
+                alert(data.msg);
+            }
+        });
+    }
+</script>
+</html>
